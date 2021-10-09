@@ -4,6 +4,12 @@
 ![.NET](https://img.shields.io/badge/-.NET-blueviolet)
 ![WCF](https://img.shields.io/badge/-WCF-white)
 
+## Info
+- Visual Studio Community 2019
+- MSSQL 18
+- .NET 4.5
+- Entity Framework 6.2.0
+
 ## Curso
 - Desarrollo de Aplicaciones II (1366)
 
