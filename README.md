@@ -9,6 +9,19 @@
 
 ## Integrantes:
 - Felix Chacaltana Trigoso
+- Ernesto Gaspard Farfan
 
-## Diagrama base de datos
+## Diagrama base de datos:
 ![Diagrama de base de datos](/docs/db_diagram.jpg)
+
+## To do:
+- [x] Refactorizacion modelo de datos
+- [ ] Actualizar informe avance 2 (DER Logico)
+- [ ] Mini explicacion de cada tabla y como se relacionan
+- [x] Crear base de datos MSSQL
+- [ ] 20 registros por tabla (minimo)
+- [ ] Libreria WCF + Entity Framework
+    - [ ] CRUD para cada tabla
+    - [ ] Servicios paciente
+    - [ ] Servicios usuario
+    - [ ] Publicacion IIS
