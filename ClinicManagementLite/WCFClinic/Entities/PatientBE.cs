@@ -14,7 +14,7 @@ namespace WCFClinic.Entities
         private Int16 id;
         private String first_name;
         private String last_name;
-        private String birthday;
+        private DateTime birthday;
         private String phone;
         private String photo;
         private String email;
@@ -45,7 +45,7 @@ namespace WCFClinic.Entities
         }
 
         [DataMember]
-        public String Birthday
+        public DateTime Birthday
         {
             get { return birthday; }
             set { birthday = value; }
