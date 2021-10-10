@@ -77,10 +77,12 @@
     <Compile Include="Entities\MedicalRecordBE.cs" />
     <Compile Include="Entities\PatientBE.cs" />
     <Compile Include="Entities\RoleBE.cs" />
+    <Compile Include="Entities\AppointmentBE.cs" />
     <Compile Include="Entities\ScheduleBE.cs" />
     <Compile Include="Entities\UserBE.cs" />
     <Compile Include="IServiceArea.cs" />
     <Compile Include="IServiceMedicalRecord.cs" />
+    <Compile Include="IServiceAppointment.cs" />
     <Compile Include="IServiceUser.cs" />
     <Compile Include="IServiceRole.cs" />
     <Compile Include="Medical_Record.cs">
@@ -103,6 +105,7 @@
     <Compile Include="IServiceSchedule.cs" />
     <Compile Include="ServiceArea.cs" />
     <Compile Include="ServiceMedicalRecord.cs" />
+    <Compile Include="ServiceAppointment.cs" />
     <Compile Include="ServiceUser.cs" />
     <Compile Include="ServicePatient.cs" />
     <Compile Include="ServiceRole.cs" />
