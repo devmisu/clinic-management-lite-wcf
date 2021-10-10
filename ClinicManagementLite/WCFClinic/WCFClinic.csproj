@@ -74,10 +74,14 @@
       <DependentUpon>ClinicManagementLite.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\AreaBE.cs" />
+    <Compile Include="Entities\MedicalRecordBE.cs" />
     <Compile Include="Entities\PatientBE.cs" />
     <Compile Include="Entities\RoleBE.cs" />
     <Compile Include="Entities\ScheduleBE.cs" />
+    <Compile Include="Entities\UserBE.cs" />
     <Compile Include="IServiceArea.cs" />
+    <Compile Include="IServiceMedicalRecord.cs" />
+    <Compile Include="IServiceUser.cs" />
     <Compile Include="IServiceRole.cs" />
     <Compile Include="Medical_Record.cs">
       <DependentUpon>ClinicManagementLite.tt</DependentUpon>
@@ -98,6 +102,8 @@
     <Compile Include="IServicePatient.cs" />
     <Compile Include="IServiceSchedule.cs" />
     <Compile Include="ServiceArea.cs" />
+    <Compile Include="ServiceMedicalRecord.cs" />
+    <Compile Include="ServiceUser.cs" />
     <Compile Include="ServicePatient.cs" />
     <Compile Include="ServiceRole.cs" />
     <Compile Include="ServiceSchedule.cs" />
@@ -131,9 +137,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
