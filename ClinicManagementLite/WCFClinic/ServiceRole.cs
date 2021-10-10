@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WCFClinic.Entities;
+using System.Data.Entity.Core;
 
-namespace WCFClinic.Services
+namespace WCFClinic
 {
     public class ServiceRole : IServiceRole
     {
@@ -32,7 +33,7 @@ namespace WCFClinic.Services
             }
         }
 
-        public bool DeleteRole(short id)
+        public bool DeleteRole(Int16 id)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
@@ -101,7 +102,7 @@ namespace WCFClinic.Services
             }
         }
 
-        public RoleBE GetOneRole(short id)
+        public RoleBE GetOneRole(Int16 id)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try

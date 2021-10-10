@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WCFClinic.Entities;
+using System.Data.Entity.Core;
 
-namespace WCFClinic.Services
+namespace WCFClinic
 {
     public class ServicePatient : IServicePatient
     {
@@ -38,12 +39,12 @@ namespace WCFClinic.Services
             }
         }
 
-        public bool DeletePatient(short id)
+        public bool DeletePatient(Int16 id)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Patient tbPatient = (from patient in db.Patients where patient.id == id select patient);
+                Patient tbPatient = (from patient in db.Patients where patient.id == id select patient).FirstOrDefault();
 
                 db.Patients.Remove(tbPatient);
                 db.SaveChanges();
@@ -119,7 +120,7 @@ namespace WCFClinic.Services
             }
         }
 
-        public PatientBE GetPatient(short id)
+        public PatientBE GetPatient(Int16 id)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try

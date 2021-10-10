@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WCFClinic.Entities;
+using System.Data.Entity.Core;
 
-namespace WCFClinic.Services
+namespace WCFClinic
 {
     public class ServiceSchedule : IServiceSchedule
     {
@@ -34,7 +35,7 @@ namespace WCFClinic.Services
             }
         }
 
-        public bool DeleteSchedule(short id)
+        public bool DeleteSchedule(Int16 id)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
@@ -82,7 +83,7 @@ namespace WCFClinic.Services
             {
                 List<ScheduleBE> listSchedules = new List<ScheduleBE>();
 
-                var query = (from schedules in db.Schedules orderby schedules.name select schedules);
+                var query = (from schedules in db.Schedules orderby schedules.id select schedules);
 
                 foreach (var tbSchedule in query)
                 {
@@ -107,7 +108,7 @@ namespace WCFClinic.Services
             }
         }
 
-        public ScheduleBE GetOneSchedule(short id)
+        public ScheduleBE GetOneSchedule(Int16 id)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try

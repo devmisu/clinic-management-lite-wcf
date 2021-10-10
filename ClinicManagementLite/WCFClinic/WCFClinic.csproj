@@ -74,7 +74,11 @@
       <DependentUpon>ClinicManagementLite.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\AreaBE.cs" />
-    <Compile Include="Services\IServiceArea.cs" />
+    <Compile Include="Entities\PatientBE.cs" />
+    <Compile Include="Entities\RoleBE.cs" />
+    <Compile Include="Entities\ScheduleBE.cs" />
+    <Compile Include="IServiceArea.cs" />
+    <Compile Include="IServiceRole.cs" />
     <Compile Include="Medical_Record.cs">
       <DependentUpon>ClinicManagementLite.tt</DependentUpon>
     </Compile>
@@ -91,7 +95,12 @@
     <Compile Include="Schedule.cs">
       <DependentUpon>ClinicManagementLite.tt</DependentUpon>
     </Compile>
-    <Compile Include="Services\ServiceArea.cs" />
+    <Compile Include="IServicePatient.cs" />
+    <Compile Include="IServiceSchedule.cs" />
+    <Compile Include="ServiceArea.cs" />
+    <Compile Include="ServicePatient.cs" />
+    <Compile Include="ServiceRole.cs" />
+    <Compile Include="ServiceSchedule.cs" />
     <Compile Include="User.cs">
       <DependentUpon>ClinicManagementLite.tt</DependentUpon>
     </Compile>
@@ -121,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

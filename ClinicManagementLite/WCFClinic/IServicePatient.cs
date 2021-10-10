@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WCFClinic.Entities;
 
-namespace WCFClinic.Services
+namespace WCFClinic
 {
     [ServiceContract]
     public interface IServicePatient

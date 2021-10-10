@@ -6,23 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 using WCFClinic.Entities;
 
-namespace WCFClinic.Services
+namespace WCFClinic
 {
-    public interface IServiceSchedule
+    [ServiceContract]
+    public interface IServiceRole
     {
         [OperationContract]
-        Boolean CreateSchedule(ScheduleBE objScheduleBE);
+        Boolean CreateRole(RoleBE objRoleBE);
 
         [OperationContract]
-        List<ScheduleBE> GetAllSchedules();
+        List<RoleBE> GetAllRoles();
 
         [OperationContract]
-        ScheduleBE GetOneSchedule(Int16 id);
+        RoleBE GetOneRole(Int16 id);
 
         [OperationContract]
-        Boolean UpdateSchedule(ScheduleBE objScheduleBE);
+        Boolean UpdateRole(RoleBE objRoleBE);
 
         [OperationContract]
-        Boolean DeleteSchedule(Int16 id);
+        Boolean DeleteRole(Int16 id);
     }
 }
