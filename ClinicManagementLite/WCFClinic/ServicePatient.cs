@@ -19,7 +19,7 @@ namespace WCFClinic
 
                 tbPatient.first_name = objPatientBE.FirstName;
                 tbPatient.last_name = objPatientBE.LastName;
-                tbPatient.birthday = objPatientBE.Birthday; //validate type
+                tbPatient.birthday = objPatientBE.Birthday;
                 tbPatient.phone = objPatientBE.Phone;
                 tbPatient.photo = objPatientBE.Photo;
                 tbPatient.email = objPatientBE.Email;
@@ -66,7 +66,7 @@ namespace WCFClinic
 
                 tbPatient.first_name = objPatientBE.FirstName;
                 tbPatient.last_name = objPatientBE.LastName;
-                tbPatient.birthday = objPatientBE.Birthday; //validate type
+                tbPatient.birthday = objPatientBE.Birthday;
                 tbPatient.phone = objPatientBE.Phone;
                 tbPatient.photo = objPatientBE.Photo;
                 tbPatient.email = objPatientBE.Email;
@@ -144,6 +144,30 @@ namespace WCFClinic
                 return objPatientBE;
             }
             catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public PatientBE Login(String dni, String password)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                Patient tbPatient = (from patient in db.Patients where patient.dni == dni && patient.password == password select patient).FirstOrDefault();
+
+                if (tbPatient == null)
+                {
+                    throw new Exception("No estas registrado en el sistema.");
+                }
+                else if (!tbPatient.active)
+                {
+                    throw new Exception("Cuenta desactivada, contactate con soporte.");
+                }
+
+                return GetPatient(Convert.ToInt16(tbPatient.id));
+            }
+            catch(EntityException ex)
             {
                 throw new Exception(ex.Message);
             }
