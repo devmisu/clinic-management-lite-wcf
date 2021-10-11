@@ -73,6 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicManagementLite.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\QueueBE.cs" />
     <Compile Include="Entities\AreaBE.cs" />
     <Compile Include="Entities\MedicalRecordBE.cs" />
     <Compile Include="Entities\PatientBE.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Entities\AppointmentBE.cs" />
     <Compile Include="Entities\ScheduleBE.cs" />
     <Compile Include="Entities\UserBE.cs" />
+    <Compile Include="IServiceQueue.cs" />
     <Compile Include="IServiceArea.cs" />
     <Compile Include="IServiceMedicalRecord.cs" />
     <Compile Include="IServiceAppointment.cs" />
@@ -103,6 +105,7 @@
     </Compile>
     <Compile Include="IServicePatient.cs" />
     <Compile Include="IServiceSchedule.cs" />
+    <Compile Include="ServiceQueue.cs" />
     <Compile Include="ServiceArea.cs" />
     <Compile Include="ServiceMedicalRecord.cs" />
     <Compile Include="ServiceAppointment.cs" />

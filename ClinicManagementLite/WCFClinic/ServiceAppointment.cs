@@ -44,7 +44,7 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Appointment tbAppointment = (from schedule in db.Appointments where schedule.id == id select schedule).FirstOrDefault();
+                Appointment tbAppointment = (from appointment in db.Appointments where appointment.id == id select appointment).FirstOrDefault();
 
                 db.Appointments.Remove(tbAppointment);
                 db.SaveChanges();
@@ -62,7 +62,7 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Appointment tbAppointment = (from schedule in db.Appointments where schedule.id == objAppointmentBE.Id select schedule).FirstOrDefault();
+                Appointment tbAppointment = (from appointment in db.Appointments where appointment.id == objAppointmentBE.Id select appointment).FirstOrDefault();
 
                 tbAppointment.id_patient = objAppointmentBE.IdPatient;
                 tbAppointment.id_user = objAppointmentBE.IdUser;
@@ -91,7 +91,7 @@ namespace WCFClinic
             {
                 List<AppointmentBE> listAppointments = new List<AppointmentBE>();
 
-                var query = (from schedules in db.Appointments orderby schedules.id select schedules);
+                var query = (from appointments in db.Appointments orderby appointments.id select appointments);
 
                 foreach (var tbAppointment in query)
                 {
@@ -125,7 +125,7 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Appointment tbAppointment = (from schedule in db.Appointments where schedule.id == id select schedule).FirstOrDefault();
+                Appointment tbAppointment = (from appointment in db.Appointments where appointment.id == id select appointment).FirstOrDefault();
 
                 AppointmentBE objAppointmentBE = new AppointmentBE();
 
