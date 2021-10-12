@@ -132,5 +132,42 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<ScheduleBE> GetAllSchedulesOfUser(Int16 id)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                List<ScheduleBE> listSchedules = new List<ScheduleBE>();
+
+                var query = (from schedules in db.Schedules where schedules.id_user == id orderby schedules.id select schedules);
+
+                foreach (var tbSchedule in query)
+                {
+                    ScheduleBE objScheduleBE = new ScheduleBE();
+
+                    objScheduleBE.Id = Convert.ToInt16(tbSchedule.id);
+                    objScheduleBE.IdUser = Convert.ToInt16(tbSchedule.id_user);
+                    objScheduleBE.StartTime = tbSchedule.start_time;
+                    objScheduleBE.EndTime = tbSchedule.end_time;
+                    objScheduleBE.Days = tbSchedule.days;
+                    objScheduleBE.Active = tbSchedule.active;
+                    objScheduleBE.CreatedAt = tbSchedule.created_at;
+
+                    listSchedules.Add(objScheduleBE);
+                }
+
+                if (listSchedules.Count == 0)
+                {
+                    throw new Exception("No se encontraron horarios.");
+                }
+
+                return listSchedules;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
