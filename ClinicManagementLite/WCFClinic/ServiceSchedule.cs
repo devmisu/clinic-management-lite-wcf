@@ -132,5 +132,10 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<ScheduleBE> GetAvailableSchedulesByUser(Int16 userId)
+        {
+            return new List<ScheduleBE>();
+        }
     }
 }

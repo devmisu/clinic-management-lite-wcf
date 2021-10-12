@@ -156,5 +156,43 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<UserBE> GetUsersByArea(Int16 areaId)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                List<UserBE> listUsers = new List<UserBE>();
+
+                var query = (from user in db.Users orderby user.last_name where user.Area.id == areaId select user);
+
+                foreach (var tbUser in query)
+                {
+                    UserBE objUserBE = new UserBE();
+
+                    objUserBE.Id = Convert.ToInt16(tbUser.id);
+                    objUserBE.IdRole = Convert.ToInt16(tbUser.id_role);
+                    objUserBE.IdArea = Convert.ToInt16(tbUser.id_area);
+                    objUserBE.FirstName = tbUser.first_name;
+                    objUserBE.LastName = tbUser.last_name;
+                    objUserBE.Phone = tbUser.phone;
+                    objUserBE.Photo = tbUser.photo;
+                    objUserBE.Email = tbUser.email;
+                    objUserBE.Dni = tbUser.dni;
+                    objUserBE.Password = tbUser.password;
+                    objUserBE.Specialization = tbUser.specialization;
+                    objUserBE.Active = tbUser.active;
+                    objUserBE.CreatedAt = tbUser.created_at;
+
+                    listUsers.Add(objUserBE);
+                }
+
+                return listUsers;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
