@@ -132,5 +132,42 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<QueueBE> GetUserQueues(Int16 userId)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                List<QueueBE> listQueues = new List<QueueBE>();
+
+                var query = (from queues in db.Queues where queues.id_user == userId orderby queues.id select queues);
+
+                foreach (var tbQueue in query)
+                {
+                    QueueBE objQueueBE = new QueueBE();
+
+                    objQueueBE.Id = Convert.ToInt16(tbQueue.id);
+                    objQueueBE.IdPatient = Convert.ToInt16(tbQueue.id_patient);
+                    objQueueBE.IdUser = Convert.ToInt16(tbQueue.id_user);
+                    objQueueBE.StartDate = tbQueue.start_date;
+                    objQueueBE.StartTime = tbQueue.start_time;
+                    objQueueBE.State = tbQueue.state;
+                    objQueueBE.CreatedAt = tbQueue.created_at;
+
+                    listQueues.Add(objQueueBE);
+                }
+
+                if (listQueues.Count == 0)
+                {
+                    throw new Exception("No se encontraron solicitudes de citas.");
+                }
+
+                return listQueues;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

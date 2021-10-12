@@ -25,5 +25,8 @@ namespace WCFClinic
 
         [OperationContract]
         Boolean DeleteQueue(Int16 id);
+
+        [OperationContract]
+        List<QueueBE> GetUserQueues(Int16 userId);
     }
 }
