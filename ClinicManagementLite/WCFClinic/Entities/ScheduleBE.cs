@@ -16,7 +16,7 @@ namespace WCFClinic.Entities
         private Int16 id_user;
         private TimeSpan start_time;
         private TimeSpan end_time;
-        private String days;
+        private String days; // mon, tue, wed, thu, fri, sat, sun
         private Boolean active;
         private DateTime created_at;
 

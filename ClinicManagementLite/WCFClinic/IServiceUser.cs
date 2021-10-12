@@ -28,5 +28,8 @@ namespace WCFClinic
 
         [OperationContract]
         List<UserBE> GetUsersByArea(Int16 areaId);
+
+        [OperationContract]
+        PatientBE Login(String dni, String password);
     }
 }
