@@ -31,5 +31,9 @@ namespace WCFClinic
 
         [OperationContract]
         List<AppointmentBE> GetUserAppointments(Int16 userId);
+
+        [OperationContract]
+        List<AppointmentBE> GetUserAppointmentsByDate(Int16 userId, DateTime date);
+
     }
 }

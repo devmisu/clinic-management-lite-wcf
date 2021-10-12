@@ -163,6 +163,76 @@ namespace WCFClinic
                 }
 
                 return listSchedules;
+
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<ScheduleBE> GetAvailableSchedulesByUser(Int16 userId, DateTime date)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                var day = "";
+
+                switch (date.DayOfWeek)
+                {
+                    case DayOfWeek.Monday:
+                        day = "MON";
+                        break;
+                    case DayOfWeek.Tuesday:
+                        day = "TUE";
+                        break;
+                    case DayOfWeek.Wednesday:
+                        day = "WED";
+                        break;
+                    case DayOfWeek.Thursday:
+                        day = "THU";
+                        break;
+                    case DayOfWeek.Friday:
+                        day = "FRI";
+                        break;
+                    case DayOfWeek.Saturday:
+                        day = "SAT";
+                        break;
+                    case DayOfWeek.Sunday:
+                        day = "SUN";
+                        break;
+                }
+
+                // Obtener citas del dia seleccionado
+                List<AppointmentBE> listAppointments = new ServiceAppointment().GetUserAppointmentsByDate(userId, date);
+
+                // Obtener horas ocupadas por citas
+                List<int> appointmentsHours = (from appointment in listAppointments select appointment.StartHour.Hours).ToList();
+
+                // Obtener horarios del dia seleccionado
+                List<ScheduleBE> listSchedules = new List<ScheduleBE>();
+
+                var query = (from schedules in db.Schedules where schedules.id_user == userId && schedules.days.Contains(day) select schedules);
+
+                foreach (var tbSchedule in query)
+                {
+                    // Crear horarios con rango de horas
+                    for (int hour = tbSchedule.start_time.Hours; hour < tbSchedule.end_time.Hours; hour++)
+                    {
+                        // Filtrar horarios disponibles
+                        if (!appointmentsHours.Contains(hour))
+                        {
+                            ScheduleBE objScheduleBE = new ScheduleBE();
+
+                            objScheduleBE.StartTime = new TimeSpan(hour, 0, 0);
+                            objScheduleBE.EndTime = new TimeSpan(hour + 1, 0, 0);
+
+                            listSchedules.Add(objScheduleBE);
+                        }
+                    }
+                }
+
+                return listSchedules;
             }
             catch (EntityException ex)
             {

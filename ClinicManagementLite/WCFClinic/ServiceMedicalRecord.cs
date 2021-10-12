@@ -140,5 +140,39 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<MedicalRecordBE> GetPatientMedicalRecords(Int16 patientId)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                List<MedicalRecordBE> listMedicalRecords = new List<MedicalRecordBE>();
+
+                var query = (from medicalRecord in db.Medical_Record orderby medicalRecord.created_at where medicalRecord.Appointment.id_patient == patientId select medicalRecord);
+
+                foreach (var tbMedicalRecord in query)
+                {
+                    MedicalRecordBE objMedicalRecordBE = new MedicalRecordBE();
+
+                    objMedicalRecordBE.Id = Convert.ToInt16(tbMedicalRecord.id);
+                    objMedicalRecordBE.IdAppointment = Convert.ToInt16(tbMedicalRecord.id_appointment);
+                    objMedicalRecordBE.Reason = tbMedicalRecord.reason;
+                    objMedicalRecordBE.Prescription = tbMedicalRecord.prescription;
+                    objMedicalRecordBE.Diseases = tbMedicalRecord.diseases;
+                    objMedicalRecordBE.Allergies = tbMedicalRecord.allergies;
+                    objMedicalRecordBE.Medicines = tbMedicalRecord.medicines;
+                    objMedicalRecordBE.Surgeries = tbMedicalRecord.surgeries;
+                    objMedicalRecordBE.CreatedAt = tbMedicalRecord.created_at;
+
+                    listMedicalRecords.Add(objMedicalRecordBE);
+                }
+
+                return listMedicalRecords;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

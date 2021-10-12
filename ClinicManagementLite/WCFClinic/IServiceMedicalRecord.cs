@@ -25,5 +25,8 @@ namespace WCFClinic
 
         [OperationContract]
         Boolean DeleteMedicalRecord(Int16 id);
+
+        [OperationContract]
+        List<MedicalRecordBE> GetPatientMedicalRecords(Int16 patientId);
     }
 }

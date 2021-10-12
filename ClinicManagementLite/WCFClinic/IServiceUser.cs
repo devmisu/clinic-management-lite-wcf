@@ -27,6 +27,9 @@ namespace WCFClinic
         Boolean DeleteUser(Int16 id);
 
         [OperationContract]
-        UserBE Login(String email, String password);
+        List<UserBE> GetUsersByArea(Int16 areaId);
+
+        [OperationContract]
+        UserBE Login(String dni, String password);
     }
 }

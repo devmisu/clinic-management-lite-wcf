@@ -157,23 +157,61 @@ namespace WCFClinic
             }
         }
 
-        public UserBE Login(string email, string password)
+        public List<UserBE> GetUsersByArea(Int16 areaId)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                User tbUser = (from user in db.Users where user.email == email && user.password == password select user).FirstOrDefault();
+                List<UserBE> listUsers = new List<UserBE>();
+
+                var query = (from user in db.Users orderby user.last_name where user.Area.id == areaId select user);
+
+                foreach (var tbUser in query)
+                {
+                    UserBE objUserBE = new UserBE();
+
+                    objUserBE.Id = Convert.ToInt16(tbUser.id);
+                    objUserBE.IdRole = Convert.ToInt16(tbUser.id_role);
+                    objUserBE.IdArea = Convert.ToInt16(tbUser.id_area);
+                    objUserBE.FirstName = tbUser.first_name;
+                    objUserBE.LastName = tbUser.last_name;
+                    objUserBE.Phone = tbUser.phone;
+                    objUserBE.Photo = tbUser.photo;
+                    objUserBE.Email = tbUser.email;
+                    objUserBE.Dni = tbUser.dni;
+                    objUserBE.Password = tbUser.password;
+                    objUserBE.Specialization = tbUser.specialization;
+                    objUserBE.Active = tbUser.active;
+                    objUserBE.CreatedAt = tbUser.created_at;
+
+                    listUsers.Add(objUserBE);
+                }
+
+                return listUsers;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public UserBE Login(String dni, String password)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                User tbUser = (from user in db.Users where user.dni == dni && user.password == password select user).FirstOrDefault();
 
                 if (tbUser == null)
                 {
-                    throw new Exception("No se encuentra registrado en el sistema.");
+                    throw new Exception("No estas registrado en el sistema.");
                 }
                 else if (!tbUser.active)
                 {
                     throw new Exception("Cuenta desactivada, contactate con soporte.");
                 }
                 return GetUser(Convert.ToInt16(tbUser.id));
-            } 
+            }
             catch (EntityException ex)
             {
                 throw new Exception(ex.Message);

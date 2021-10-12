@@ -28,5 +28,8 @@ namespace WCFClinic
 
         [OperationContract]
         List<ScheduleBE> GetAllSchedulesOfUser(Int16 id);
+
+        [OperationContract]
+        List<ScheduleBE> GetAvailableSchedulesByUser(Int16 userId, DateTime date);
     }
 }
