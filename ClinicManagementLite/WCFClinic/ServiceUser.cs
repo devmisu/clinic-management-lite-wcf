@@ -156,5 +156,28 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public UserBE Login(string email, string password)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                User tbUser = (from user in db.Users where user.email == email && user.password == password select user).FirstOrDefault();
+
+                if (tbUser == null)
+                {
+                    throw new Exception("No se encuentra registrado en el sistema.");
+                }
+                else if (!tbUser.active)
+                {
+                    throw new Exception("Cuenta desactivada, contactate con soporte.");
+                }
+                return GetUser(Convert.ToInt16(tbUser.id));
+            } 
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

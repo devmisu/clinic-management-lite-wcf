@@ -25,5 +25,8 @@ namespace WCFClinic
 
         [OperationContract]
         Boolean DeleteUser(Int16 id);
+
+        [OperationContract]
+        UserBE Login(String email, String password);
     }
 }
