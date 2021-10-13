@@ -23,6 +23,7 @@ namespace WCFClinic
         public string medicines { get; set; }
         public string surgeries { get; set; }
         public System.DateTime created_at { get; set; }
+        public bool active { get; set; }
     
         public virtual Appointment Appointment { get; set; }
     }

@@ -22,7 +22,6 @@ namespace WCFClinic
         public int id { get; set; }
         public int id_patient { get; set; }
         public int id_user { get; set; }
-        public string cancellation_reason { get; set; }
         public System.DateTime date { get; set; }
         public System.TimeSpan start_hour { get; set; }
         public System.TimeSpan end_hour { get; set; }

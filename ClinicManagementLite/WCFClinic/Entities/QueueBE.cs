@@ -19,6 +19,23 @@ namespace WCFClinic.Entities
         private TimeSpan start_time;
         private String state;
         private DateTime created_at;
+        private Boolean active;
+
+        public static QueueBE Create(Queue tbQueue)
+        {
+            QueueBE objQueueBE = new QueueBE();
+
+            objQueueBE.Id = Convert.ToInt16(tbQueue.id);
+            objQueueBE.IdPatient = Convert.ToInt16(tbQueue.id_patient);
+            objQueueBE.IdUser = Convert.ToInt16(tbQueue.id_user);
+            objQueueBE.StartDate = tbQueue.start_date;
+            objQueueBE.StartTime = tbQueue.start_time;
+            objQueueBE.State = tbQueue.state;
+            objQueueBE.CreatedAt = tbQueue.created_at;
+            objQueueBE.Active = tbQueue.active;
+
+            return objQueueBE;
+        }
 
         [DataMember]
         public Int16 Id 
@@ -67,6 +84,13 @@ namespace WCFClinic.Entities
         { 
             get { return created_at; }
             set { created_at = value; }
+        }
+
+        [DataMember]
+        public bool Active
+        {
+            get { return active; }
+            set { active = value; }
         }
     }
 }

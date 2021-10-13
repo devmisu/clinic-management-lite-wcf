@@ -12,7 +12,6 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_patient" Type="int" Nullable="false" />
           <Property Name="id_user" Type="int" Nullable="false" />
-          <Property Name="cancellation_reason" Type="nvarchar" MaxLength="255" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="start_hour" Type="time" Precision="7" Nullable="false" />
           <Property Name="end_hour" Type="time" Precision="7" Nullable="false" />
@@ -45,6 +44,7 @@
           <Property Name="medicines" Type="nvarchar" MaxLength="255" />
           <Property Name="surgeries" Type="nvarchar" MaxLength="255" />
           <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
@@ -264,7 +264,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_patient" Type="Int32" Nullable="false" />
           <Property Name="id_user" Type="Int32" Nullable="false" />
-          <Property Name="cancellation_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="start_hour" Type="Time" Nullable="false" Precision="7" />
           <Property Name="end_hour" Type="Time" Nullable="false" Precision="7" />
@@ -302,6 +301,7 @@
           <Property Name="surgeries" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Appointment" Relationship="Self.FK_Medical_Record_Appointment1" FromRole="Medical_Record" ToRole="Appointment" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
@@ -534,7 +534,6 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_patient" ColumnName="id_patient" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
-                <ScalarProperty Name="cancellation_reason" ColumnName="cancellation_reason" />
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="start_hour" ColumnName="start_hour" />
                 <ScalarProperty Name="end_hour" ColumnName="end_hour" />
@@ -559,6 +558,7 @@
           <EntitySetMapping Name="Medical_Record">
             <EntityTypeMapping TypeName="ClinicManagementLiteModel.Medical_Record">
               <MappingFragment StoreEntitySet="Medical_Record">
+                <ScalarProperty Name="active" ColumnName="active" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_appointment" ColumnName="id_appointment" />
                 <ScalarProperty Name="reason" ColumnName="reason" />

@@ -116,6 +116,7 @@
     <Compile Include="User.cs">
       <DependentUpon>ClinicManagementLite.tt</DependentUpon>
     </Compile>
+    <Compile Include="Util\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

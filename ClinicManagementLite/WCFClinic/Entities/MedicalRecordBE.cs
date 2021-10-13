@@ -19,7 +19,26 @@ namespace WCFClinic.Entities
         private String allergies;
         private String medicines;
         private String surgeries;
+        private Boolean active;
         private DateTime created_at;
+
+        public static MedicalRecordBE Create(Medical_Record tbMedicalRecord)
+        {
+            MedicalRecordBE objMedicalRecordBE = new MedicalRecordBE();
+
+            objMedicalRecordBE.Id = Convert.ToInt16(tbMedicalRecord.id);
+            objMedicalRecordBE.IdAppointment = Convert.ToInt16(tbMedicalRecord.id_appointment);
+            objMedicalRecordBE.Reason = tbMedicalRecord.reason;
+            objMedicalRecordBE.Prescription = tbMedicalRecord.prescription;
+            objMedicalRecordBE.Diseases = tbMedicalRecord.diseases;
+            objMedicalRecordBE.Allergies = tbMedicalRecord.allergies;
+            objMedicalRecordBE.Medicines = tbMedicalRecord.medicines;
+            objMedicalRecordBE.Surgeries = tbMedicalRecord.surgeries;
+            objMedicalRecordBE.Active = tbMedicalRecord.active;
+            objMedicalRecordBE.CreatedAt = tbMedicalRecord.created_at;
+
+            return objMedicalRecordBE;
+        }
 
         [DataMember]
         public Int16 Id
@@ -81,6 +100,13 @@ namespace WCFClinic.Entities
         {
             get { return created_at; }
             set { created_at = value; }
+        }
+
+        [DataMember]
+        public Boolean Active
+        {
+            get { return active; }
+            set { active = value; }
         }
     }
 }

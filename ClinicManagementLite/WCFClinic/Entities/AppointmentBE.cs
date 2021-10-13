@@ -15,7 +15,6 @@ namespace WCFClinic.Entities
         private Int16 id;
         private Int16 id_patient;
         private Int16 id_user;
-        private String cancellation_reason;
         private DateTime date;
         private TimeSpan start_hour;
         private TimeSpan end_hour;
@@ -23,6 +22,25 @@ namespace WCFClinic.Entities
         private Nullable<TimeSpan> departure_hour;
         private String state;
         private DateTime created_at;
+        private Boolean active;
+
+        public static AppointmentBE Create(Appointment tbAppointment)
+        {
+            AppointmentBE objAppointmentBE = new AppointmentBE();
+
+            objAppointmentBE.Id = Convert.ToInt16(tbAppointment.id);
+            objAppointmentBE.IdPatient = Convert.ToInt16(tbAppointment.id_patient);
+            objAppointmentBE.IdUser = Convert.ToInt16(tbAppointment.id_user);
+            objAppointmentBE.Date = tbAppointment.date;
+            objAppointmentBE.StartHour = tbAppointment.start_hour;
+            objAppointmentBE.EndHour = tbAppointment.end_hour;
+            objAppointmentBE.ArrivalHour = tbAppointment.arrival_hour;
+            objAppointmentBE.DepartureHour = tbAppointment.departure_hour;
+            objAppointmentBE.State = tbAppointment.state;
+            objAppointmentBE.CreatedAt = tbAppointment.created_at;
+
+            return objAppointmentBE;
+        }
 
         [DataMember]
         public Int16 Id 
@@ -43,13 +61,6 @@ namespace WCFClinic.Entities
         {
             get { return id_user; }
             set { id_user = value; }
-        }
-
-        [DataMember]
-        public String CancellationReason
-        {
-            get { return cancellation_reason; }
-            set { cancellation_reason = value; }
         }
 
         [DataMember]
@@ -99,6 +110,13 @@ namespace WCFClinic.Entities
         { 
             get { return created_at; }
             set { created_at = value; }
+        }
+
+        [DataMember]
+        public Boolean Active
+        {
+            get { return active; }
+            set { active = value; }
         }
     }
 }
