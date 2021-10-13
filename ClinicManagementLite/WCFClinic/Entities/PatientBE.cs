@@ -23,6 +23,25 @@ namespace WCFClinic.Entities
         private Boolean active;
         private DateTime created_at;
 
+        public static PatientBE Create(Patient tbPatient)
+        {
+            PatientBE objPatientBE = new PatientBE();
+
+            objPatientBE.Id = Convert.ToInt16(tbPatient.id);
+            objPatientBE.FirstName = tbPatient.first_name;
+            objPatientBE.LastName = tbPatient.last_name;
+            objPatientBE.Birthday = tbPatient.birthday;
+            objPatientBE.Phone = tbPatient.phone;
+            objPatientBE.Photo = tbPatient.photo;
+            objPatientBE.Email = tbPatient.email;
+            objPatientBE.Dni = tbPatient.dni;
+            objPatientBE.Password = tbPatient.password;
+            objPatientBE.Active = tbPatient.active;
+            objPatientBE.CreatedAt = tbPatient.created_at;
+
+            return objPatientBE;
+        }
+
         [DataMember]
         public Int16 Id
         {

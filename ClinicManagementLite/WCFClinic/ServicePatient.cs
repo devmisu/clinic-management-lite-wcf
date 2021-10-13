@@ -15,6 +15,22 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
+                if (objPatientBE.FirstName == null ||
+                    objPatientBE.LastName == null ||
+                    objPatientBE.Birthday == null ||
+                    objPatientBE.Phone == null || objPatientBE.Phone.Length != 9 ||
+                    objPatientBE.Email == null ||
+                    objPatientBE.Dni == null || objPatientBE.Dni.Length != 8 ||
+                    objPatientBE.Password == null)
+                {
+                    throw new Exception("Hay uno o mas valores invalidos.");
+                }
+
+                if ((from patient in db.Patients where patient.active && patient.dni == objPatientBE.Dni select patient).FirstOrDefault() != null)
+                {
+                    throw new Exception("Ya existe un paciente registrado con ese DNI.");
+                }
+
                 Patient tbPatient = new Patient();
 
                 tbPatient.first_name = objPatientBE.FirstName;
@@ -25,7 +41,7 @@ namespace WCFClinic
                 tbPatient.email = objPatientBE.Email;
                 tbPatient.dni = objPatientBE.Dni;
                 tbPatient.password = objPatientBE.Password;
-                tbPatient.active = objPatientBE.Active;
+                tbPatient.active = true;
                 tbPatient.created_at = DateTime.Now;
 
                 db.Patients.Add(tbPatient);
@@ -44,9 +60,24 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Patient tbPatient = (from patient in db.Patients where patient.id == id select patient).FirstOrDefault();
+                Patient tbPatient = (from patient in db.Patients where patient.active && patient.id == id select patient).FirstOrDefault();
 
-                db.Patients.Remove(tbPatient);
+                if (tbPatient == null)
+                {
+                    throw new Exception("No se encontro paciente.");
+                }
+
+                if (new ServiceAppointment().GetPatientAppointments(id).Count != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay citas asignadas al paciente.");
+                }
+
+                if ((from queue in db.Queues where queue.active && queue.Patient.active && queue.Patient.id == id select queue).Count() != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay citas en cola asignadas al paciente.");
+                }
+
+                tbPatient.active = false;
                 db.SaveChanges();
 
                 return true;
@@ -62,17 +93,20 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Patient tbPatient = (from patient in db.Patients where patient.id == objPatientBE.Id select patient).FirstOrDefault();
+                Patient tbPatient = (from patient in db.Patients where patient.active && patient.id == objPatientBE.Id select patient).FirstOrDefault();
 
-                tbPatient.first_name = objPatientBE.FirstName;
-                tbPatient.last_name = objPatientBE.LastName;
-                tbPatient.birthday = objPatientBE.Birthday;
-                tbPatient.phone = objPatientBE.Phone;
+                if (tbPatient == null)
+                {
+                    throw new Exception("No se encontro paciente.");
+                }
+
+                if (objPatientBE.FirstName != null) tbPatient.first_name = objPatientBE.FirstName;
+                if (objPatientBE.LastName != null) tbPatient.last_name = objPatientBE.LastName;
+                if (objPatientBE.Birthday != null) tbPatient.birthday = objPatientBE.Birthday;
+                if (objPatientBE.Phone != null && objPatientBE.Phone.Length == 9) tbPatient.phone = objPatientBE.Phone;
+                if (objPatientBE.Email != null) tbPatient.email = objPatientBE.Email;
+                if (objPatientBE.Password != null) tbPatient.password = objPatientBE.Password;
                 tbPatient.photo = objPatientBE.Photo;
-                tbPatient.email = objPatientBE.Email;
-                tbPatient.dni = objPatientBE.Dni;
-                tbPatient.password = objPatientBE.Password;
-                tbPatient.active = objPatientBE.Active;
 
                 db.SaveChanges();
 
@@ -91,25 +125,11 @@ namespace WCFClinic
             {
                 List<PatientBE> listPatients = new List<PatientBE>();
 
-                var query = (from patient in db.Patients orderby patient.last_name select patient);
+                var query = (from patient in db.Patients orderby patient.first_name where patient.active select patient);
 
                 foreach (var tbPatient in query)
                 {
-                    PatientBE objPatientBE = new PatientBE();
-
-                    objPatientBE.Id = Convert.ToInt16(tbPatient.id);
-                    objPatientBE.FirstName = tbPatient.first_name;
-                    objPatientBE.LastName = tbPatient.last_name;
-                    objPatientBE.Birthday = tbPatient.birthday;
-                    objPatientBE.Phone = tbPatient.phone;
-                    objPatientBE.Photo = tbPatient.photo;
-                    objPatientBE.Email = tbPatient.email;
-                    objPatientBE.Dni = tbPatient.dni;
-                    objPatientBE.Password = tbPatient.password;
-                    objPatientBE.Active = tbPatient.active;
-                    objPatientBE.CreatedAt = tbPatient.created_at;
-
-                    listPatients.Add(objPatientBE);
+                    listPatients.Add(PatientBE.Create(tbPatient));
                 }
 
                 return listPatients;
@@ -125,23 +145,14 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Patient tbPatient = (from patient in db.Patients where patient.id == id select patient).FirstOrDefault();
+                Patient tbPatient = (from patient in db.Patients where patient.active && patient.id == id select patient).FirstOrDefault();
 
-                PatientBE objPatientBE = new PatientBE();
+                if (tbPatient == null)
+                {
+                    throw new Exception("No se encontro paciente.");
+                }
 
-                objPatientBE.Id = Convert.ToInt16(tbPatient.id);
-                objPatientBE.FirstName = tbPatient.first_name;
-                objPatientBE.LastName = tbPatient.last_name;
-                objPatientBE.Birthday = tbPatient.birthday;
-                objPatientBE.Phone = tbPatient.phone;
-                objPatientBE.Photo = tbPatient.photo;
-                objPatientBE.Email = tbPatient.email;
-                objPatientBE.Dni = tbPatient.dni;
-                objPatientBE.Password = tbPatient.password;
-                objPatientBE.Active = tbPatient.active;
-                objPatientBE.CreatedAt = tbPatient.created_at;
-
-                return objPatientBE;
+                return PatientBE.Create(tbPatient);
             }
             catch (EntityException ex)
             {
@@ -154,18 +165,19 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Patient tbPatient = (from patient in db.Patients where patient.dni == dni && patient.password == password select patient).FirstOrDefault();
+                if (dni == null || dni.Length != 8 || password == null)
+                {
+                    throw new Exception("DNI o password invalido.");
+                }
+
+                Patient tbPatient = (from patient in db.Patients where patient.active && patient.dni == dni && patient.password == password select patient).FirstOrDefault();
 
                 if (tbPatient == null)
                 {
                     throw new Exception("No estas registrado en el sistema.");
                 }
-                else if (!tbPatient.active)
-                {
-                    throw new Exception("Cuenta desactivada, contactate con soporte.");
-                }
 
-                return GetPatient(Convert.ToInt16(tbPatient.id));
+                return PatientBE.Create(tbPatient);
             }
             catch(EntityException ex)
             {

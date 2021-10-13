@@ -30,6 +30,7 @@ namespace WCFClinic
         public Nullable<System.TimeSpan> departure_hour { get; set; }
         public string state { get; set; }
         public System.DateTime created_at { get; set; }
+        public bool active { get; set; }
     
         public virtual Patient Patient { get; set; }
         public virtual User User { get; set; }
