@@ -75,6 +75,16 @@ namespace WCFClinic
                     throw new Exception("No se puede eliminar, hay citas asignadas al usuario.");
                 }
 
+                if ((from queue in db.Queues where queue.active && queue.User.active && queue.User.id == id select queue).Count() != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay citas en cola asignadas al usuario.");
+                }
+
+                if ((from schedule in db.Schedules where schedule.active && schedule.User.active && schedule.User.id == id select schedule).Count() != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay horarios asignados al usuario.");
+                }
+
                 tbUser.active = false;
                 db.SaveChanges();
 
