@@ -15,13 +15,18 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
+                if (objScheduleBE.IdUser == 0 || objScheduleBE.StartTime == null || objScheduleBE.EndTime == null || objScheduleBE.Days == null)
+                {
+                    throw new Exception("Hay uno o mas valores invalidos.");
+                }
+
                 Schedule tbSchedule = new Schedule();
 
                 tbSchedule.id_user = objScheduleBE.IdUser;
                 tbSchedule.start_time = objScheduleBE.StartTime;
                 tbSchedule.end_time = objScheduleBE.EndTime;
                 tbSchedule.days = objScheduleBE.Days;
-                tbSchedule.active = objScheduleBE.Active;
+                tbSchedule.active = true;
                 tbSchedule.created_at = DateTime.Now;
 
                 db.Schedules.Add(tbSchedule);
@@ -40,9 +45,14 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Schedule tbSchedule = (from schedule in db.Schedules where schedule.id == id select schedule).FirstOrDefault();
+                Schedule tbSchedule = (from schedule in db.Schedules where schedule.active && schedule.id == id select schedule).FirstOrDefault();
 
-                db.Schedules.Remove(tbSchedule);
+                if (tbSchedule == null)
+                {
+                    throw new Exception("No se encontro horario.");
+                }
+
+                tbSchedule.active = false;
                 db.SaveChanges();
 
                 return true;
@@ -58,13 +68,16 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Schedule tbSchedule = (from schedule in db.Schedules where schedule.id == objScheduleBE.Id select schedule).FirstOrDefault();
+                Schedule tbSchedule = (from schedule in db.Schedules where schedule.active && schedule.id == objScheduleBE.Id select schedule).FirstOrDefault();
 
-                tbSchedule.id_user = objScheduleBE.IdUser;
-                tbSchedule.start_time = objScheduleBE.StartTime;
-                tbSchedule.end_time = objScheduleBE.EndTime;
-                tbSchedule.days = objScheduleBE.Days;
-                tbSchedule.active = objScheduleBE.Active;
+                if (tbSchedule == null)
+                {
+                    throw new Exception("No se encontro horario.");
+                }
+
+                if (objScheduleBE.StartTime != null) tbSchedule.start_time = objScheduleBE.StartTime;
+                if (objScheduleBE.EndTime != null) tbSchedule.end_time = objScheduleBE.EndTime;
+                if (objScheduleBE.Days != null) tbSchedule.days = objScheduleBE.Days;
 
                 db.SaveChanges();
 
@@ -83,21 +96,11 @@ namespace WCFClinic
             {
                 List<ScheduleBE> listSchedules = new List<ScheduleBE>();
 
-                var query = (from schedules in db.Schedules orderby schedules.id select schedules);
+                var query = (from schedules in db.Schedules where schedules.active select schedules);
 
                 foreach (var tbSchedule in query)
                 {
-                    ScheduleBE objScheduleBE = new ScheduleBE();
-
-                    objScheduleBE.Id = Convert.ToInt16(tbSchedule.id);
-                    objScheduleBE.IdUser = Convert.ToInt16(tbSchedule.id_user);
-                    objScheduleBE.StartTime = tbSchedule.start_time;
-                    objScheduleBE.EndTime = tbSchedule.end_time;
-                    objScheduleBE.Days = tbSchedule.days;
-                    objScheduleBE.Active = tbSchedule.active;
-                    objScheduleBE.CreatedAt = tbSchedule.created_at;
-
-                    listSchedules.Add(objScheduleBE);
+                    listSchedules.Add(ScheduleBE.Create(tbSchedule));
                 }
 
                 return listSchedules;
@@ -113,19 +116,14 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Schedule tbSchedule = (from schedule in db.Schedules where schedule.id == id select schedule).FirstOrDefault();
+                Schedule tbSchedule = (from schedule in db.Schedules where schedule.active && schedule.id == id select schedule).FirstOrDefault();
 
-                ScheduleBE objScheduleBE = new ScheduleBE();
+                if (tbSchedule == null)
+                {
+                    throw new Exception("No se encontro horario.");
+                }
 
-                objScheduleBE.Id = Convert.ToInt16(tbSchedule.id);
-                objScheduleBE.IdUser = Convert.ToInt16(tbSchedule.id_user);
-                objScheduleBE.StartTime = tbSchedule.start_time;
-                objScheduleBE.EndTime = tbSchedule.end_time;
-                objScheduleBE.Days = tbSchedule.days;
-                objScheduleBE.Active = tbSchedule.active;
-                objScheduleBE.CreatedAt = tbSchedule.created_at;
-
-                return objScheduleBE;
+                return ScheduleBE.Create(tbSchedule);
             }
             catch (EntityException ex)
             {
@@ -140,30 +138,14 @@ namespace WCFClinic
             {
                 List<ScheduleBE> listSchedules = new List<ScheduleBE>();
 
-                var query = (from schedules in db.Schedules where schedules.id_user == id orderby schedules.id select schedules);
+                var query = (from schedules in db.Schedules where schedules.active && schedules.User.active && schedules.id_user == id select schedules);
 
                 foreach (var tbSchedule in query)
                 {
-                    ScheduleBE objScheduleBE = new ScheduleBE();
-
-                    objScheduleBE.Id = Convert.ToInt16(tbSchedule.id);
-                    objScheduleBE.IdUser = Convert.ToInt16(tbSchedule.id_user);
-                    objScheduleBE.StartTime = tbSchedule.start_time;
-                    objScheduleBE.EndTime = tbSchedule.end_time;
-                    objScheduleBE.Days = tbSchedule.days;
-                    objScheduleBE.Active = tbSchedule.active;
-                    objScheduleBE.CreatedAt = tbSchedule.created_at;
-
-                    listSchedules.Add(objScheduleBE);
-                }
-
-                if (listSchedules.Count == 0)
-                {
-                    throw new Exception("No se encontraron horarios.");
+                    listSchedules.Add(ScheduleBE.Create(tbSchedule));
                 }
 
                 return listSchedules;
-
             }
             catch (EntityException ex)
             {
@@ -212,7 +194,7 @@ namespace WCFClinic
                 // Obtener horarios del dia seleccionado
                 List<ScheduleBE> listSchedules = new List<ScheduleBE>();
 
-                var query = (from schedules in db.Schedules where schedules.id_user == userId && schedules.days.Contains(day) select schedules);
+                var query = (from schedules in db.Schedules where schedules.active && schedules.id_user == userId && schedules.days.Contains(day) select schedules);
 
                 foreach (var tbSchedule in query)
                 {

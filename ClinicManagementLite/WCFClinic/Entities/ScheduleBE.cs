@@ -16,9 +16,24 @@ namespace WCFClinic.Entities
         private Int16 id_user;
         private TimeSpan start_time;
         private TimeSpan end_time;
-        private String days; // mon, tue, wed, thu, fri, sat, sun
+        private String days; // MON,TUE,WED,THU,FRI,SAT,SUN
         private Boolean active;
         private DateTime created_at;
+
+        public static ScheduleBE Create(Schedule tbSchedule)
+        {
+            ScheduleBE objScheduleBE = new ScheduleBE();
+
+            objScheduleBE.Id = Convert.ToInt16(tbSchedule.id);
+            objScheduleBE.IdUser = Convert.ToInt16(tbSchedule.id_user);
+            objScheduleBE.StartTime = tbSchedule.start_time;
+            objScheduleBE.EndTime = tbSchedule.end_time;
+            objScheduleBE.Days = tbSchedule.days;
+            objScheduleBE.Active = tbSchedule.active;
+            objScheduleBE.CreatedAt = tbSchedule.created_at;
+
+            return objScheduleBE;
+        }
 
         [DataMember]
         public Int16 Id 
