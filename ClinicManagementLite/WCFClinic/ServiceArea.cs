@@ -17,11 +17,21 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
+                if (objAreaBE.Name == null)
+                {
+                    throw new Exception("Hay uno o mas valores invalidos.");
+                }
+
+                if ((from area in db.Areas where area.active && area.name == objAreaBE.Name select area).FirstOrDefault() != null)
+                {
+                    throw new Exception("Ya existe un area registrada con ese nombre.");
+                }
+
                 Area tbArea = new Area();
 
                 tbArea.name = objAreaBE.Name;
                 tbArea.description = objAreaBE.Description;
-                tbArea.active = objAreaBE.Active;
+                tbArea.active = true;
                 tbArea.created_at = DateTime.Now;
 
                 db.Areas.Add(tbArea);
@@ -42,19 +52,11 @@ namespace WCFClinic
             {
                 List<AreaBE> listAreas = new List<AreaBE>();
 
-                var query = (from area in db.Areas orderby area.name select area);
+                var query = (from area in db.Areas orderby area.name where area.active select area);
 
                 foreach(var tbArea in query)
                 {
-                    AreaBE objAreaBE = new AreaBE();
-
-                    objAreaBE.Id = Convert.ToInt16(tbArea.id);
-                    objAreaBE.Name = tbArea.name;
-                    objAreaBE.Description = tbArea.description;
-                    objAreaBE.Active = tbArea.active;
-                    objAreaBE.CreatedAt = tbArea.created_at;
-
-                    listAreas.Add(objAreaBE);
+                    listAreas.Add(AreaBE.Create(tbArea));
                 }
 
                 return listAreas;
@@ -70,17 +72,14 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Area tbArea = (from area in db.Areas where area.id == id select area).FirstOrDefault();
+                Area tbArea = (from area in db.Areas where area.active && area.id == id select area).FirstOrDefault();
 
-                AreaBE objAreaBE = new AreaBE();
+                if (tbArea == null)
+                {
+                    throw new Exception("No se encontro area.");
+                }
 
-                objAreaBE.Id = Convert.ToInt16(tbArea.id);
-                objAreaBE.Name = tbArea.name;
-                objAreaBE.Description = tbArea.description;
-                objAreaBE.Active = tbArea.active;
-                objAreaBE.CreatedAt = tbArea.created_at;
-
-                return objAreaBE;
+                return AreaBE.Create(tbArea);
             }
             catch (EntityException ex)
             {
@@ -93,11 +92,15 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Area tbArea = (from area in db.Areas where area.id == objAreaBE.Id select area).FirstOrDefault();
+                Area tbArea = (from area in db.Areas where area.active && area.id == objAreaBE.Id select area).FirstOrDefault();
 
-                tbArea.name = objAreaBE.Name;
+                if (tbArea == null)
+                {
+                    throw new Exception("No se encontro area.");
+                }
+
+                if (objAreaBE.Name != null) tbArea.name = objAreaBE.Name;
                 tbArea.description = objAreaBE.Description;
-                tbArea.active = objAreaBE.Active;
 
                 db.SaveChanges();
 
@@ -114,9 +117,19 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Area tbArea = (from area in db.Areas where area.id == id select area).FirstOrDefault();
+                Area tbArea = (from area in db.Areas where area.active && area.id == id select area).FirstOrDefault();
 
-                db.Areas.Remove(tbArea);
+                if (tbArea == null)
+                {
+                    throw new Exception("No se encontro area.");
+                }
+
+                if (new ServiceUser().GetUsersByArea(id).Count != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay usuarios asignados al area.");
+                }
+
+                tbArea.active = false;
                 db.SaveChanges();
 
                 return true;

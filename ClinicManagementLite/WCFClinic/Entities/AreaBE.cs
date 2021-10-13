@@ -17,6 +17,19 @@ namespace WCFClinic.Entities
         private Boolean active;
         private DateTime created_at;
 
+        public static AreaBE Create(Area tbArea)
+        {
+            AreaBE objAreaBE = new AreaBE();
+
+            objAreaBE.Id = Convert.ToInt16(tbArea.id);
+            objAreaBE.Name = tbArea.name;
+            objAreaBE.Description = tbArea.description;
+            objAreaBE.Active = tbArea.active;
+            objAreaBE.CreatedAt = tbArea.created_at;
+
+            return objAreaBE;
+        }
+
         [DataMember]
         public Int16 Id
         {

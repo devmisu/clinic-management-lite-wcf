@@ -64,8 +64,18 @@ namespace WCFClinic
             try
             {
                 User tbUser = (from user in db.Users where user.active && user.id == id select user).FirstOrDefault();
-                tbUser.active = false;
 
+                if (tbUser == null)
+                {
+                    throw new Exception("No se encontro usuario.");
+                }
+
+                if (new ServiceAppointment().GetUserAppointments(id).Count != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay citas asignadas al usuario.");
+                }
+
+                tbUser.active = false;
                 db.SaveChanges();
 
                 return true;
@@ -81,20 +91,26 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                UserBE currentUser = GetUser(objUserBE.Id);
-                UserBE updatedUser = currentUser;
+                User tbUser = (from user in db.Users where user.active && user.id == objUserBE.Id select user).FirstOrDefault();
 
-                if (objUserBE.IdRole != 0) updatedUser.IdRole = objUserBE.IdRole;
-                if (objUserBE.IdArea != 0) updatedUser.IdArea = objUserBE.IdArea;
-                if (objUserBE.FirstName != null) updatedUser.FirstName = objUserBE.FirstName;
-                if (objUserBE.LastName != null) updatedUser.LastName = objUserBE.LastName;
-                if (objUserBE.Password != null) updatedUser.Password = objUserBE.Password;
-                if (objUserBE.Email != null) updatedUser.Email = objUserBE.Email;
-                if (objUserBE.Phone != null && objUserBE.Phone.Length == 9) updatedUser.Phone = objUserBE.Phone;
-                updatedUser.Photo = objUserBE.Photo;
-                updatedUser.Specialization = objUserBE.Specialization;
+                if (tbUser == null)
+                {
+                    throw new Exception("No se encontro usuario.");
+                }
 
-                return DeleteUser(currentUser.Id) && CreateUser(updatedUser);
+                if (objUserBE.IdRole != 0) tbUser.id_role = objUserBE.IdRole;
+                if (objUserBE.IdArea != 0) tbUser.id_area = objUserBE.IdArea;
+                if (objUserBE.FirstName != null) tbUser.first_name = objUserBE.FirstName;
+                if (objUserBE.LastName != null) tbUser.last_name = objUserBE.LastName;
+                if (objUserBE.Password != null) tbUser.password = objUserBE.Password;
+                if (objUserBE.Email != null) tbUser.email = objUserBE.Email;
+                if (objUserBE.Phone != null && objUserBE.Phone.Length == 9) tbUser.phone = objUserBE.Phone;
+                tbUser.photo = objUserBE.Photo;
+                tbUser.specialization = objUserBE.Specialization;
+
+                db.SaveChanges();
+
+                return true;
             }
             catch (EntityException ex)
             {
@@ -109,7 +125,7 @@ namespace WCFClinic
             {
                 List<UserBE> listUsers = new List<UserBE>();
 
-                var query = (from user in db.Users where user.active select user);
+                var query = (from user in db.Users orderby user.first_name where user.active select user);
 
                 foreach (var tbUser in query)
                 {
@@ -151,7 +167,7 @@ namespace WCFClinic
             {
                 List<UserBE> listUsers = new List<UserBE>();
 
-                var query = (from user in db.Users where user.active && user.Area.active && user.Area.id == areaId select user);
+                var query = (from user in db.Users orderby user.first_name where user.active && user.Area.active && user.Area.id == areaId select user);
 
                 foreach (var tbUser in query)
                 {
