@@ -15,6 +15,23 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
+                if (objUserBE.IdRole == 0 ||
+                    objUserBE.IdArea == 0 ||
+                    objUserBE.FirstName == null ||
+                    objUserBE.LastName == null ||
+                    objUserBE.Phone == null || objUserBE.Phone.Length != 9 ||
+                    objUserBE.Email == null ||
+                    objUserBE.Dni == null || objUserBE.Dni.Length != 8 ||
+                    objUserBE.Password == null)
+                {
+                    throw new Exception("Hay uno o mas valores invalidos.");
+                }
+
+                if ((from user in db.Users where user.active && user.dni == objUserBE.Dni select user).FirstOrDefault() != null)
+                {
+                    throw new Exception("Ya existe un usuario registrado con ese DNI.");
+                }
+
                 User tbUser = new User();
 
                 tbUser.id_role = objUserBE.IdRole;
@@ -27,7 +44,7 @@ namespace WCFClinic
                 tbUser.dni = objUserBE.Dni;
                 tbUser.password = objUserBE.Password;
                 tbUser.specialization = objUserBE.Specialization;
-                tbUser.active = objUserBE.Active;
+                tbUser.active = true;
                 tbUser.created_at = DateTime.Now;
 
                 db.Users.Add(tbUser);
@@ -46,9 +63,9 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                User tbUser = (from user in db.Users where user.id == id select user).FirstOrDefault();
+                User tbUser = (from user in db.Users where user.active && user.id == id select user).FirstOrDefault();
+                tbUser.active = false;
 
-                db.Users.Remove(tbUser);
                 db.SaveChanges();
 
                 return true;
@@ -64,23 +81,20 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                User tbUser = (from user in db.Users where user.id == objUserBE.Id select user).FirstOrDefault();
+                UserBE currentUser = GetUser(objUserBE.Id);
+                UserBE updatedUser = currentUser;
 
-                tbUser.id_role = objUserBE.IdRole;
-                tbUser.id_area = objUserBE.IdArea;
-                tbUser.first_name = objUserBE.FirstName;
-                tbUser.last_name = objUserBE.LastName;
-                tbUser.phone = objUserBE.Phone;
-                tbUser.photo = objUserBE.Photo;
-                tbUser.email = objUserBE.Email;
-                tbUser.dni = objUserBE.Dni;
-                tbUser.password = objUserBE.Password;
-                tbUser.specialization = objUserBE.Specialization;
-                tbUser.active = objUserBE.Active;
+                if (objUserBE.IdRole != 0) updatedUser.IdRole = objUserBE.IdRole;
+                if (objUserBE.IdArea != 0) updatedUser.IdArea = objUserBE.IdArea;
+                if (objUserBE.FirstName != null) updatedUser.FirstName = objUserBE.FirstName;
+                if (objUserBE.LastName != null) updatedUser.LastName = objUserBE.LastName;
+                if (objUserBE.Password != null) updatedUser.Password = objUserBE.Password;
+                if (objUserBE.Email != null) updatedUser.Email = objUserBE.Email;
+                if (objUserBE.Phone != null && objUserBE.Phone.Length == 9) updatedUser.Phone = objUserBE.Phone;
+                updatedUser.Photo = objUserBE.Photo;
+                updatedUser.Specialization = objUserBE.Specialization;
 
-                db.SaveChanges();
-
-                return true;
+                return DeleteUser(currentUser.Id) && CreateUser(updatedUser);
             }
             catch (EntityException ex)
             {
@@ -95,27 +109,11 @@ namespace WCFClinic
             {
                 List<UserBE> listUsers = new List<UserBE>();
 
-                var query = (from user in db.Users orderby user.last_name select user);
+                var query = (from user in db.Users where user.active select user);
 
                 foreach (var tbUser in query)
                 {
-                    UserBE objUserBE = new UserBE();
-
-                    objUserBE.Id = Convert.ToInt16(tbUser.id);
-                    objUserBE.IdRole = Convert.ToInt16(tbUser.id_role);
-                    objUserBE.IdArea = Convert.ToInt16(tbUser.id_area);
-                    objUserBE.FirstName = tbUser.first_name;
-                    objUserBE.LastName = tbUser.last_name;
-                    objUserBE.Phone = tbUser.phone;
-                    objUserBE.Photo = tbUser.photo;
-                    objUserBE.Email = tbUser.email;
-                    objUserBE.Dni = tbUser.dni;
-                    objUserBE.Password = tbUser.password;
-                    objUserBE.Specialization = tbUser.specialization;
-                    objUserBE.Active = tbUser.active;
-                    objUserBE.CreatedAt = tbUser.created_at;
-
-                    listUsers.Add(objUserBE);
+                    listUsers.Add(UserBE.Create(tbUser));
                 }
 
                 return listUsers;
@@ -131,25 +129,14 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                User tbUser = (from user in db.Users where user.id == id select user).FirstOrDefault();
+                User tbUser = (from user in db.Users where user.active && user.id == id select user).FirstOrDefault();
 
-                UserBE objUserBE = new UserBE();
+                if (tbUser == null)
+                {
+                    throw new Exception("No se encontro usuario.");
+                }
 
-                objUserBE.Id = Convert.ToInt16(tbUser.id);
-                objUserBE.IdRole = Convert.ToInt16(tbUser.id_role);
-                objUserBE.IdArea = Convert.ToInt16(tbUser.id_area);
-                objUserBE.FirstName = tbUser.first_name;
-                objUserBE.LastName = tbUser.last_name;
-                objUserBE.Phone = tbUser.phone;
-                objUserBE.Photo = tbUser.photo;
-                objUserBE.Email = tbUser.email;
-                objUserBE.Dni = tbUser.dni;
-                objUserBE.Password = tbUser.password;
-                objUserBE.Specialization = tbUser.specialization;
-                objUserBE.Active = tbUser.active;
-                objUserBE.CreatedAt = tbUser.created_at;
-
-                return objUserBE;
+                return UserBE.Create(tbUser);
             }
             catch (EntityException ex)
             {
@@ -164,27 +151,11 @@ namespace WCFClinic
             {
                 List<UserBE> listUsers = new List<UserBE>();
 
-                var query = (from user in db.Users orderby user.last_name where user.Area.id == areaId select user);
+                var query = (from user in db.Users where user.active && user.Area.active && user.Area.id == areaId select user);
 
                 foreach (var tbUser in query)
                 {
-                    UserBE objUserBE = new UserBE();
-
-                    objUserBE.Id = Convert.ToInt16(tbUser.id);
-                    objUserBE.IdRole = Convert.ToInt16(tbUser.id_role);
-                    objUserBE.IdArea = Convert.ToInt16(tbUser.id_area);
-                    objUserBE.FirstName = tbUser.first_name;
-                    objUserBE.LastName = tbUser.last_name;
-                    objUserBE.Phone = tbUser.phone;
-                    objUserBE.Photo = tbUser.photo;
-                    objUserBE.Email = tbUser.email;
-                    objUserBE.Dni = tbUser.dni;
-                    objUserBE.Password = tbUser.password;
-                    objUserBE.Specialization = tbUser.specialization;
-                    objUserBE.Active = tbUser.active;
-                    objUserBE.CreatedAt = tbUser.created_at;
-
-                    listUsers.Add(objUserBE);
+                    listUsers.Add(UserBE.Create(tbUser));
                 }
 
                 return listUsers;
@@ -200,17 +171,19 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                User tbUser = (from user in db.Users where user.dni == dni && user.password == password select user).FirstOrDefault();
+                if (dni == null || dni.Length != 8 || password == null)
+                {
+                    throw new Exception("DNI o password invalido.");
+                }
+
+                User tbUser = (from user in db.Users where user.active && user.dni == dni && user.password == password select user).FirstOrDefault();
 
                 if (tbUser == null)
                 {
                     throw new Exception("No estas registrado en el sistema.");
                 }
-                else if (!tbUser.active)
-                {
-                    throw new Exception("Cuenta desactivada, contactate con soporte.");
-                }
-                return GetUser(Convert.ToInt16(tbUser.id));
+
+                return UserBE.Create(tbUser);
             }
             catch (EntityException ex)
             {

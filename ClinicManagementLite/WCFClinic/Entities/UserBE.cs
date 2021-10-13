@@ -22,6 +22,27 @@ namespace WCFClinic.Entities
         private Boolean active;
         private DateTime created_at;
 
+        public static UserBE Create(User tbUser)
+        {
+            UserBE objUserBE = new UserBE();
+
+            objUserBE.Id = Convert.ToInt16(tbUser.id);
+            objUserBE.IdRole = Convert.ToInt16(tbUser.id_role);
+            objUserBE.IdArea = Convert.ToInt16(tbUser.id_area);
+            objUserBE.FirstName = tbUser.first_name;
+            objUserBE.LastName = tbUser.last_name;
+            objUserBE.Phone = tbUser.phone;
+            objUserBE.Photo = tbUser.photo;
+            objUserBE.Email = tbUser.email;
+            objUserBE.Dni = tbUser.dni;
+            objUserBE.Password = tbUser.password;
+            objUserBE.Specialization = tbUser.specialization;
+            objUserBE.Active = tbUser.active;
+            objUserBE.CreatedAt = tbUser.created_at;
+
+            return objUserBE;
+        }
+
         public Int16 Id 
         {
             get { return id; }
