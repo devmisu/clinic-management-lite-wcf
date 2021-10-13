@@ -19,8 +19,8 @@ namespace WCFClinic.Entities
         private DateTime date;
         private TimeSpan start_hour;
         private TimeSpan end_hour;
-        private TimeSpan arrival_hour;
-        private TimeSpan departure_hour;
+        private Nullable<TimeSpan> arrival_hour;
+        private Nullable<TimeSpan> departure_hour;
         private String state;
         private DateTime created_at;
 
@@ -74,14 +74,14 @@ namespace WCFClinic.Entities
         }
 
         [DataMember]
-        public TimeSpan ArrivalHour
+        public Nullable<TimeSpan> ArrivalHour
         {
             get { return arrival_hour; }
             set { arrival_hour = value; }
         }
 
         [DataMember]
-        public TimeSpan DepartureHour
+        public Nullable<TimeSpan> DepartureHour
         {
             get { return departure_hour; }
             set { departure_hour = value; }
