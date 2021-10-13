@@ -18,6 +18,19 @@ namespace WCFClinic.Entities
         private Boolean active;
         private DateTime created_at;
 
+        public static RoleBE Create(Role tbRole)
+        {
+            RoleBE objRoleBE = new RoleBE();
+
+            objRoleBE.Id = Convert.ToInt16(tbRole.id);
+            objRoleBE.Name = tbRole.name;
+            objRoleBE.Attributes = tbRole.attributes;
+            objRoleBE.Active = tbRole.active;
+            objRoleBE.CreatedAt = tbRole.created_at;
+
+            return objRoleBE;
+        }
+
         [DataMember]
         public Int16 Id
         {

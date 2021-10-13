@@ -15,11 +15,21 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
+                if (objRoleBE.Name == null || objRoleBE.Attributes == null)
+                {
+                    throw new Exception("Hay uno o mas valores invalidos.");
+                }
+
+                if ((from role in db.Roles where role.active && role.name == objRoleBE.Name select role).FirstOrDefault() != null)
+                {
+                    throw new Exception("Ya existe un rol registrado con ese nombre.");
+                }
+
                 Role tbRole = new Role();
 
                 tbRole.name = objRoleBE.Name;
                 tbRole.attributes = objRoleBE.Attributes;
-                tbRole.active = objRoleBE.Active;
+                tbRole.active = true;
                 tbRole.created_at = DateTime.Now;
 
                 db.Roles.Add(tbRole);
@@ -38,9 +48,19 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Role tbRole = (from role in db.Roles where role.id == id select role).FirstOrDefault();
+                Role tbRole = (from role in db.Roles where role.active && role.id == id select role).FirstOrDefault();
 
-                db.Roles.Remove(tbRole);
+                if (tbRole == null)
+                {
+                    throw new Exception("No se encontro rol.");
+                }
+
+                if ((from user in db.Users where user.active && user.Role.active && user.Role.id == id select user).Count() != 0)
+                {
+                    throw new Exception("No se puede eliminar, hay usuarios asignados al rol.");
+                }
+
+                tbRole.active = false;
                 db.SaveChanges();
 
                 return true;
@@ -56,11 +76,15 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Role tbRole = (from role in db.Roles where role.id == objRoleBE.Id select role).FirstOrDefault();
+                Role tbRole = (from role in db.Roles where role.active && role.id == objRoleBE.Id select role).FirstOrDefault();
 
-                tbRole.name = objRoleBE.Name;
-                tbRole.attributes = objRoleBE.Attributes;
-                tbRole.active = objRoleBE.Active;
+                if (tbRole == null)
+                {
+                    throw new Exception("No se encontro rol.");
+                }
+
+                if (objRoleBE.Name != null) tbRole.name = objRoleBE.Name;
+                if (objRoleBE.Attributes != null) tbRole.attributes = objRoleBE.Attributes;
 
                 db.SaveChanges();
 
@@ -79,19 +103,11 @@ namespace WCFClinic
             {
                 List<RoleBE> listRoles = new List<RoleBE>();
 
-                var query = (from role in db.Roles orderby role.name select role);
+                var query = (from role in db.Roles orderby role.name where role.active select role);
 
                 foreach (var tbRole in query)
                 {
-                    RoleBE objRoleBE = new RoleBE();
-
-                    objRoleBE.Id = Convert.ToInt16(tbRole.id);
-                    objRoleBE.Name = tbRole.name;
-                    objRoleBE.Attributes = tbRole.attributes;
-                    objRoleBE.Active = tbRole.active;
-                    objRoleBE.CreatedAt = tbRole.created_at;
-
-                    listRoles.Add(objRoleBE);
+                    listRoles.Add(RoleBE.Create(tbRole));
                 }
 
                 return listRoles;
@@ -107,17 +123,14 @@ namespace WCFClinic
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                Role tbRole = (from role in db.Roles where role.id == id select role).FirstOrDefault();
+                Role tbRole = (from role in db.Roles where role.active && role.id == id select role).FirstOrDefault();
 
-                RoleBE objRoleBE = new RoleBE();
+                if (tbRole == null)
+                {
+                    throw new Exception("No se encontro rol.");
+                }
 
-                objRoleBE.Id = Convert.ToInt16(tbRole.id);
-                objRoleBE.Name = tbRole.name;
-                objRoleBE.Attributes = tbRole.attributes;
-                objRoleBE.Active = tbRole.active;
-                objRoleBE.CreatedAt = tbRole.created_at;
-
-                return objRoleBE;
+                return RoleBE.Create(tbRole);
             }
             catch (EntityException ex)
             {
