@@ -24,26 +24,30 @@ namespace WebPatient
         {
             try
             {
-                if (!Regex.IsMatch(txtDni.Text, @"^[\d]{8}$"))
+                btnLogin.Enabled = false;
+
+                if (!Regex.IsMatch(txtDni.Text.Trim(), @"^[\d]{8}$"))
                 {
                     throw new Exception("Ingrese un DNI valido.");
                 }
 
-                if (txtPassword.Text.Length <= 0)
+                if (txtPassword.Text.Trim().Length <= 0)
                 {
                     throw new Exception("Ingrese una contraseña valida.");
                 }
 
                 ServicePatientClient proxyPatient = new ServicePatientClient();
-                PatientBE patientBE = proxyPatient.Login(txtDni.Text, txtPassword.Text);
+                PatientBE patientBE = proxyPatient.Login(txtDni.Text.Trim(), txtPassword.Text.Trim());
                 proxyPatient.Close();
 
-                FormsAuthentication.RedirectFromLoginPage(patientBE.Dni, true);
+                FormsAuthentication.RedirectFromLoginPage(patientBE.Id.ToString(), true);
             }
             catch (Exception ex)
             {
                 viewError.Visible = true;
                 lblErrorMessage.Text = ex.Message;
+
+                btnLogin.Enabled = true;
             }
         }
     }
