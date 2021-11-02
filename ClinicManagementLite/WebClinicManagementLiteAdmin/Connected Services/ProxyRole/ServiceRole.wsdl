@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceRole" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceRole.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceRole.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceRole.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceRole_CreateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRole" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_CreateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_GetAllRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoles" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_GetAllRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_GetOneRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneRole" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_GetOneRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_UpdateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRole" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_UpdateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_DeleteRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="IServiceRole_DeleteRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceRole">
+    <wsdl:operation name="CreateRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRole/CreateRole" message="tns:IServiceRole_CreateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRole/CreateRoleResponse" message="tns:IServiceRole_CreateRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRole/GetAllRoles" message="tns:IServiceRole_GetAllRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRole/GetAllRolesResponse" message="tns:IServiceRole_GetAllRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRole/GetOneRole" message="tns:IServiceRole_GetOneRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRole/GetOneRoleResponse" message="tns:IServiceRole_GetOneRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRole/UpdateRole" message="tns:IServiceRole_UpdateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRole/UpdateRoleResponse" message="tns:IServiceRole_UpdateRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRole/DeleteRole" message="tns:IServiceRole_DeleteRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRole/DeleteRoleResponse" message="tns:IServiceRole_DeleteRole_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceRole" type="tns:IServiceRole">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateRole">
+      <soap:operation soapAction="http://tempuri.org/IServiceRole/CreateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap:operation soapAction="http://tempuri.org/IServiceRole/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneRole">
+      <soap:operation soapAction="http://tempuri.org/IServiceRole/GetOneRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRole">
+      <soap:operation soapAction="http://tempuri.org/IServiceRole/UpdateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap:operation soapAction="http://tempuri.org/IServiceRole/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceRole">
+    <wsdl:port name="BasicHttpBinding_IServiceRole" binding="tns:BasicHttpBinding_IServiceRole">
+      <soap:address location="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceRole.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
