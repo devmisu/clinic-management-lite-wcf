@@ -17,6 +17,7 @@ namespace WCFClinic
             {
                 if (objPatientBE.FirstName == null ||
                     objPatientBE.LastName == null ||
+
                     objPatientBE.Birthday == null ||
                     objPatientBE.Phone == null || objPatientBE.Phone.Length != 9 ||
                     objPatientBE.Email == null ||
