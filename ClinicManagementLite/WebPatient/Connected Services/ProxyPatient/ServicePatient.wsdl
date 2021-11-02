@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicePatient" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServicePatient.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServicePatient.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServicePatient.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicePatient_CreatePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_CreatePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_GetAllPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatients" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_GetAllPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_GetPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_GetPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_UpdatePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_UpdatePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_DeletePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatient" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_DeletePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServicePatient_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicePatient">
+    <wsdl:operation name="CreatePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePatient/CreatePatient" message="tns:IServicePatient_CreatePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePatient/CreatePatientResponse" message="tns:IServicePatient_CreatePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatients">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePatient/GetAllPatients" message="tns:IServicePatient_GetAllPatients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePatient/GetAllPatientsResponse" message="tns:IServicePatient_GetAllPatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePatient/GetPatient" message="tns:IServicePatient_GetPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePatient/GetPatientResponse" message="tns:IServicePatient_GetPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePatient/UpdatePatient" message="tns:IServicePatient_UpdatePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePatient/UpdatePatientResponse" message="tns:IServicePatient_UpdatePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePatient/DeletePatient" message="tns:IServicePatient_DeletePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePatient/DeletePatientResponse" message="tns:IServicePatient_DeletePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicePatient/Login" message="tns:IServicePatient_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicePatient/LoginResponse" message="tns:IServicePatient_Login_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicePatient" type="tns:IServicePatient">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePatient">
+      <soap:operation soapAction="http://tempuri.org/IServicePatient/CreatePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPatients">
+      <soap:operation soapAction="http://tempuri.org/IServicePatient/GetAllPatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <soap:operation soapAction="http://tempuri.org/IServicePatient/GetPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <soap:operation soapAction="http://tempuri.org/IServicePatient/UpdatePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatient">
+      <soap:operation soapAction="http://tempuri.org/IServicePatient/DeletePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServicePatient/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicePatient">
+    <wsdl:port name="BasicHttpBinding_IServicePatient" binding="tns:BasicHttpBinding_IServicePatient">
+      <soap:address location="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServicePatient.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
