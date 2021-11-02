@@ -21,6 +21,8 @@ namespace WCFClinic.Entities
         private String specialization;
         private Boolean active;
         private DateTime created_at;
+        private RoleBE role;
+        private AreaBE area;
 
         public static UserBE Create(User tbUser)
         {
@@ -39,6 +41,8 @@ namespace WCFClinic.Entities
             objUserBE.Specialization = tbUser.specialization;
             objUserBE.Active = tbUser.active;
             objUserBE.CreatedAt = tbUser.created_at;
+            objUserBE.Role = RoleBE.Create(tbUser.Role);
+            objUserBE.Area = AreaBE.Create(tbUser.Area);
 
             return objUserBE;
         }
@@ -53,10 +57,20 @@ namespace WCFClinic.Entities
             get { return id_role; }
             set { id_role = value; }
         }
+        public RoleBE Role
+        {
+            get { return role; }
+            set { role= value; }
+        }
         public Int16 IdArea 
         {
             get { return id_area; }
             set { id_area = value; }
+        }
+        public AreaBE Area
+        {
+            get { return area; }
+            set { area = value; }
         }
         public String FirstName 
         {
