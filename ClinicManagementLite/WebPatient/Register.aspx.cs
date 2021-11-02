@@ -14,7 +14,10 @@ namespace WebPatient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack && HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect("Index.aspx");
+            }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
