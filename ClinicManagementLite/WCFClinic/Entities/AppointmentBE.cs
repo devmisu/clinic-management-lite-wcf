@@ -23,6 +23,7 @@ namespace WCFClinic.Entities
         private String state;
         private DateTime created_at;
         private Boolean active;
+        private UserBE user;
 
         public static AppointmentBE Create(Appointment tbAppointment)
         {
@@ -38,6 +39,7 @@ namespace WCFClinic.Entities
             objAppointmentBE.DepartureHour = tbAppointment.departure_hour;
             objAppointmentBE.State = tbAppointment.state;
             objAppointmentBE.CreatedAt = tbAppointment.created_at;
+            objAppointmentBE.User = UserBE.Create(tbAppointment.User);
 
             return objAppointmentBE;
         }
@@ -61,6 +63,13 @@ namespace WCFClinic.Entities
         {
             get { return id_user; }
             set { id_user = value; }
+        }
+
+        [DataMember]
+        public UserBE User
+        {
+            get { return user; }
+            set { user = value; }
         }
 
         [DataMember]
