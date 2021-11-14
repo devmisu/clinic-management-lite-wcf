@@ -69,6 +69,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ProxyMedicalRecords\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyMedicalRecords\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyMedicalRecords\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="www\img\icon_delete_16.png" />
     <Content Include="www\img\icon_edit_16.png" />
     <Content Include="www\img\icon_view_16.png" />
@@ -83,6 +89,19 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Connected Services\ProxyAppointment\WebPatient.ProxyAppointment.AppointmentBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxyMedicalRecords\service.wsdl" />
+    <None Include="Connected Services\ProxyMedicalRecords\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyMedicalRecords\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyMedicalRecords\WCFClinic.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyMedicalRecords\WebPatient.ProxyMedicalRecords.MedicalRecordBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ProxyPatient\ServicePatient.wsdl" />
@@ -110,6 +129,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ProxyAppointment\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyMedicalRecords\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -176,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ProxyAppointment\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyMedicalRecords\" />
     <WCFMetadataStorage Include="Connected Services\ProxyPatient\" />
   </ItemGroup>
   <PropertyGroup>

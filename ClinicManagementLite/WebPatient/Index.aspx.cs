@@ -5,37 +5,48 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
-using WebPatient.ProxyPatient;
 using System.Collections;
 using System.Data;
+using WebPatient.ProxyPatient;
 using WebPatient.ProxyAppointment;
+using WebPatient.ProxyMedicalRecords;
 
 namespace WebPatient
 {
     public partial class Index : System.Web.UI.Page
     {
+        Int16 patientId = 0;
+        String option = "appointments";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack && HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 try
                 {
-                    Int16 patientId = Convert.ToInt16(User.Identity.Name);
-                    String option = Request.QueryString["option"] != null ? Request.QueryString["option"].ToString() : "appointments";
+                    patientId = Convert.ToInt16(User.Identity.Name);
 
-                    updateWelcomeText(patientId);
+                    if (Request.QueryString["option"] != null)
+                    {
+                        option = Request.QueryString["option"].ToString();
+                    }
+
+                    updateWelcomeText();
 
                     if (option == "medical_record")
                     {
-                        //TODO: populate grid view with medical records
+                        lblTitle.Text = "Historia Clinica";
+                        populateMedicalRecordsGridView();
                     }
                     else if (option == "patient")
                     {
-                        populatePatientGridView(patientId);
+                        lblTitle.Text = "Mi Perfil";
+                        populatePatientGridView();
                     }
                     else
                     {
-                        populateAppointmentsGridView(patientId);
+                        lblTitle.Text = "Mis Citas";
+                        populateAppointmentsGridView();
                     }
                 }
                 catch (Exception ex)
@@ -58,7 +69,7 @@ namespace WebPatient
             // TODO: Redirect to appointment detail
         }
 
-        protected void updateWelcomeText(Int16 patientId)
+        protected void updateWelcomeText()
         {
             try
             {
@@ -74,7 +85,7 @@ namespace WebPatient
             }
         }
 
-        protected PatientBE getPatientBy(Int16 patientId)
+        protected PatientBE getPatient()
         {
             try
             {
@@ -90,7 +101,7 @@ namespace WebPatient
             }
         }
 
-        protected List<AppointmentBE> getAppointmentsForPatient(Int16 patientId)
+        protected List<AppointmentBE> getAppointmentsForPatient()
         {
             try
             {
@@ -106,7 +117,23 @@ namespace WebPatient
             }
         }
 
-        protected void populateAppointmentsGridView(Int16 patientId)
+        protected List<MedicalRecordBE> getMedicalRecordsForPatient()
+        {
+            try
+            {
+                ServiceMedicalRecordClient proxyMedicalRecord = new ServiceMedicalRecordClient();
+                List<MedicalRecordBE> medicalRecordBEs = proxyMedicalRecord.GetPatientMedicalRecords(patientId).ToList();
+                proxyMedicalRecord.Close();
+
+                return medicalRecordBEs;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void populateAppointmentsGridView()
         {
             try
             {
@@ -127,7 +154,7 @@ namespace WebPatient
                 dataTable.Columns.Add("Hora");
                 dataTable.Columns.Add("Estado");
 
-                foreach (AppointmentBE appointmentBE in getAppointmentsForPatient(patientId))
+                foreach (AppointmentBE appointmentBE in getAppointmentsForPatient())
                 {
                     DataRow row = dataTable.NewRow();
 
@@ -150,7 +177,7 @@ namespace WebPatient
             }
         }
 
-        protected void populatePatientGridView(Int16 patientId)
+        protected void populatePatientGridView()
         {
             try
             {
@@ -170,7 +197,7 @@ namespace WebPatient
                 dataTable.Columns.Add("Apellidos");
                 dataTable.Columns.Add("Fecha de creacion");
 
-                PatientBE patientBE = getPatientBy(patientId);
+                PatientBE patientBE = getPatient();
 
                 DataRow row = dataTable.NewRow();
 
@@ -189,6 +216,50 @@ namespace WebPatient
             {
                 throw ex;
             } 
+        }
+
+        protected void populateMedicalRecordsGridView()
+        {
+            try
+            {
+                CommandField cField = new CommandField();
+                cField.ButtonType = ButtonType.Image;
+                cField.ShowSelectButton = true;
+                cField.SelectImageUrl = "~/www/img/icon_view_16.png";
+                cField.SelectText = "Ver";
+
+                gridView.Columns.Add(cField);
+
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("Id");
+                dataTable.Columns.Add("Especialidad");
+                dataTable.Columns.Add("Doctor");
+                dataTable.Columns.Add("Fecha");
+                dataTable.Columns.Add("Hora");
+                dataTable.Columns.Add("Estado");
+
+                foreach (MedicalRecordBE medicalRecordBE in getMedicalRecordsForPatient())
+                {
+                    DataRow row = dataTable.NewRow();
+
+                    row[0] = medicalRecordBE.Id.ToString();
+                    //row[1] = appointmentBE.User.Area.Name;
+                    //row[2] = appointmentBE.User.FirstName + " " + appointmentBE.User.LastName;
+                    //row[3] = appointmentBE.Date.ToString("dd/MM/yyyy");
+                    //row[4] = appointmentBE.StartHour.ToString(@"hh\:mm") + " - " + appointmentBE.EndHour.ToString(@"hh\:mm");
+                    //row[5] = appointmentBE.State == "1" ? "Pendiente" : "Finalizado";
+
+                    dataTable.Rows.Add(row);
+                }
+
+                gridView.DataSource = dataTable;
+                gridView.DataBind();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
