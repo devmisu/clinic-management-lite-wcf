@@ -22,7 +22,7 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="Index.aspx?option=appointments">
+                <a class="nav-link" href="Index.aspx?option=appointments">
                   Mis Citas
                 </a>
               </li>
@@ -61,21 +61,8 @@
             </asp:Panel>
 
             <div class="table-responsive">
-                <asp:GridView id="gridView" CssClass="table table-striped table-sm" AutoGenerateColumns="false" AllowSorting="false" EmptyDataText="No se encontraron datos." BorderWidth="0" runat="server"
+                <asp:GridView id="gridView" CssClass="table table-striped table-sm" EmptyDataText="No se encontraron datos." BorderWidth="0" runat="server"
                     OnSelectedIndexChanged="gridView_SelectedIndexChanged">
-                    <Columns>
-                        <asp:BoundField DataField="Id" HeaderText="Id" />
-                        <asp:BoundField DataField="User.Area.Name" HeaderText="Especialidad" />
-                        <asp:BoundField DataField="User.FirstName" HeaderText="Doctor" />
-                        <asp:BoundField DataField="Date" HeaderText="Fecha" />
-                        <asp:BoundField DataField="StartHour" HeaderText="Hora Inicio" />
-                        <asp:BoundField DataField="EndHour" HeaderText="Hora Fin" />
-                        <asp:BoundField DataField="ArrivalHour" HeaderText="Hora Llegada" />
-                        <asp:BoundField DataField="DepartureHour" HeaderText="Hora Salida" />
-                        <asp:BoundField DataField="State" HeaderText="Estado" />
-                        <asp:CommandField ButtonType="Image" HeaderText="Acciones"
-                            ShowSelectButton="true" SelectImageUrl="~/www/img/icon_view_16.png" SelectText="Ver" />
-                    </Columns>
                 </asp:GridView>
             </div>
         </div>
