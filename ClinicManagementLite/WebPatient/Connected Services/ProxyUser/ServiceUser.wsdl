@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceUser" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceUser.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceUser.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceUser.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceUser_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_GetUsersByArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByArea" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_GetUsersByArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersByAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServiceUser_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceUser">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/CreateUser" message="tns:IServiceUser_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/CreateUserResponse" message="tns:IServiceUser_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/GetAllUsers" message="tns:IServiceUser_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/GetAllUsersResponse" message="tns:IServiceUser_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/GetUser" message="tns:IServiceUser_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/GetUserResponse" message="tns:IServiceUser_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/UpdateUser" message="tns:IServiceUser_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/UpdateUserResponse" message="tns:IServiceUser_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/DeleteUser" message="tns:IServiceUser_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/DeleteUserResponse" message="tns:IServiceUser_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/GetUsersByArea" message="tns:IServiceUser_GetUsersByArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/GetUsersByAreaResponse" message="tns:IServiceUser_GetUsersByArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceUser/Login" message="tns:IServiceUser_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceUser/LoginResponse" message="tns:IServiceUser_Login_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceUser" type="tns:IServiceUser">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByArea">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/GetUsersByArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServiceUser/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceUser">
+    <wsdl:port name="BasicHttpBinding_IServiceUser" binding="tns:BasicHttpBinding_IServiceUser">
+      <soap:address location="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceUser.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

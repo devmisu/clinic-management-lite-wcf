@@ -71,7 +71,7 @@ namespace WebPatient
 
         protected void btnCreateAppointment_Click(object sender, EventArgs e)
         {
-            // TODO: Go to appointment creation form
+            Response.Redirect("ScheduleAppointment.aspx");
         }
 
         // Methods
@@ -192,6 +192,7 @@ namespace WebPatient
                 dataTable.Columns.Add("Fecha");
                 dataTable.Columns.Add("Hora");
                 dataTable.Columns.Add("Estado");
+                dataTable.Columns.Add("Fecha de creacion");
 
                 foreach (AppointmentBE appointmentBE in getAppointmentsForPatient())
                 {
@@ -203,6 +204,7 @@ namespace WebPatient
                     row[3] = appointmentBE.Date.ToString("dd/MM/yyyy");
                     row[4] = appointmentBE.StartHour.ToString(@"hh\:mm") + " - " + appointmentBE.EndHour.ToString(@"hh\:mm");
                     row[5] = appointmentBE.State == "1" ? "Pendiente" : "Finalizado";
+                    row[6] = appointmentBE.CreatedAt.ToString("dd/MM/yyyy");
 
                     dataTable.Rows.Add(row);
                 }
@@ -256,12 +258,15 @@ namespace WebPatient
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");
+                dataTable.Columns.Add("Fecha de creacion");
+                //TODO: Completar tabla
 
                 foreach (MedicalRecordBE medicalRecordBE in getMedicalRecordsForPatient())
                 {
                     DataRow row = dataTable.NewRow();
 
                     row[0] = medicalRecordBE.Id.ToString();
+                    row[1] = medicalRecordBE.CreatedAt.ToString("dd/MM/yyyy");
 
                     dataTable.Rows.Add(row);
                 }

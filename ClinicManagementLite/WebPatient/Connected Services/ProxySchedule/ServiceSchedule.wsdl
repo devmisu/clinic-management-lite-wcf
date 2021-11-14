@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceSchedule" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceSchedule.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceSchedule.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceSchedule.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceSchedule_CreateSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_CreateSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetAllSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSchedules" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetAllSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetOneSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetOneSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_UpdateSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_UpdateSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_DeleteSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_DeleteSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetAllSchedulesOfUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesOfUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetAllSchedulesOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesOfUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetAvailableSchedulesByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableSchedulesByUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSchedule_GetAvailableSchedulesByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableSchedulesByUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceSchedule">
+    <wsdl:operation name="CreateSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/CreateSchedule" message="tns:IServiceSchedule_CreateSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/CreateScheduleResponse" message="tns:IServiceSchedule_CreateSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/GetAllSchedules" message="tns:IServiceSchedule_GetAllSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesResponse" message="tns:IServiceSchedule_GetAllSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/GetOneSchedule" message="tns:IServiceSchedule_GetOneSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/GetOneScheduleResponse" message="tns:IServiceSchedule_GetOneSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/UpdateSchedule" message="tns:IServiceSchedule_UpdateSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/UpdateScheduleResponse" message="tns:IServiceSchedule_UpdateSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/DeleteSchedule" message="tns:IServiceSchedule_DeleteSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/DeleteScheduleResponse" message="tns:IServiceSchedule_DeleteSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedulesOfUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUser" message="tns:IServiceSchedule_GetAllSchedulesOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserResponse" message="tns:IServiceSchedule_GetAllSchedulesOfUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSchedulesByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUser" message="tns:IServiceSchedule_GetAvailableSchedulesByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUserResponse" message="tns:IServiceSchedule_GetAvailableSchedulesByUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceSchedule" type="tns:IServiceSchedule">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateSchedule">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/CreateSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/GetAllSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneSchedule">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/GetOneSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/UpdateSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/DeleteSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedulesOfUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableSchedulesByUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceSchedule">
+    <wsdl:port name="BasicHttpBinding_IServiceSchedule" binding="tns:BasicHttpBinding_IServiceSchedule">
+      <soap:address location="http://desktop-no71s6r/WCF_Clinic/WCFClinic.ServiceSchedule.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
