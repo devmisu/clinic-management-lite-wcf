@@ -42,6 +42,15 @@ namespace WebPatient
         protected global::System.Web.UI.WebControls.Panel viewActions;
 
         /// <summary>
+        /// btnCreateAppointment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCreateAppointment;
+
+        /// <summary>
         /// viewError control.
         /// </summary>
         /// <remarks>

@@ -57,16 +57,21 @@ namespace WebPatient
 
             if (option == "medical_record")
             {
-                
+                // TODO: Go to medical record detail
             }
             else if (option == "patient")
             {
-                
+                // TODO: Go to patient profile
             }
             else
             {
-                
+                // TODO: Go to appointment detail
             }
+        }
+
+        protected void btnCreateAppointment_Click(object sender, EventArgs e)
+        {
+            // TODO: Go to appointment creation form
         }
 
         // Methods

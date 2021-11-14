@@ -44,7 +44,7 @@
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <asp:Label ID="lblTitle" CssClass="h2" runat="server"></asp:Label>
             <asp:Panel ID="viewActions" CssClass="btn-toolbar mb-2 mb-md-0" runat="server">
-                <asp:Button CssClass="btn btn-sm btn-outline-secondary" Text="Agendar cita" runat="server" />
+                <asp:Button ID="btnCreateAppointment" CssClass="btn btn-sm btn-outline-secondary" Text="Agendar cita" OnClick="btnCreateAppointment_Click" runat="server" />
             </asp:Panel>
           </div>
 
