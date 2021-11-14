@@ -43,16 +43,9 @@
         <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <asp:Label ID="lblTitle" CssClass="h2" runat="server"></asp:Label>
-            <!--div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-              <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-              </button>
-            </div-->
+            <asp:Panel ID="viewActions" CssClass="btn-toolbar mb-2 mb-md-0" runat="server">
+                <asp:Button CssClass="btn btn-sm btn-outline-secondary" Text="Agendar cita" runat="server" />
+            </asp:Panel>
           </div>
 
             <asp:Panel ID="viewError" class="alert alert-danger alert-dismissible mb-4" role="alert" runat="server" Visible="false">

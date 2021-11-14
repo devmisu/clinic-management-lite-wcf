@@ -32,22 +32,7 @@ namespace WebPatient
                     }
 
                     updateWelcomeText();
-
-                    if (option == "medical_record")
-                    {
-                        lblTitle.Text = "Historia Clinica";
-                        populateMedicalRecordsGridView();
-                    }
-                    else if (option == "patient")
-                    {
-                        lblTitle.Text = "Mi Perfil";
-                        populatePatientGridView();
-                    }
-                    else
-                    {
-                        lblTitle.Text = "Mis Citas";
-                        populateAppointmentsGridView();
-                    }
+                    setupGridView();
                 }
                 catch (Exception ex)
                 {
@@ -65,9 +50,26 @@ namespace WebPatient
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Int16 appointmentId = Convert.ToInt16(gridView.SelectedRow.Cells[0].Text);
-            // TODO: Redirect to appointment detail
+            GridViewRow row = gridView.SelectedRow;
+            String id = row.Cells[1].Text;
+
+            System.Diagnostics.Debug.WriteLine(id);
+
+            if (option == "medical_record")
+            {
+                
+            }
+            else if (option == "patient")
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
+
+        // Methods
 
         protected void updateWelcomeText()
         {
@@ -78,6 +80,46 @@ namespace WebPatient
                 proxyPatient.Close();
 
                 lblWelcome.Text = "Hola! " + patientBE.FirstName;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void setupGridView()
+        {
+            try
+            {
+                CommandField cField = new CommandField();
+                cField.ButtonType = ButtonType.Image;
+                cField.ShowSelectButton = true;
+                cField.SelectImageUrl = "~/www/img/icon_view_16.png";
+                cField.SelectText = "Ver";
+
+                gridView.Columns.Add(cField);
+
+                if (option == "medical_record")
+                {
+                    lblTitle.Text = "Historia Clinica";
+                    viewActions.Visible = false;
+
+                    populateMedicalRecordsGridView();
+                }
+                else if (option == "patient")
+                {
+                    lblTitle.Text = "Mi Perfil";
+                    viewActions.Visible = false;
+
+                    populatePatientGridView();
+                }
+                else
+                {
+                    lblTitle.Text = "Mis Citas";
+                    viewActions.Visible = true;
+
+                    populateAppointmentsGridView();
+                }
             }
             catch (Exception ex)
             {
@@ -137,14 +179,6 @@ namespace WebPatient
         {
             try
             {
-                CommandField cField = new CommandField();
-                cField.ButtonType = ButtonType.Image;
-                cField.ShowSelectButton = true;
-                cField.SelectImageUrl = "~/www/img/icon_view_16.png";
-                cField.SelectText = "Ver";
-
-                gridView.Columns.Add(cField);
-
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");
@@ -181,14 +215,6 @@ namespace WebPatient
         {
             try
             {
-                CommandField cField = new CommandField();
-                cField.ButtonType = ButtonType.Image;
-                cField.ShowSelectButton = true;
-                cField.SelectImageUrl = "~/www/img/icon_view_16.png";
-                cField.SelectText = "Ver";
-
-                gridView.Columns.Add(cField);
-
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");
@@ -222,33 +248,15 @@ namespace WebPatient
         {
             try
             {
-                CommandField cField = new CommandField();
-                cField.ButtonType = ButtonType.Image;
-                cField.ShowSelectButton = true;
-                cField.SelectImageUrl = "~/www/img/icon_view_16.png";
-                cField.SelectText = "Ver";
-
-                gridView.Columns.Add(cField);
-
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("Id");
-                dataTable.Columns.Add("Especialidad");
-                dataTable.Columns.Add("Doctor");
-                dataTable.Columns.Add("Fecha");
-                dataTable.Columns.Add("Hora");
-                dataTable.Columns.Add("Estado");
 
                 foreach (MedicalRecordBE medicalRecordBE in getMedicalRecordsForPatient())
                 {
                     DataRow row = dataTable.NewRow();
 
                     row[0] = medicalRecordBE.Id.ToString();
-                    //row[1] = appointmentBE.User.Area.Name;
-                    //row[2] = appointmentBE.User.FirstName + " " + appointmentBE.User.LastName;
-                    //row[3] = appointmentBE.Date.ToString("dd/MM/yyyy");
-                    //row[4] = appointmentBE.StartHour.ToString(@"hh\:mm") + " - " + appointmentBE.EndHour.ToString(@"hh\:mm");
-                    //row[5] = appointmentBE.State == "1" ? "Pendiente" : "Finalizado";
 
                     dataTable.Rows.Add(row);
                 }
