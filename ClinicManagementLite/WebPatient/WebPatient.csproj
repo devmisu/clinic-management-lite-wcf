@@ -79,6 +79,7 @@
     <None Include="Connected Services\ProxyArea\WCFClinic2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Appointment.aspx" />
     <Content Include="Connected Services\ProxyArea\WebPatient.ProxyArea.AreaBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -177,6 +178,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.aspx.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appointment.aspx.designer.cs">
+      <DependentUpon>Appointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProxyAppointment\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

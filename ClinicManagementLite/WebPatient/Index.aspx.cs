@@ -65,7 +65,8 @@ namespace WebPatient
             }
             else
             {
-                // TODO: Go to appointment detail
+                Session["appointmentId"] = id;
+                Response.Redirect("Appointment.aspx");
             }
         }
 
