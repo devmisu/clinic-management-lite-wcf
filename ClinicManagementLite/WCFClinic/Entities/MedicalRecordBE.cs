@@ -21,6 +21,7 @@ namespace WCFClinic.Entities
         private String surgeries;
         private Boolean active;
         private DateTime created_at;
+        private AppointmentBE appointment;
 
         public static MedicalRecordBE Create(Medical_Record tbMedicalRecord)
         {
@@ -36,6 +37,7 @@ namespace WCFClinic.Entities
             objMedicalRecordBE.Surgeries = tbMedicalRecord.surgeries;
             objMedicalRecordBE.Active = tbMedicalRecord.active;
             objMedicalRecordBE.CreatedAt = tbMedicalRecord.created_at;
+            objMedicalRecordBE.Appointment = AppointmentBE.Create(tbMedicalRecord.Appointment);
 
             return objMedicalRecordBE;
         }
@@ -107,6 +109,13 @@ namespace WCFClinic.Entities
         {
             get { return active; }
             set { active = value; }
+        }
+
+        [DataMember]
+        public AppointmentBE Appointment
+        {
+            get { return appointment; }
+            set { appointment = value; }
         }
     }
 }

@@ -8,12 +8,11 @@ using System.Web.Security;
 using System.Collections;
 using System.Data;
 using WebPatient.ProxyPatient;
-using WebPatient.ProxyAppointment;
 using WebPatient.ProxyMedicalRecords;
 
 namespace WebPatient
 {
-    public partial class Index : System.Web.UI.Page
+    public partial class MedicalRecords : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,9 +28,9 @@ namespace WebPatient
 
                     lblWelcome.Text = "Hola! " + patientBE.FirstName;
 
-                    ServiceAppointmentClient proxyAppointment = new ServiceAppointmentClient();
-                    List<ProxyAppointment.AppointmentBE> appointmentBEs = proxyAppointment.GetPatientAppointments(patientId).ToList();
-                    proxyAppointment.Close();
+                    ServiceMedicalRecordClient proxyMedicalRecord = new ServiceMedicalRecordClient();
+                    List<MedicalRecordBE> medicalRecordBEs = proxyMedicalRecord.GetPatientMedicalRecords(patientId).ToList();
+                    proxyMedicalRecord.Close();
 
                     CommandField cField = new CommandField();
 
@@ -46,23 +45,19 @@ namespace WebPatient
 
                     dataTable.Columns.Add("Id");
                     dataTable.Columns.Add("Especialidad");
-                    dataTable.Columns.Add("Doctor");
-                    dataTable.Columns.Add("Fecha");
-                    dataTable.Columns.Add("Hora");
-                    dataTable.Columns.Add("Estado");
+                    dataTable.Columns.Add("Razon");
+                    dataTable.Columns.Add("Prescripcion");
                     dataTable.Columns.Add("Fecha de creacion");
 
-                    foreach (ProxyAppointment.AppointmentBE appointmentBE in appointmentBEs)
+                    foreach (MedicalRecordBE medicalRecordBE in medicalRecordBEs)
                     {
                         DataRow row = dataTable.NewRow();
 
-                        row[0] = appointmentBE.Id.ToString();
-                        row[1] = appointmentBE.User.Area.Name;
-                        row[2] = appointmentBE.User.FirstName + " " + appointmentBE.User.LastName;
-                        row[3] = appointmentBE.Date.ToString("dd/MM/yyyy");
-                        row[4] = appointmentBE.StartHour.ToString(@"hh\:mm") + " - " + appointmentBE.EndHour.ToString(@"hh\:mm");
-                        row[5] = appointmentBE.State == "1" ? "Pendiente" : "Finalizado";
-                        row[6] = appointmentBE.CreatedAt.ToString("dd/MM/yyyy");
+                        row[0] = medicalRecordBE.Id.ToString();
+                        row[1] = medicalRecordBE.Appointment.User.Area.Name;
+                        row[2] = medicalRecordBE.Reason;
+                        row[3] = medicalRecordBE.Prescription;
+                        row[4] = medicalRecordBE.CreatedAt.ToString("dd/MM/yyyy");
 
                         dataTable.Rows.Add(row);
                     }
@@ -87,15 +82,10 @@ namespace WebPatient
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = gridView.SelectedRow;
-            String appointmentId = row.Cells[1].Text;
+            String medicalRecordId = row.Cells[1].Text;
 
-            Session["appointmentId"] = appointmentId;
-            Response.Redirect("Appointment.aspx");
-        }
-
-        protected void btnCreateAppointment_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ScheduleAppointment.aspx");
+            Session["medicalRecordId"] = medicalRecordId;
+            Response.Redirect("MedicalRecord.aspx");
         }
 
         protected void btnHome_Click(object sender, EventArgs e)

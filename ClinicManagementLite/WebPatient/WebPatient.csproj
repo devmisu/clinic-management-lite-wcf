@@ -79,6 +79,8 @@
     <None Include="Connected Services\ProxyArea\WCFClinic2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="MedicalRecord.aspx" />
+    <Content Include="MedicalRecords.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Appointment.aspx" />
     <Content Include="Connected Services\ProxyArea\WebPatient.ProxyArea.AreaBE.datasource">
@@ -179,6 +181,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicalRecord.aspx.cs">
+      <DependentUpon>MedicalRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicalRecord.aspx.designer.cs">
+      <DependentUpon>MedicalRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecords.aspx.cs">
+      <DependentUpon>MedicalRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicalRecords.aspx.designer.cs">
+      <DependentUpon>MedicalRecords.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

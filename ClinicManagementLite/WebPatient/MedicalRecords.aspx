@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="WebPatient.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MedicalRecords.aspx.cs" Inherits="WebPatient.MedicalRecords" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="www/css/Index.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             <div class="container">
@@ -11,13 +10,13 @@
 
                   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li>
-                        <asp:LinkButton ID="btnHome" CssClass="nav-link px-2 link-secondary" runat="server" OnClick="btnHome_Click">Mis Citas</asp:LinkButton>
+                        <asp:LinkButton ID="btnHome" CssClass="nav-link px-2 link-dark" runat="server" OnClick="btnHome_Click">Mis Citas</asp:LinkButton>
                     </li>
                     <li>
                         <asp:LinkButton ID="btnProfile" CssClass="nav-link px-2 link-dark" runat="server" OnClick="btnProfile_Click">Perfil</asp:LinkButton>
                     </li>
                     <li>
-                        <asp:LinkButton ID="btnMedicalRecord" CssClass="nav-link px-2 link-dark" runat="server" OnClick="btnMedicalRecord_Click">Historias Medicas</asp:LinkButton>
+                        <asp:LinkButton ID="btnMedicalRecord" CssClass="nav-link px-2 link-secondary" runat="server" OnClick="btnMedicalRecord_Click">Historias Medicas</asp:LinkButton>
                     </li>
                   </ul>
 
@@ -31,13 +30,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </asp:Panel>
 
-                <h4>Mis Citas</h4>
+                <h4>Historias Medicas</h4>
 
-                <br />
-
-                <asp:LinkButton ID="btnCreateAppointment" CssClass="btn btn-primary btn-sm" runat="server" OnClick="btnCreateAppointment_Click">Agendar Cita</asp:LinkButton>
-
-                <br />
                 <br />
 
                 <div class="table-responsive">
