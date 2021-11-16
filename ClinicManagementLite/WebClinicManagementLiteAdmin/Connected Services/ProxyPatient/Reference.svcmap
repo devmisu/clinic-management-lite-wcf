@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ec2a0fe4-629f-4069-b17f-ecbe1b7ed812" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://DESKTOP-TH5F7NM/WCFClinic/WCFClinic.ServicePatient.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFClinic.disco" MetadataType="Disco" ID="32a03e5a-fec2-4a0d-a3bc-8617f21394a6" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServicePatient.svc?disco" />
+    <MetadataFile FileName="ServicePatient.wsdl" MetadataType="Wsdl" ID="a82a9a6d-8304-48e4-91cc-90cbe2b2da63" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServicePatient.svc?wsdl" />
+    <MetadataFile FileName="WCFClinic.xsd" MetadataType="Schema" ID="47c02c71-51cd-48a6-ad02-d9e5580c859c" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServicePatient.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCFClinic1.xsd" MetadataType="Schema" ID="8c084082-b28e-437a-894e-b4ab6288e18d" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServicePatient.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCFClinic2.xsd" MetadataType="Schema" ID="54c2d802-4dad-4bbe-8b24-ff6d8e95e2a0" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServicePatient.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

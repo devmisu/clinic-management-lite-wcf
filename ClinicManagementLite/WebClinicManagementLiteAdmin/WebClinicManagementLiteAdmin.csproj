@@ -106,6 +106,19 @@
     <Content Include="Connected Services\ProxyArea\WebClinicManagementLiteAdmin.ProxyArea.AreaBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\ProxyPatient\ServicePatient.wsdl" />
+    <None Include="Connected Services\ProxyPatient\WCFClinic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyPatient\WCFClinic1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyPatient\WCFClinic2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyPatient\WebClinicManagementLiteAdmin.ProxyPatient.PatientBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ProxyRole\ServiceRole.wsdl" />
     <None Include="Connected Services\ProxyRole\WCFClinic.xsd">
       <SubType>Designer</SubType>
@@ -123,7 +136,27 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ProxyPatient\WCFClinic.disco" />
+    <None Include="Connected Services\ProxyPatient\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyPatient\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyPatient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\ProxyRole\WebClinicManagementLiteAdmin.ProxyRole.RoleBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxySchedule\ServiceSchedule.wsdl" />
+    <None Include="Connected Services\ProxySchedule\WCFClinic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxySchedule\WCFClinic1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxySchedule\WCFClinic2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxySchedule\WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ProxyUser\WCFClinic.disco" />
@@ -140,12 +173,20 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ProxySchedule\WCFClinic.disco" />
+    <None Include="Connected Services\ProxySchedule\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxySchedule\configuration.svcinfo" />
+    <None Include="Connected Services\ProxySchedule\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="CreateAppointment.aspx" />
     <Content Include="CSS\Main.css" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ShowAppointments.aspx" />
+    <Content Include="UpdateAppointment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +200,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ProxyPatient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProxyRole\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxySchedule\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -212,6 +263,13 @@
     <Compile Include="ShowAppointments.aspx.designer.cs">
       <DependentUpon>ShowAppointments.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateAppointment.aspx.cs">
+      <DependentUpon>UpdateAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAppointment.aspx.designer.cs">
+      <DependentUpon>UpdateAppointment.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.master" />
@@ -243,7 +301,9 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ProxyAppointment\" />
     <WCFMetadataStorage Include="Connected Services\ProxyArea\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyPatient\" />
     <WCFMetadataStorage Include="Connected Services\ProxyRole\" />
+    <WCFMetadataStorage Include="Connected Services\ProxySchedule\" />
     <WCFMetadataStorage Include="Connected Services\ProxyUser\" />
   </ItemGroup>
   <PropertyGroup>

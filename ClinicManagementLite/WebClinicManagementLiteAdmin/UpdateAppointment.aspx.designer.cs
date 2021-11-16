@@ -11,8 +11,17 @@ namespace WebClinicManagementLiteAdmin
 {
 
 
-    public partial class CreateAppointment
+    public partial class UpdateAppointment
     {
+
+        /// <summary>
+        /// Control btnDeleteAppointment.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteAppointment;
 
         /// <summary>
         /// Control viewError.
@@ -33,40 +42,22 @@ namespace WebClinicManagementLiteAdmin
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
-        /// Control viewSuccess.
+        /// Control txtArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel viewSuccess;
+        protected global::System.Web.UI.WebControls.TextBox txtArea;
 
         /// <summary>
-        /// Control lblSuccessMessage.
+        /// Control txtState.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuccessMessage;
-
-        /// <summary>
-        /// Control ddlArea.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlArea;
-
-        /// <summary>
-        /// Control ddlDoctor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDoctor;
+        protected global::System.Web.UI.WebControls.TextBox txtState;
 
         /// <summary>
         /// Control txtDate.
@@ -78,39 +69,57 @@ namespace WebClinicManagementLiteAdmin
         protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
-        /// Control btnShowAvailableSchedules.
+        /// Control txtStartHour.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowAvailableSchedules;
+        protected global::System.Web.UI.WebControls.TextBox txtStartHour;
 
         /// <summary>
-        /// Control ddlPatient.
+        /// Control txtEndHour.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPatient;
+        protected global::System.Web.UI.WebControls.TextBox txtEndHour;
 
         /// <summary>
-        /// Control ddlSchedule.
+        /// Control txtDoctor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSchedule;
+        protected global::System.Web.UI.WebControls.TextBox txtDoctor;
 
         /// <summary>
-        /// Control btnScheduleAppointment.
+        /// Control txtDoctorDni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnScheduleAppointment;
+        protected global::System.Web.UI.WebControls.TextBox txtDoctorDni;
+
+        /// <summary>
+        /// Control txtDoctorPhone.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDoctorPhone;
+
+        /// <summary>
+        /// Control txtDoctorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDoctorEmail;
     }
 }

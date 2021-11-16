@@ -11,12 +11,13 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <asp:Button ID="btnSignOut" runat="server" Text="Cerrar sesión" OnClick="btnSignOut_Click"></asp:Button>
+        <asp:Button CssClass="btn btn-primary" ID="btnSignOut" runat="server" Text="Cerrar sesión" OnClick="btnSignOut_Click"></asp:Button>
       </nav>
     </div>
 
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <asp:Label ID="tvWelcomeMsg" runat="server" class="display-4 fw-normal">Bienvenido a su página de Inicio</asp:Label>
+      <br /><br />
       <p class="fs-5 text-muted">Aquí podrá visualizar y administrar a sus pacientes, citas en espera de aprobación y demás.</p>
     </div>
   </header>

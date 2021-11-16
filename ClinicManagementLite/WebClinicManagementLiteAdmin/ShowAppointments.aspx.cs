@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebClinicManagementLiteAdmin.ProxyAppointment;
+using WebClinicManagementLiteAdmin.ProxyUser;
 
 namespace WebClinicManagementLiteAdmin
 {
@@ -18,6 +19,7 @@ namespace WebClinicManagementLiteAdmin
             {
                 try
                 {
+                    setupDoctorName();
                     gdvAppointments.DataSource = GetAppointmentsTable();
                     CommandField editBtn = new CommandField();
                     editBtn.ButtonType = ButtonType.Image;
@@ -56,11 +58,11 @@ namespace WebClinicManagementLiteAdmin
                 {
                     DataRow row = dataTable.NewRow();
                     row[0] = appointment.Date.ToString("dd/MM/yyyy");
-                    row[1] = appointment.StartHour.ToString();
-                    row[2] = appointment.EndHour.ToString();
+                    row[1] = appointment.StartHour.ToString(@"hh\:mm");
+                    row[2] = appointment.EndHour.ToString(@"hh\:mm");
                     row[3] = appointment.ArrivalHour.ToString();
                     row[4] = appointment.DepartureHour.ToString();
-                    row[5] = appointment.User.FirstName;
+                    row[5] = appointment.User.LastName + " " + appointment.User.FirstName;
                     var name = (appointment.State == "1") ? "Activa" : "Finalizada";
                     row[6] = name;
 
@@ -85,11 +87,51 @@ namespace WebClinicManagementLiteAdmin
                 String idUser = HttpContext.Current.User.Identity.Name;
                 List<AppointmentBE> arrayAppointments = proxyAppoinment.GetUserAppointments(Convert.ToInt16(idUser)).ToList();
                 proxyAppoinment.Close();
-                //System.Diagnostics.Debug.WriteLine(arrayAppointments[selectedIndex].StartHour);
+
+                Session["appointmentId"] = arrayAppointments[selectedIndex].Id;
+                Response.Redirect("UpdateAppointment.aspx");
             } 
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("ERROR: " + ex.Message);
+            }
+        }
+
+        protected void btnCreateAppointment_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateAppointment.aspx");
+        }
+
+        protected void setupDoctorName()
+        {
+            try
+            {
+                Int16 doctorId = Convert.ToInt16(User.Identity.Name);
+
+                ServiceUserClient proxyArea = new ServiceUserClient();
+                ProxyUser.UserBE userBE = proxyArea.GetUser(doctorId);
+                proxyArea.Close();
+
+                //Set Doctor name
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Name");
+                dt.Columns.Add("Value");
+                DataRow dr = dt.NewRow();
+                dr[0] = userBE.LastName + " " + userBE.FirstName;
+                dr[1] = userBE.Id;
+                dt.Rows.Add(dr);
+                ddlDoctor.DataTextField = "Name";
+                ddlDoctor.DataValueField = "Value";
+                ddlDoctor.DataSource = dt;
+                ddlDoctor.DataBind();
+                ddlDoctor.SelectedIndex = 0;
+                ddlDoctor.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("ERROR: " + ex.Message);
+                throw ex;
             }
         }
     }

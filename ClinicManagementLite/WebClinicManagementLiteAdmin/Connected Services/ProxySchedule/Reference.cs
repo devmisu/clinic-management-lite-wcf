@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPatient.ProxySchedule {
+namespace WebClinicManagementLiteAdmin.ProxySchedule {
     using System.Runtime.Serialization;
     using System;
     
@@ -159,28 +159,28 @@ namespace WebPatient.ProxySchedule {
     public interface IServiceSchedule {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/CreateSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/CreateScheduleResponse")]
-        bool CreateSchedule(WebPatient.ProxySchedule.ScheduleBE objScheduleBE);
+        bool CreateSchedule(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/CreateSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/CreateScheduleResponse")]
-        System.Threading.Tasks.Task<bool> CreateScheduleAsync(WebPatient.ProxySchedule.ScheduleBE objScheduleBE);
+        System.Threading.Tasks.Task<bool> CreateScheduleAsync(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedules", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesResponse")]
-        WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedules();
+        WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[] GetAllSchedules();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedules", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesAsync();
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[]> GetAllSchedulesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetOneSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/GetOneScheduleResponse")]
-        WebPatient.ProxySchedule.ScheduleBE GetOneSchedule(short id);
+        WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE GetOneSchedule(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetOneSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/GetOneScheduleResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE> GetOneScheduleAsync(short id);
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE> GetOneScheduleAsync(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/UpdateSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/UpdateScheduleResponse")]
-        bool UpdateSchedule(WebPatient.ProxySchedule.ScheduleBE objScheduleBE);
+        bool UpdateSchedule(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/UpdateSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/UpdateScheduleResponse")]
-        System.Threading.Tasks.Task<bool> UpdateScheduleAsync(WebPatient.ProxySchedule.ScheduleBE objScheduleBE);
+        System.Threading.Tasks.Task<bool> UpdateScheduleAsync(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/DeleteSchedule", ReplyAction="http://tempuri.org/IServiceSchedule/DeleteScheduleResponse")]
         bool DeleteSchedule(short id);
@@ -189,25 +189,25 @@ namespace WebPatient.ProxySchedule {
         System.Threading.Tasks.Task<bool> DeleteScheduleAsync(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserResponse")]
-        WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id);
+        WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id);
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUserResponse")]
-        WebPatient.ProxySchedule.ScheduleBE[] GetAvailableSchedulesByUser(short userId, System.DateTime date);
+        WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[] GetAvailableSchedulesByUser(short userId, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUserResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAvailableSchedulesByUserAsync(short userId, System.DateTime date);
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[]> GetAvailableSchedulesByUserAsync(short userId, System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceScheduleChannel : WebPatient.ProxySchedule.IServiceSchedule, System.ServiceModel.IClientChannel {
+    public interface IServiceScheduleChannel : WebClinicManagementLiteAdmin.ProxySchedule.IServiceSchedule, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceScheduleClient : System.ServiceModel.ClientBase<WebPatient.ProxySchedule.IServiceSchedule>, WebPatient.ProxySchedule.IServiceSchedule {
+    public partial class ServiceScheduleClient : System.ServiceModel.ClientBase<WebClinicManagementLiteAdmin.ProxySchedule.IServiceSchedule>, WebClinicManagementLiteAdmin.ProxySchedule.IServiceSchedule {
         
         public ServiceScheduleClient() {
         }
@@ -228,35 +228,35 @@ namespace WebPatient.ProxySchedule {
                 base(binding, remoteAddress) {
         }
         
-        public bool CreateSchedule(WebPatient.ProxySchedule.ScheduleBE objScheduleBE) {
+        public bool CreateSchedule(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE) {
             return base.Channel.CreateSchedule(objScheduleBE);
         }
         
-        public System.Threading.Tasks.Task<bool> CreateScheduleAsync(WebPatient.ProxySchedule.ScheduleBE objScheduleBE) {
+        public System.Threading.Tasks.Task<bool> CreateScheduleAsync(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE) {
             return base.Channel.CreateScheduleAsync(objScheduleBE);
         }
         
-        public WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedules() {
+        public WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[] GetAllSchedules() {
             return base.Channel.GetAllSchedules();
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesAsync() {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[]> GetAllSchedulesAsync() {
             return base.Channel.GetAllSchedulesAsync();
         }
         
-        public WebPatient.ProxySchedule.ScheduleBE GetOneSchedule(short id) {
+        public WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE GetOneSchedule(short id) {
             return base.Channel.GetOneSchedule(id);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE> GetOneScheduleAsync(short id) {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE> GetOneScheduleAsync(short id) {
             return base.Channel.GetOneScheduleAsync(id);
         }
         
-        public bool UpdateSchedule(WebPatient.ProxySchedule.ScheduleBE objScheduleBE) {
+        public bool UpdateSchedule(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE) {
             return base.Channel.UpdateSchedule(objScheduleBE);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateScheduleAsync(WebPatient.ProxySchedule.ScheduleBE objScheduleBE) {
+        public System.Threading.Tasks.Task<bool> UpdateScheduleAsync(WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE objScheduleBE) {
             return base.Channel.UpdateScheduleAsync(objScheduleBE);
         }
         
@@ -268,19 +268,19 @@ namespace WebPatient.ProxySchedule {
             return base.Channel.DeleteScheduleAsync(id);
         }
         
-        public WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id) {
+        public WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id) {
             return base.Channel.GetAllSchedulesOfUser(id);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id) {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id) {
             return base.Channel.GetAllSchedulesOfUserAsync(id);
         }
         
-        public WebPatient.ProxySchedule.ScheduleBE[] GetAvailableSchedulesByUser(short userId, System.DateTime date) {
+        public WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[] GetAvailableSchedulesByUser(short userId, System.DateTime date) {
             return base.Channel.GetAvailableSchedulesByUser(userId, date);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAvailableSchedulesByUserAsync(short userId, System.DateTime date) {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxySchedule.ScheduleBE[]> GetAvailableSchedulesByUserAsync(short userId, System.DateTime date) {
             return base.Channel.GetAvailableSchedulesByUserAsync(userId, date);
         }
     }
