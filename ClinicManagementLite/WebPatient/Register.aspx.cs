@@ -46,7 +46,7 @@ namespace WebPatient
                     throw new Exception("Ingrese un celular valido.");
                 }
 
-                if (!Regex.IsMatch(txtEmail.Text.Trim(), @"[a-z0 - 9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"))
+                if (!Regex.IsMatch(txtEmail.Text.Trim(), @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
                 {
                     throw new Exception("Ingrese un email valido.");
                 }

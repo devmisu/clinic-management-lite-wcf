@@ -17,6 +17,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </asp:Panel>
 
+            <asp:Panel ID="viewSuccess" class="alert alert-success alert-dismissible mb-3" role="alert" runat="server" Visible="false">
+                <asp:Label ID="lblSuccessMessage" runat="server"></asp:Label>
+                <a href="Index.aspx" class="alert-link">Volver al inicio</a>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </asp:Panel>
+
+            <div class="form-check">
+              <asp:CheckBox ID="switchEdit" CssClass="form-check-input" runat="server" OnCheckedChanged="switchEdit_CheckedChanged" AutoPostBack="true" />
+              <label class="form-check-label" for="switchEdit">Editar</label>
+            </div>
+
             <div>
               <div class="row g-3">
 
@@ -55,9 +66,12 @@
 
                 <div class="col-sm-4">
                     <label for="txtEmail" class="form-label">Email</label>
-                    <asp:TextBox ID="txtEmail" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" CssClass="form-control" textMode="Email" runat="server" Enabled="false"></asp:TextBox>
                 </div>
 
+                <hr class="my-4">
+              
+                <asp:Button ID="btnUpdate" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Actualizar" Enabled="false" OnClick="btnUpdate_Click" />
             </div>
           </div>
         </div>
