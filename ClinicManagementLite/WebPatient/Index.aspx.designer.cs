@@ -24,31 +24,31 @@ namespace WebPatient
         protected global::System.Web.UI.WebControls.Label lblWelcome;
 
         /// <summary>
-        /// lblTitle control.
+        /// btnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
+        protected global::System.Web.UI.WebControls.LinkButton btnHome;
 
         /// <summary>
-        /// viewActions control.
+        /// btnProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel viewActions;
+        protected global::System.Web.UI.WebControls.LinkButton btnProfile;
 
         /// <summary>
-        /// btnCreateAppointment control.
+        /// btnMedicalRecord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateAppointment;
+        protected global::System.Web.UI.WebControls.LinkButton btnMedicalRecord;
 
         /// <summary>
         /// viewError control.
