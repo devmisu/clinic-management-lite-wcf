@@ -68,40 +68,6 @@
                     <label for="txtDoctorEmail" class="form-label">Email</label>
                     <asp:TextBox ID="txtDoctorEmail" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
                 </div>
-
-                <hr class="my-4">
-
-                <h4 class="mb-3">Receta Medica</h4>
-
-                <div class="col-sm-12">
-                    <label for="txtReason" class="form-label">Razon</label>
-                    <asp:TextBox ID="txtReason" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                </div>
-
-                <div class="col-sm-12">
-                    <label for="txtPresciption" class="form-label">Prescripcion</label>
-                    <asp:TextBox ID="txtPresciption" CssClass="form-control" textMode="MultiLine" runat="server" Enabled="false"></asp:TextBox>
-                </div>
-
-                <div class="col-sm-3">
-                    <label for="txtDiseases" class="form-label">Enfermedades</label>
-                    <asp:TextBox ID="txtDiseases" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                </div>
-
-                <div class="col-sm-3">
-                    <label for="txtAllergies" class="form-label">Alergias</label>
-                    <asp:TextBox ID="txtAllergies" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                </div>
-
-                <div class="col-sm-3">
-                    <label for="txtMedicines" class="form-label">Medicinas</label>
-                    <asp:TextBox ID="txtMedicines" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                </div>
-
-                <div class="col-sm-3">
-                    <label for="txtSurgeries" class="form-label">Cirugias</label>
-                    <asp:TextBox ID="txtSurgeries" CssClass="form-control" textMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                </div>
             </div>
           </div>
         </div>

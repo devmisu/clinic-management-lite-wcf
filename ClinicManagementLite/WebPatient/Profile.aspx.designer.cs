@@ -11,7 +11,7 @@ namespace WebPatient
 {
 
 
-    public partial class Appointment
+    public partial class Profile
     {
 
         /// <summary>
@@ -33,84 +33,75 @@ namespace WebPatient
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
-        /// txtArea control.
+        /// txtDni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArea;
+        protected global::System.Web.UI.WebControls.TextBox txtDni;
 
         /// <summary>
-        /// txtState control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtState;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// txtDate control.
+        /// btnShowPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.Button btnShowPassword;
 
         /// <summary>
-        /// txtStartHour control.
+        /// txtFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStartHour;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
 
         /// <summary>
-        /// txtEndHour control.
+        /// txtLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndHour;
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
 
         /// <summary>
-        /// txtDoctor control.
+        /// txtBirthday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoctor;
+        protected global::System.Web.UI.WebControls.TextBox txtBirthday;
 
         /// <summary>
-        /// txtDoctorDni control.
+        /// txtPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoctorDni;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
-        /// txtDoctorPhone control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoctorPhone;
-
-        /// <summary>
-        /// txtDoctorEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoctorEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
     }
 }
