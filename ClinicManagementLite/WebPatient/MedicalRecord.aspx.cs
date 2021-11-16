@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using WebPatient.ProxyMedicalRecords;
 
 namespace WebPatient
 {
@@ -18,8 +13,8 @@ namespace WebPatient
                 {
                     Int16 medicalRecordId = Convert.ToInt16(Session["medicalRecordId"].ToString());
 
-                    ServiceMedicalRecordClient proxyMedicalRecord = new ServiceMedicalRecordClient();
-                    MedicalRecordBE medicalRecordBE = proxyMedicalRecord.GetMedicalRecord(medicalRecordId);
+                    ProxyMedicalRecords.ServiceMedicalRecordClient proxyMedicalRecord = new ProxyMedicalRecords.ServiceMedicalRecordClient();
+                    ProxyMedicalRecords.MedicalRecordBE medicalRecordBE = proxyMedicalRecord.GetMedicalRecord(medicalRecordId);
                     proxyMedicalRecord.Close();
 
                     txtReason.Text = medicalRecordBE.Reason;

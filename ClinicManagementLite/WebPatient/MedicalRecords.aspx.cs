@@ -22,14 +22,14 @@ namespace WebPatient
                 {
                     Int16 patientId = Convert.ToInt16(User.Identity.Name);
 
-                    ServicePatientClient proxyPatient = new ServicePatientClient();
-                    PatientBE patientBE = proxyPatient.GetPatient(patientId);
+                    ProxyPatient.ServicePatientClient proxyPatient = new ProxyPatient.ServicePatientClient();
+                    ProxyPatient.PatientBE patientBE = proxyPatient.GetPatient(patientId);
                     proxyPatient.Close();
 
                     lblWelcome.Text = "Hola! " + patientBE.FirstName;
 
-                    ServiceMedicalRecordClient proxyMedicalRecord = new ServiceMedicalRecordClient();
-                    List<MedicalRecordBE> medicalRecordBEs = proxyMedicalRecord.GetPatientMedicalRecords(patientId).ToList();
+                    ProxyMedicalRecords.ServiceMedicalRecordClient proxyMedicalRecord = new ProxyMedicalRecords.ServiceMedicalRecordClient();
+                    List<ProxyMedicalRecords.MedicalRecordBE> medicalRecordBEs = proxyMedicalRecord.GetPatientMedicalRecords(patientId).ToList();
                     proxyMedicalRecord.Close();
 
                     CommandField cField = new CommandField();
@@ -49,7 +49,7 @@ namespace WebPatient
                     dataTable.Columns.Add("Prescripcion");
                     dataTable.Columns.Add("Fecha de creacion");
 
-                    foreach (MedicalRecordBE medicalRecordBE in medicalRecordBEs)
+                    foreach (ProxyMedicalRecords.MedicalRecordBE medicalRecordBE in medicalRecordBEs)
                     {
                         DataRow row = dataTable.NewRow();
 

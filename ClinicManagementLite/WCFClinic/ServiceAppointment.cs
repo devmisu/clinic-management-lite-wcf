@@ -98,7 +98,7 @@ namespace WCFClinic
                 {
                     throw new Exception("La cita ha finalizado, no se puede actualizar.");
                 }
-                
+
                 tbAppointment.arrival_hour = objAppointmentBE.ArrivalHour;
                 tbAppointment.departure_hour = objAppointmentBE.DepartureHour;
                 tbAppointment.state = objAppointmentBE.State;

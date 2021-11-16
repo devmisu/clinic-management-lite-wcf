@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPatient.ProxyMedicalRecords {
+namespace WebClinicManagementLiteAdmin.ProxyMedicalRecords {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,7 +29,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private string AllergiesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.AppointmentBE AppointmentField;
+        private WebClinicManagementLiteAdmin.ProxyMedicalRecords.AppointmentBE AppointmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedAtField;
@@ -92,7 +92,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.AppointmentBE Appointment {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.AppointmentBE Appointment {
             get {
                 return this.AppointmentField;
             }
@@ -255,7 +255,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private short IdUserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.PatientBE PatientField;
+        private WebClinicManagementLiteAdmin.ProxyMedicalRecords.PatientBE PatientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.TimeSpan StartHourField;
@@ -264,7 +264,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.UserBE UserField;
+        private WebClinicManagementLiteAdmin.ProxyMedicalRecords.UserBE UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -394,7 +394,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.PatientBE Patient {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.PatientBE Patient {
             get {
                 return this.PatientField;
             }
@@ -433,7 +433,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.UserBE User {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.UserBE User {
             get {
                 return this.UserField;
             }
@@ -673,7 +673,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.AreaBE AreaField;
+        private WebClinicManagementLiteAdmin.ProxyMedicalRecords.AreaBE AreaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedAtField;
@@ -709,7 +709,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private string PhotoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.RoleBE RoleField;
+        private WebClinicManagementLiteAdmin.ProxyMedicalRecords.RoleBE RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecializationField;
@@ -738,7 +738,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.AreaBE Area {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.AreaBE Area {
             get {
                 return this.AreaField;
             }
@@ -894,7 +894,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.RoleBE Role {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.RoleBE Role {
             get {
                 return this.RoleField;
             }
@@ -1152,28 +1152,28 @@ namespace WebPatient.ProxyMedicalRecords {
     public interface IServiceMedicalRecord {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecordResponse")]
-        bool CreateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        bool CreateMedicalRecord(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecordResponse")]
-        System.Threading.Tasks.Task<bool> CreateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        System.Threading.Tasks.Task<bool> CreateMedicalRecordAsync(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecordsResponse")]
-        WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetAllMedicalRecords();
+        WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[] GetAllMedicalRecords();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecordsResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetAllMedicalRecordsAsync();
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[]> GetAllMedicalRecordsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecordResponse")]
-        WebPatient.ProxyMedicalRecords.MedicalRecordBE GetMedicalRecord(short id);
+        WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE GetMedicalRecord(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecordResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE> GetMedicalRecordAsync(short id);
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE> GetMedicalRecordAsync(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecordResponse")]
-        bool UpdateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        bool UpdateMedicalRecord(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecordResponse")]
-        System.Threading.Tasks.Task<bool> UpdateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        System.Threading.Tasks.Task<bool> UpdateMedicalRecordAsync(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/DeleteMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/DeleteMedicalRecordResponse")]
         bool DeleteMedicalRecord(short id);
@@ -1182,19 +1182,19 @@ namespace WebPatient.ProxyMedicalRecords {
         System.Threading.Tasks.Task<bool> DeleteMedicalRecordAsync(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecordsResponse")]
-        WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetPatientMedicalRecords(short patientId);
+        WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[] GetPatientMedicalRecords(short patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecordsResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetPatientMedicalRecordsAsync(short patientId);
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[]> GetPatientMedicalRecordsAsync(short patientId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceMedicalRecordChannel : WebPatient.ProxyMedicalRecords.IServiceMedicalRecord, System.ServiceModel.IClientChannel {
+    public interface IServiceMedicalRecordChannel : WebClinicManagementLiteAdmin.ProxyMedicalRecords.IServiceMedicalRecord, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceMedicalRecordClient : System.ServiceModel.ClientBase<WebPatient.ProxyMedicalRecords.IServiceMedicalRecord>, WebPatient.ProxyMedicalRecords.IServiceMedicalRecord {
+    public partial class ServiceMedicalRecordClient : System.ServiceModel.ClientBase<WebClinicManagementLiteAdmin.ProxyMedicalRecords.IServiceMedicalRecord>, WebClinicManagementLiteAdmin.ProxyMedicalRecords.IServiceMedicalRecord {
         
         public ServiceMedicalRecordClient() {
         }
@@ -1215,35 +1215,35 @@ namespace WebPatient.ProxyMedicalRecords {
                 base(binding, remoteAddress) {
         }
         
-        public bool CreateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
+        public bool CreateMedicalRecord(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
             return base.Channel.CreateMedicalRecord(objMedicalRecordBE);
         }
         
-        public System.Threading.Tasks.Task<bool> CreateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
+        public System.Threading.Tasks.Task<bool> CreateMedicalRecordAsync(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
             return base.Channel.CreateMedicalRecordAsync(objMedicalRecordBE);
         }
         
-        public WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetAllMedicalRecords() {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[] GetAllMedicalRecords() {
             return base.Channel.GetAllMedicalRecords();
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetAllMedicalRecordsAsync() {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[]> GetAllMedicalRecordsAsync() {
             return base.Channel.GetAllMedicalRecordsAsync();
         }
         
-        public WebPatient.ProxyMedicalRecords.MedicalRecordBE GetMedicalRecord(short id) {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE GetMedicalRecord(short id) {
             return base.Channel.GetMedicalRecord(id);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE> GetMedicalRecordAsync(short id) {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE> GetMedicalRecordAsync(short id) {
             return base.Channel.GetMedicalRecordAsync(id);
         }
         
-        public bool UpdateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
+        public bool UpdateMedicalRecord(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
             return base.Channel.UpdateMedicalRecord(objMedicalRecordBE);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
+        public System.Threading.Tasks.Task<bool> UpdateMedicalRecordAsync(WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
             return base.Channel.UpdateMedicalRecordAsync(objMedicalRecordBE);
         }
         
@@ -1255,11 +1255,11 @@ namespace WebPatient.ProxyMedicalRecords {
             return base.Channel.DeleteMedicalRecordAsync(id);
         }
         
-        public WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetPatientMedicalRecords(short patientId) {
+        public WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[] GetPatientMedicalRecords(short patientId) {
             return base.Channel.GetPatientMedicalRecords(patientId);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetPatientMedicalRecordsAsync(short patientId) {
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyMedicalRecords.MedicalRecordBE[]> GetPatientMedicalRecordsAsync(short patientId) {
             return base.Channel.GetPatientMedicalRecordsAsync(patientId);
         }
     }

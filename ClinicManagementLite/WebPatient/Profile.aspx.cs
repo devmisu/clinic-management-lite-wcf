@@ -20,8 +20,8 @@ namespace WebPatient
 
                 try
                 {
-                    ServicePatientClient proxyPatient = new ServicePatientClient();
-                    PatientBE patientBE = proxyPatient.GetPatient(patientId);
+                    ProxyPatient.ServicePatientClient proxyPatient = new ProxyPatient.ServicePatientClient();
+                    ProxyPatient.PatientBE patientBE = proxyPatient.GetPatient(patientId);
                     proxyPatient.Close();
 
                     txtDni.Text = patientBE.Dni;
@@ -76,7 +76,7 @@ namespace WebPatient
                     throw new Exception("Ingrese una contraseña valida.");
                 }
 
-                PatientBE patientBE = new PatientBE();
+                ProxyPatient.PatientBE patientBE = new ProxyPatient.PatientBE();
                 patientBE.Id = Convert.ToInt16(User.Identity.Name);
                 patientBE.FirstName = txtFirstName.Text.Trim();
                 patientBE.LastName = txtLastName.Text.Trim();

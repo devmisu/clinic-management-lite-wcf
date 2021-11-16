@@ -23,8 +23,8 @@ namespace WebPatient
                 {
                     Int16 patientId = Convert.ToInt16(User.Identity.Name);
 
-                    ServicePatientClient proxyPatient = new ServicePatientClient();
-                    PatientBE patientBE = proxyPatient.GetPatient(patientId);
+                    ProxyPatient.ServicePatientClient proxyPatient = new ProxyPatient.ServicePatientClient();
+                    ProxyPatient.PatientBE patientBE = proxyPatient.GetPatient(patientId);
                     proxyPatient.Close();
 
                     lblWelcome.Text = "Hola! " + patientBE.FirstName;

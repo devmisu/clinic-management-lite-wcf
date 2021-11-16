@@ -16,8 +16,11 @@ namespace WebClinicManagementLiteAdmin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            getUser();
-            tvWelcomeMsg.Text = "Bienvenido " + user.FirstName + " " + user.LastName + " a su página de Inicio";
+            if (!IsPostBack && HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                getUser();
+                tvWelcomeMsg.Text = "Bienvenido " + user.FirstName + " " + user.LastName + " a su página de Inicio";
+            }
         }
 
         protected void btnSignOut_Click(object sender, EventArgs e)

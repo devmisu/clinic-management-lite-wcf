@@ -31,6 +31,8 @@ namespace WebClinicManagementLiteAdmin
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine("ERROR: " + ex.Message);
+                    divContainerNoAppointments.Visible = true;
+                    gdvAppointments.Visible = false;
                 }
             }
         }
@@ -54,15 +56,20 @@ namespace WebClinicManagementLiteAdmin
                 List<AppointmentBE> arrayAppointments = proxyAppoinment.GetUserAppointments(Convert.ToInt16(idUser)).ToList();
                 proxyAppoinment.Close();
 
+                if (arrayAppointments.Count == 0)
+                {
+                    divContainerNoAppointments.Visible = true;
+                }
+
                 foreach (AppointmentBE appointment in arrayAppointments)
                 {
                     DataRow row = dataTable.NewRow();
                     row[0] = appointment.Date.ToString("dd/MM/yyyy");
                     row[1] = appointment.StartHour.ToString(@"hh\:mm");
                     row[2] = appointment.EndHour.ToString(@"hh\:mm");
-                    row[3] = appointment.ArrivalHour.ToString();
-                    row[4] = appointment.DepartureHour.ToString();
-                    row[5] = appointment.User.LastName + " " + appointment.User.FirstName;
+                    row[3] = appointment.ArrivalHour == null ? "" : appointment.ArrivalHour?.ToString(@"hh\:mm");
+                    row[4] = appointment.DepartureHour == null ? "" : appointment.DepartureHour?.ToString(@"hh\:mm");
+                    row[5] = appointment.Patient.LastName + " " + appointment.Patient.FirstName;
                     var name = (appointment.State == "1") ? "Activa" : "Finalizada";
                     row[6] = name;
 

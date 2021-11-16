@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeBehind="UpdateAppointment.aspx.cs" Inherits="WebClinicManagementLiteAdmin.UpdateAppointment" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeBehind="FinishAppointment.aspx.cs" Inherits="WebClinicManagementLiteAdmin.FinishAppointment" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,14 +7,8 @@
     <div class="container">
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
             <a href="Index.aspx" class="d-flex align-items-center text-dark text-decoration-none">
-                <h1>Actualizar información de cita</h1>
+                <h1>Finalizar consulta</h1>
             </a>
-
-            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                <asp:Button CssClass="btn btn-success" ID="btnFinishAppointment" runat="server" Text="Finalizar Cita" OnClick="btnFinishAppointment_Click"></asp:Button>
-                <p style="color: white">__</p>
-                <asp:Button CssClass="btn btn-danger" ID="btnDeleteAppointment" runat="server" Text="Eliminar Cita" OnClick="btnDeleteAppointment_Click"></asp:Button>
-            </nav>
         </div>
         <div class="row" style="margin-top: 32px;">
 
@@ -32,30 +26,6 @@
 
                 <div id="divContainerInfo" runat="server">
                     <div class="row g-3">
-
-                        <h4 class="mb-3">Doctor</h4>
-
-                        <div class="col-sm-8">
-                            <label for="txtDoctor" class="form-label">Nombres y Apellidos</label>
-                            <asp:TextBox ID="txtDoctor" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <label for="txtDoctorDni" class="form-label">DNI</label>
-                            <asp:TextBox ID="txtDoctorDni" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label for="txtDoctorPhone" class="form-label">Celular</label>
-                            <asp:TextBox ID="txtDoctorPhone" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label for="txtDoctorEmail" class="form-label">Email</label>
-                            <asp:TextBox ID="txtDoctorEmail" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
-                        </div>
-
-                        <hr class="my-4">
 
                         <h4 class="mb-3">Cita</h4>
 
@@ -84,7 +54,56 @@
                             <asp:TextBox ID="txtEndHour" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="false"></asp:TextBox>
                         </div>
 
+                        <div class="col-sm-6">
+                            <label for="txtRealStartHour" class="form-label">Hora de llegada del paciente</label>
+                            <asp:TextBox ID="txtRealStartHour" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="txtRealEndHour" class="form-label">Hora de salida del paciente</label>
+                            <asp:TextBox ID="txtRealEndHour" CssClass="form-control" TextMode="SingleLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Prescripción</h4>
+
+                        <div class="col-sm-6">
+                            <label for="txtReason" class="form-label">Motivo de consulta</label>
+                            <asp:TextBox ID="txtReason" CssClass="form-control" TextMode="MultiLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="txtPrescription" class="form-label">Prescripción</label>
+                            <asp:TextBox ID="txtPrescription" CssClass="form-control" TextMode="MultiLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="txtDiseases" class="form-label">Alergias</label>
+                            <asp:TextBox ID="txtDiseases" CssClass="form-control" TextMode="MultiLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="txtAllergies" class="form-label">Enfermadades</label>
+                            <asp:TextBox ID="txtAllergies" CssClass="form-control" TextMode="MultiLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="txtMedicines" class="form-label">Medicinas recetadas</label>
+                            <asp:TextBox ID="txtMedicines" CssClass="form-control" TextMode="MultiLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="txtSurgeries" class="form-label">Cirugias</label>
+                            <asp:TextBox ID="txtSurgeries" CssClass="form-control" TextMode="MultiLine" runat="server" Enabled="true"></asp:TextBox>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <asp:Button ID="btnFinishAppointment" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Finalizar consulta" OnClick="btnFinishAppointment_Click" />
+
                     </div>
+
                 </div>
 
             </div>
@@ -95,6 +114,9 @@
                     <li class="list-inline-item"><a href="Index.aspx">Inicio</a></li>
                 </ul>
             </footer>
+
         </div>
+
     </div>
+
 </asp:Content>
