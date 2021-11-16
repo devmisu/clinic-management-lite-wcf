@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d8a379f8-0d14-42e7-b518-9866fe1642d9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="818ab5d3-1293-465d-add0-2ec2e4bf7f17" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://DESKTOP-TH5F7NM/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://DESKTOP-TH5F7NM/WCFClinic/WCFClinic.ServiceAppointment.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WCFClinic.xsd" MetadataType="Schema" ID="653b1029-9c7b-44cd-a5bc-0a4a74b725ad" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc?xsd=xsd1" />
-    <MetadataFile FileName="WCFClinic1.xsd" MetadataType="Schema" ID="1d495335-99af-48c3-8809-25c4ad2b0c29" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc?xsd=xsd0" />
-    <MetadataFile FileName="ServiceAppointment.wsdl" MetadataType="Wsdl" ID="fd551b74-a976-4dca-8aad-bf9615ed2c3f" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc?wsdl" />
-    <MetadataFile FileName="WCFClinic2.xsd" MetadataType="Schema" ID="0cf2a615-95cf-49d1-894f-4e5a12bf61f1" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc?xsd=xsd2" />
-    <MetadataFile FileName="WCFClinic.disco" MetadataType="Disco" ID="3e2b145e-21b5-48c5-98e1-59d14d8558a2" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc?disco" />
+    <MetadataFile FileName="WCFClinic.xsd" MetadataType="Schema" ID="4ae25c6b-b587-4241-b452-6ab9e4600b88" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceAppointment.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCFClinic.disco" MetadataType="Disco" ID="5c06175b-4da9-4d5e-af72-5bebce51eb12" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceAppointment.svc?disco" />
+    <MetadataFile FileName="ServiceAppointment.wsdl" MetadataType="Wsdl" ID="12b565b9-50e6-48e3-8519-539c1bcd5ea0" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceAppointment.svc?wsdl" />
+    <MetadataFile FileName="WCFClinic1.xsd" MetadataType="Schema" ID="07489888-e97a-4922-b9ba-e500d671b52e" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceAppointment.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFClinic2.xsd" MetadataType="Schema" ID="de4cc0d7-e350-44d0-8d4c-510d48185e56" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceAppointment.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

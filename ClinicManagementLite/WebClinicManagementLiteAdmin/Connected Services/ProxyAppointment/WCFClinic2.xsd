@@ -1,26 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://desktop-th5f7nm/WCF_ClinicManagementLite/WCFClinic.ServiceAppointment.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="AppointmentBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
-      <xs:element minOccurs="0" name="ArrivalHour" nillable="true" type="ser:duration" />
-      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="DepartureHour" nillable="true" type="ser:duration" />
-      <xs:element minOccurs="0" name="EndHour" type="ser:duration" />
-      <xs:element minOccurs="0" name="Id" type="xs:short" />
-      <xs:element minOccurs="0" name="IdPatient" type="xs:short" />
-      <xs:element minOccurs="0" name="IdUser" type="xs:short" />
-      <xs:element minOccurs="0" name="StartHour" type="ser:duration" />
-      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AppointmentBE" nillable="true" type="tns:AppointmentBE" />
-  <xs:complexType name="ArrayOfAppointmentBE">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppointmentBE" nillable="true" type="tns:AppointmentBE" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAppointmentBE" nillable="true" type="tns:ArrayOfAppointmentBE" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceAppointment.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" />
+  <xs:element name="CreateAppointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="objAppointmentBE" nillable="true" type="q1:AppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateAppointmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAppointments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAppointmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="GetAllAppointmentsResult" nillable="true" type="q2:ArrayOfAppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneAppointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOneAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="GetOneAppointmentResult" nillable="true" type="q3:AppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAppointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="objAppointmentBE" nillable="true" type="q4:AppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAppointmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAppointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteAppointmentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientAppointments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="patientId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientAppointmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="GetPatientAppointmentsResult" nillable="true" type="q5:ArrayOfAppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAppointments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAppointmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="GetUserAppointmentsResult" nillable="true" type="q6:ArrayOfAppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAppointmentsByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:short" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAppointmentsByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" minOccurs="0" name="GetUserAppointmentsByDateResult" nillable="true" type="q7:ArrayOfAppointmentBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

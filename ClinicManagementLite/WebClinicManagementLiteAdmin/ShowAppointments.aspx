@@ -15,7 +15,7 @@
             <div class="col-sm-10 col-md-10 col-lg-10">
                 <div class="panel panel-default">
                     <div class="panel-body table-responsive">
-                        <asp:GridView ID="gdvAppointments" width="100%" CssClass="table table-striped table-bordered table-hover" runat="server">
+                        <asp:GridView ID="gdvAppointments" width="100%" CssClass="table table-striped table-bordered table-hover" runat="server" OnSelectedIndexChanged="gdvAppointments_SelectedIndexChanged">
                         </asp:GridView>
                     </div>
                 </div>

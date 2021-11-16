@@ -5,9 +5,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebClinicManagementLiteAdmin.ProxyUser;
-using WebClinicManagementLiteAdmin.ProxyArea;
-using WebClinicManagementLiteAdmin.ProxyRole;
 
 namespace WebClinicManagementLiteAdmin
 {
@@ -23,8 +20,8 @@ namespace WebClinicManagementLiteAdmin
         {
             try
             {
-                ServiceAreaClient proxyArea = new ServiceAreaClient();
-                List<AreaBE> areas = proxyArea.GetAllAreas().ToList();
+                ProxyArea.ServiceAreaClient proxyArea = new ProxyArea.ServiceAreaClient();
+                List<ProxyArea.AreaBE> areas = proxyArea.GetAllAreas().ToList();
                 dropArea.DataSource = areas;
                 dropArea.DataTextField = "name";
                 dropArea.DataValueField = "id";
@@ -43,8 +40,8 @@ namespace WebClinicManagementLiteAdmin
         {
             try
             {
-                ServiceRoleClient proxyRole = new ServiceRoleClient();
-                List<RoleBE> roles = proxyRole.GetAllRoles().ToList();
+                ProxyRole.ServiceRoleClient proxyRole = new ProxyRole.ServiceRoleClient();
+                List<ProxyRole.RoleBE> roles = proxyRole.GetAllRoles().ToList();
                 dropRole.DataSource = roles;
                 dropRole.DataTextField = "name";
                 dropRole.DataValueField = "id";
@@ -117,7 +114,7 @@ namespace WebClinicManagementLiteAdmin
 
 
 
-                UserBE userBE = new UserBE();
+                ProxyUser.UserBE userBE = new ProxyUser.UserBE();
                 userBE.FirstName = txtFirstName.Text.Trim();
                 userBE.LastName = txtLastName.Text.Trim();
                 userBE.Dni = txtDni.Text.Trim();
@@ -128,7 +125,7 @@ namespace WebClinicManagementLiteAdmin
                 userBE.IdArea = Convert.ToInt16(dropArea.SelectedItem.Value);
                 userBE.IdRole = Convert.ToInt16(dropRole.SelectedItem.Value);
 
-                ServiceUserClient proxyUser = new ServiceUserClient();
+                ProxyUser.ServiceUserClient proxyUser = new ProxyUser.ServiceUserClient();
 
                 if (proxyUser.CreateUser(userBE))
                 {
