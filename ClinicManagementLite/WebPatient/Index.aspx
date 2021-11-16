@@ -35,6 +35,11 @@
 
                 <br />
 
+                <asp:LinkButton ID="btnCreateAppointment" CssClass="btn btn-primary btn-sm" runat="server" OnClick="btnCreateAppointment_Click">Agendar Cita</asp:LinkButton>
+
+                <br />
+                <br />
+
                 <div class="table-responsive">
                     <asp:GridView id="gridView" CssClass="table table-striped table-sm" EmptyDataText="No se encontraron datos." BorderWidth="0" runat="server"
                         OnSelectedIndexChanged="gridView_SelectedIndexChanged">
