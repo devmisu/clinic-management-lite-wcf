@@ -112,5 +112,10 @@ namespace WebPatient
         {
             Response.Redirect("MedicalRecords.aspx");
         }
+
+        protected void btnQueueAppointment_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("QueueAppointment.aspx");
+        }
     }
 }

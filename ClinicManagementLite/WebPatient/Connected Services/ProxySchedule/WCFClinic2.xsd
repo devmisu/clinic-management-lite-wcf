@@ -73,6 +73,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="id" type="xs:short" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

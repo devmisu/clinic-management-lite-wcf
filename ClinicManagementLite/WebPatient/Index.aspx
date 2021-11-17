@@ -36,6 +36,7 @@
                 <br />
 
                 <asp:LinkButton ID="btnCreateAppointment" CssClass="btn btn-primary btn-sm" runat="server" OnClick="btnCreateAppointment_Click">Agendar Cita</asp:LinkButton>
+                <asp:LinkButton ID="btnQueueAppointment" CssClass="btn btn-primary btn-sm" runat="server" OnClick="btnQueueAppointment_Click">Solicitar Cita</asp:LinkButton>
 
                 <br />
                 <br />

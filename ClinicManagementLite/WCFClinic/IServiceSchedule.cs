@@ -27,7 +27,7 @@ namespace WCFClinic
         Boolean DeleteSchedule(Int16 id);
 
         [OperationContract]
-        List<ScheduleBE> GetAllSchedulesOfUser(Int16 id);
+        List<ScheduleBE> GetAllSchedulesOfUser(Int16 id, DateTime date);
 
         [OperationContract]
         List<ScheduleBE> GetAvailableSchedulesByUser(Int16 userId, DateTime date);

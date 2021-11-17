@@ -189,10 +189,10 @@ namespace WebPatient.ProxySchedule {
         System.Threading.Tasks.Task<bool> DeleteScheduleAsync(short id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserResponse")]
-        WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id);
+        WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id);
+        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id, System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUserResponse")]
         WebPatient.ProxySchedule.ScheduleBE[] GetAvailableSchedulesByUser(short userId, System.DateTime date);
@@ -268,12 +268,12 @@ namespace WebPatient.ProxySchedule {
             return base.Channel.DeleteScheduleAsync(id);
         }
         
-        public WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id) {
-            return base.Channel.GetAllSchedulesOfUser(id);
+        public WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUser(short id, System.DateTime date) {
+            return base.Channel.GetAllSchedulesOfUser(id, date);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id) {
-            return base.Channel.GetAllSchedulesOfUserAsync(id);
+        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserAsync(short id, System.DateTime date) {
+            return base.Channel.GetAllSchedulesOfUserAsync(id, date);
         }
         
         public WebPatient.ProxySchedule.ScheduleBE[] GetAvailableSchedulesByUser(short userId, System.DateTime date) {
