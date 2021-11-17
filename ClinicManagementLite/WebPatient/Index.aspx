@@ -14,6 +14,9 @@
                         <asp:LinkButton ID="btnHome" CssClass="nav-link px-2 link-secondary" runat="server" OnClick="btnHome_Click">Mis Citas</asp:LinkButton>
                     </li>
                     <li>
+                        <asp:LinkButton ID="btnQueue" CssClass="nav-link px-2 link-dark" runat="server" OnClick="btnQueue_Click">Mis Solicitudes</asp:LinkButton>
+                    </li>
+                    <li>
                         <asp:LinkButton ID="btnProfile" CssClass="nav-link px-2 link-dark" runat="server" OnClick="btnProfile_Click">Perfil</asp:LinkButton>
                     </li>
                     <li>

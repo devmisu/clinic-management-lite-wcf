@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPatient.ProxyMedicalRecords {
+namespace WebPatient.ProxyQueue {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MedicalRecordBE", Namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QueueBE", Namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities")]
     [System.SerializableAttribute()]
-    public partial class MedicalRecordBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class QueueBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -26,224 +26,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AllergiesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.AppointmentBE AppointmentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedAtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DiseasesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private short IdAppointmentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MedicinesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReasonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SurgeriesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Active {
-            get {
-                return this.ActiveField;
-            }
-            set {
-                if ((this.ActiveField.Equals(value) != true)) {
-                    this.ActiveField = value;
-                    this.RaisePropertyChanged("Active");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Allergies {
-            get {
-                return this.AllergiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AllergiesField, value) != true)) {
-                    this.AllergiesField = value;
-                    this.RaisePropertyChanged("Allergies");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.AppointmentBE Appointment {
-            get {
-                return this.AppointmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AppointmentField, value) != true)) {
-                    this.AppointmentField = value;
-                    this.RaisePropertyChanged("Appointment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedAt {
-            get {
-                return this.CreatedAtField;
-            }
-            set {
-                if ((this.CreatedAtField.Equals(value) != true)) {
-                    this.CreatedAtField = value;
-                    this.RaisePropertyChanged("CreatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Diseases {
-            get {
-                return this.DiseasesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DiseasesField, value) != true)) {
-                    this.DiseasesField = value;
-                    this.RaisePropertyChanged("Diseases");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public short IdAppointment {
-            get {
-                return this.IdAppointmentField;
-            }
-            set {
-                if ((this.IdAppointmentField.Equals(value) != true)) {
-                    this.IdAppointmentField = value;
-                    this.RaisePropertyChanged("IdAppointment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Medicines {
-            get {
-                return this.MedicinesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MedicinesField, value) != true)) {
-                    this.MedicinesField = value;
-                    this.RaisePropertyChanged("Medicines");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Prescription {
-            get {
-                return this.PrescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrescriptionField, value) != true)) {
-                    this.PrescriptionField = value;
-                    this.RaisePropertyChanged("Prescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Reason {
-            get {
-                return this.ReasonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReasonField, value) != true)) {
-                    this.ReasonField = value;
-                    this.RaisePropertyChanged("Reason");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Surgeries {
-            get {
-                return this.SurgeriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SurgeriesField, value) != true)) {
-                    this.SurgeriesField = value;
-                    this.RaisePropertyChanged("Surgeries");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AppointmentBE", Namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities")]
-    [System.SerializableAttribute()]
-    public partial class AppointmentBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.TimeSpan> ArrivalHourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedAtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.TimeSpan> DepartureHourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan EndHourField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short IdField;
@@ -255,16 +38,19 @@ namespace WebPatient.ProxyMedicalRecords {
         private short IdUserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.PatientBE PatientField;
+        private WebPatient.ProxyQueue.PatientBE PatientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan StartHourField;
+        private System.DateTime StartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan StartTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.UserBE UserField;
+        private WebPatient.ProxyQueue.UserBE UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -290,19 +76,6 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> ArrivalHour {
-            get {
-                return this.ArrivalHourField;
-            }
-            set {
-                if ((this.ArrivalHourField.Equals(value) != true)) {
-                    this.ArrivalHourField = value;
-                    this.RaisePropertyChanged("ArrivalHour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime CreatedAt {
             get {
                 return this.CreatedAtField;
@@ -311,45 +84,6 @@ namespace WebPatient.ProxyMedicalRecords {
                 if ((this.CreatedAtField.Equals(value) != true)) {
                     this.CreatedAtField = value;
                     this.RaisePropertyChanged("CreatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Date {
-            get {
-                return this.DateField;
-            }
-            set {
-                if ((this.DateField.Equals(value) != true)) {
-                    this.DateField = value;
-                    this.RaisePropertyChanged("Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> DepartureHour {
-            get {
-                return this.DepartureHourField;
-            }
-            set {
-                if ((this.DepartureHourField.Equals(value) != true)) {
-                    this.DepartureHourField = value;
-                    this.RaisePropertyChanged("DepartureHour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan EndHour {
-            get {
-                return this.EndHourField;
-            }
-            set {
-                if ((this.EndHourField.Equals(value) != true)) {
-                    this.EndHourField = value;
-                    this.RaisePropertyChanged("EndHour");
                 }
             }
         }
@@ -394,7 +128,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.PatientBE Patient {
+        public WebPatient.ProxyQueue.PatientBE Patient {
             get {
                 return this.PatientField;
             }
@@ -407,14 +141,27 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan StartHour {
+        public System.DateTime StartDate {
             get {
-                return this.StartHourField;
+                return this.StartDateField;
             }
             set {
-                if ((this.StartHourField.Equals(value) != true)) {
-                    this.StartHourField = value;
-                    this.RaisePropertyChanged("StartHour");
+                if ((this.StartDateField.Equals(value) != true)) {
+                    this.StartDateField = value;
+                    this.RaisePropertyChanged("StartDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan StartTime {
+            get {
+                return this.StartTimeField;
+            }
+            set {
+                if ((this.StartTimeField.Equals(value) != true)) {
+                    this.StartTimeField = value;
+                    this.RaisePropertyChanged("StartTime");
                 }
             }
         }
@@ -433,7 +180,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.UserBE User {
+        public WebPatient.ProxyQueue.UserBE User {
             get {
                 return this.UserField;
             }
@@ -673,7 +420,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.AreaBE AreaField;
+        private WebPatient.ProxyQueue.AreaBE AreaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedAtField;
@@ -709,7 +456,7 @@ namespace WebPatient.ProxyMedicalRecords {
         private string PhotoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebPatient.ProxyMedicalRecords.RoleBE RoleField;
+        private WebPatient.ProxyQueue.RoleBE RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecializationField;
@@ -738,7 +485,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.AreaBE Area {
+        public WebPatient.ProxyQueue.AreaBE Area {
             get {
                 return this.AreaField;
             }
@@ -894,7 +641,7 @@ namespace WebPatient.ProxyMedicalRecords {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebPatient.ProxyMedicalRecords.RoleBE Role {
+        public WebPatient.ProxyQueue.RoleBE Role {
             get {
                 return this.RoleField;
             }
@@ -1148,119 +895,133 @@ namespace WebPatient.ProxyMedicalRecords {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyMedicalRecords.IServiceMedicalRecord")]
-    public interface IServiceMedicalRecord {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyQueue.IServiceQueue")]
+    public interface IServiceQueue {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecordResponse")]
-        bool CreateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/CreateQueue", ReplyAction="http://tempuri.org/IServiceQueue/CreateQueueResponse")]
+        bool CreateQueue(WebPatient.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/CreateMedicalRecordResponse")]
-        System.Threading.Tasks.Task<bool> CreateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/CreateQueue", ReplyAction="http://tempuri.org/IServiceQueue/CreateQueueResponse")]
+        System.Threading.Tasks.Task<bool> CreateQueueAsync(WebPatient.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecordsResponse")]
-        WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetAllMedicalRecords();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetAllQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetAllQueuesResponse")]
+        WebPatient.ProxyQueue.QueueBE[] GetAllQueues();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetAllMedicalRecordsResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetAllMedicalRecordsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetAllQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetAllQueuesResponse")]
+        System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetAllQueuesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecordResponse")]
-        WebPatient.ProxyMedicalRecords.MedicalRecordBE GetMedicalRecord(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetOneQueue", ReplyAction="http://tempuri.org/IServiceQueue/GetOneQueueResponse")]
+        WebPatient.ProxyQueue.QueueBE GetOneQueue(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetMedicalRecordResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE> GetMedicalRecordAsync(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetOneQueue", ReplyAction="http://tempuri.org/IServiceQueue/GetOneQueueResponse")]
+        System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE> GetOneQueueAsync(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecordResponse")]
-        bool UpdateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/UpdateQueue", ReplyAction="http://tempuri.org/IServiceQueue/UpdateQueueResponse")]
+        bool UpdateQueue(WebPatient.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/UpdateMedicalRecordResponse")]
-        System.Threading.Tasks.Task<bool> UpdateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/UpdateQueue", ReplyAction="http://tempuri.org/IServiceQueue/UpdateQueueResponse")]
+        System.Threading.Tasks.Task<bool> UpdateQueueAsync(WebPatient.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/DeleteMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/DeleteMedicalRecordResponse")]
-        bool DeleteMedicalRecord(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/DeleteQueue", ReplyAction="http://tempuri.org/IServiceQueue/DeleteQueueResponse")]
+        bool DeleteQueue(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/DeleteMedicalRecord", ReplyAction="http://tempuri.org/IServiceMedicalRecord/DeleteMedicalRecordResponse")]
-        System.Threading.Tasks.Task<bool> DeleteMedicalRecordAsync(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/DeleteQueue", ReplyAction="http://tempuri.org/IServiceQueue/DeleteQueueResponse")]
+        System.Threading.Tasks.Task<bool> DeleteQueueAsync(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecordsResponse")]
-        WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetPatientMedicalRecords(short patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetUserQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetUserQueuesResponse")]
+        WebPatient.ProxyQueue.QueueBE[] GetUserQueues(short userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecords", ReplyAction="http://tempuri.org/IServiceMedicalRecord/GetPatientMedicalRecordsResponse")]
-        System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetPatientMedicalRecordsAsync(short patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetUserQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetUserQueuesResponse")]
+        System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetUserQueuesAsync(short userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetPatientQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse")]
+        WebPatient.ProxyQueue.QueueBE[] GetPatientQueues(short patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetPatientQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse")]
+        System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetPatientQueuesAsync(short patientId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceMedicalRecordChannel : WebPatient.ProxyMedicalRecords.IServiceMedicalRecord, System.ServiceModel.IClientChannel {
+    public interface IServiceQueueChannel : WebPatient.ProxyQueue.IServiceQueue, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceMedicalRecordClient : System.ServiceModel.ClientBase<WebPatient.ProxyMedicalRecords.IServiceMedicalRecord>, WebPatient.ProxyMedicalRecords.IServiceMedicalRecord {
+    public partial class ServiceQueueClient : System.ServiceModel.ClientBase<WebPatient.ProxyQueue.IServiceQueue>, WebPatient.ProxyQueue.IServiceQueue {
         
-        public ServiceMedicalRecordClient() {
+        public ServiceQueueClient() {
         }
         
-        public ServiceMedicalRecordClient(string endpointConfigurationName) : 
+        public ServiceQueueClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServiceMedicalRecordClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceQueueClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceMedicalRecordClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceQueueClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceMedicalRecordClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceQueueClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public bool CreateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
-            return base.Channel.CreateMedicalRecord(objMedicalRecordBE);
+        public bool CreateQueue(WebPatient.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.CreateQueue(objQueueBE);
         }
         
-        public System.Threading.Tasks.Task<bool> CreateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
-            return base.Channel.CreateMedicalRecordAsync(objMedicalRecordBE);
+        public System.Threading.Tasks.Task<bool> CreateQueueAsync(WebPatient.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.CreateQueueAsync(objQueueBE);
         }
         
-        public WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetAllMedicalRecords() {
-            return base.Channel.GetAllMedicalRecords();
+        public WebPatient.ProxyQueue.QueueBE[] GetAllQueues() {
+            return base.Channel.GetAllQueues();
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetAllMedicalRecordsAsync() {
-            return base.Channel.GetAllMedicalRecordsAsync();
+        public System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetAllQueuesAsync() {
+            return base.Channel.GetAllQueuesAsync();
         }
         
-        public WebPatient.ProxyMedicalRecords.MedicalRecordBE GetMedicalRecord(short id) {
-            return base.Channel.GetMedicalRecord(id);
+        public WebPatient.ProxyQueue.QueueBE GetOneQueue(short id) {
+            return base.Channel.GetOneQueue(id);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE> GetMedicalRecordAsync(short id) {
-            return base.Channel.GetMedicalRecordAsync(id);
+        public System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE> GetOneQueueAsync(short id) {
+            return base.Channel.GetOneQueueAsync(id);
         }
         
-        public bool UpdateMedicalRecord(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
-            return base.Channel.UpdateMedicalRecord(objMedicalRecordBE);
+        public bool UpdateQueue(WebPatient.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.UpdateQueue(objQueueBE);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateMedicalRecordAsync(WebPatient.ProxyMedicalRecords.MedicalRecordBE objMedicalRecordBE) {
-            return base.Channel.UpdateMedicalRecordAsync(objMedicalRecordBE);
+        public System.Threading.Tasks.Task<bool> UpdateQueueAsync(WebPatient.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.UpdateQueueAsync(objQueueBE);
         }
         
-        public bool DeleteMedicalRecord(short id) {
-            return base.Channel.DeleteMedicalRecord(id);
+        public bool DeleteQueue(short id) {
+            return base.Channel.DeleteQueue(id);
         }
         
-        public System.Threading.Tasks.Task<bool> DeleteMedicalRecordAsync(short id) {
-            return base.Channel.DeleteMedicalRecordAsync(id);
+        public System.Threading.Tasks.Task<bool> DeleteQueueAsync(short id) {
+            return base.Channel.DeleteQueueAsync(id);
         }
         
-        public WebPatient.ProxyMedicalRecords.MedicalRecordBE[] GetPatientMedicalRecords(short patientId) {
-            return base.Channel.GetPatientMedicalRecords(patientId);
+        public WebPatient.ProxyQueue.QueueBE[] GetUserQueues(short userId) {
+            return base.Channel.GetUserQueues(userId);
         }
         
-        public System.Threading.Tasks.Task<WebPatient.ProxyMedicalRecords.MedicalRecordBE[]> GetPatientMedicalRecordsAsync(short patientId) {
-            return base.Channel.GetPatientMedicalRecordsAsync(patientId);
+        public System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetUserQueuesAsync(short userId) {
+            return base.Channel.GetUserQueuesAsync(userId);
+        }
+        
+        public WebPatient.ProxyQueue.QueueBE[] GetPatientQueues(short patientId) {
+            return base.Channel.GetPatientQueues(patientId);
+        }
+        
+        public System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetPatientQueuesAsync(short patientId) {
+            return base.Channel.GetPatientQueuesAsync(patientId);
         }
     }
 }

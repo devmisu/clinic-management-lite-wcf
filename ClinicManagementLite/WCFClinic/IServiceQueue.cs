@@ -28,5 +28,8 @@ namespace WCFClinic
 
         [OperationContract]
         List<QueueBE> GetUserQueues(Int16 userId);
+
+        [OperationContract]
+        List<QueueBE> GetPatientQueues(Int16 patientId);
     }
 }

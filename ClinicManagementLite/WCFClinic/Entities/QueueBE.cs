@@ -20,6 +20,8 @@ namespace WCFClinic.Entities
         private String state;
         private DateTime created_at;
         private Boolean active;
+        private UserBE user;
+        private PatientBE patient;
 
         public static QueueBE Create(Queue tbQueue)
         {
@@ -33,6 +35,8 @@ namespace WCFClinic.Entities
             objQueueBE.State = tbQueue.state;
             objQueueBE.CreatedAt = tbQueue.created_at;
             objQueueBE.Active = tbQueue.active;
+            objQueueBE.User = UserBE.Create(tbQueue.User);
+            objQueueBE.Patient = PatientBE.Create(tbQueue.Patient);
 
             return objQueueBE;
         }
@@ -52,10 +56,24 @@ namespace WCFClinic.Entities
         }
 
         [DataMember]
+        public PatientBE Patient
+        {
+            get { return patient; }
+            set { patient = value; }
+        }
+
+        [DataMember]
         public Int16 IdUser
         {
             get { return id_user; }
             set { id_user = value; }
+        }
+
+        [DataMember]
+        public UserBE User
+        {
+            get { return user; }
+            set { user = value; }
         }
 
         [DataMember]

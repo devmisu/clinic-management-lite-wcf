@@ -11,7 +11,7 @@ namespace WebPatient
 {
 
 
-    public partial class Index
+    public partial class Queues
     {
 
         /// <summary>
@@ -78,21 +78,21 @@ namespace WebPatient
         protected global::System.Web.UI.WebControls.Label lblErrorMessage;
 
         /// <summary>
-        /// btnCreateAppointment control.
+        /// btnCreateQueue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCreateAppointment;
+        protected global::System.Web.UI.WebControls.LinkButton btnCreateQueue;
 
         /// <summary>
-        /// gridView control.
+        /// gridViewQueue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridView;
+        protected global::System.Web.UI.WebControls.GridView gridViewQueue;
     }
 }

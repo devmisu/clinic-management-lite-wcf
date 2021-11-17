@@ -131,18 +131,64 @@ namespace WCFClinic
             }
         }
 
-        public List<ScheduleBE> GetAllSchedulesOfUser(Int16 id)
+        public List<ScheduleBE> GetAllSchedulesOfUser(Int16 id, DateTime date)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
             try
             {
-                List<ScheduleBE> listSchedules = new List<ScheduleBE>();
+                /*List<ScheduleBE> listSchedules = new List<ScheduleBE>();
 
                 var query = (from schedules in db.Schedules where schedules.active && schedules.User.active && schedules.id_user == id select schedules);
 
                 foreach (var tbSchedule in query)
                 {
                     listSchedules.Add(ScheduleBE.Create(tbSchedule));
+                }
+
+                return listSchedules;*/
+
+                var day = "";
+
+                switch (date.DayOfWeek)
+                {
+                    case DayOfWeek.Monday:
+                        day = "MON";
+                        break;
+                    case DayOfWeek.Tuesday:
+                        day = "TUE";
+                        break;
+                    case DayOfWeek.Wednesday:
+                        day = "WED";
+                        break;
+                    case DayOfWeek.Thursday:
+                        day = "THU";
+                        break;
+                    case DayOfWeek.Friday:
+                        day = "FRI";
+                        break;
+                    case DayOfWeek.Saturday:
+                        day = "SAT";
+                        break;
+                    case DayOfWeek.Sunday:
+                        day = "SUN";
+                        break;
+                }
+
+                List<ScheduleBE> listSchedules = new List<ScheduleBE>();
+
+                var query = (from schedules in db.Schedules where schedules.active && schedules.id_user == id && schedules.days.Contains(day) select schedules);
+
+                foreach (var tbSchedule in query)
+                {
+                    for (int hour = tbSchedule.start_time.Hours; hour < tbSchedule.end_time.Hours; hour++)
+                    {
+                        ScheduleBE objScheduleBE = new ScheduleBE();
+
+                        objScheduleBE.StartTime = new TimeSpan(hour, 0, 0);
+                        objScheduleBE.EndTime = new TimeSpan(hour + 1, 0, 0);
+
+                        listSchedules.Add(objScheduleBE);
+                    }
                 }
 
                 return listSchedules;
