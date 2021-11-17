@@ -57,6 +57,10 @@ namespace WebClinicManagementLiteAdmin
         protected void btnAreas_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShowAreas.aspx");
+	}
+        protected void btnQueue_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowQueues.aspx");
         }
     }
 }
