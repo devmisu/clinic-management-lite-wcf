@@ -82,7 +82,7 @@
                         <div class="card-body">
                             <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Módulo de administración de doctores registrados.</small></h2>
                             <br />
-                            <button type="btnDoctors" class="w-100 btn btn-lg btn-outline-primary">Visualizar</button>
+                            <asp:Button ID="btnUsers" runat="server" type="button" class="w-100 btn btn-lg btn-outline-primary" Text="Visualizar" OnClick="btnUsers_Click"></asp:Button>
                         </div>
                     </div>
                 </div>

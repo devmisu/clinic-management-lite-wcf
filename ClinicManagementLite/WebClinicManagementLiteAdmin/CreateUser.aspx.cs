@@ -1,66 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace WebClinicManagementLiteAdmin
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class CreateUser : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            PopulateAreas();
-            PopulateRole();
-        }
-
-        private void PopulateAreas()
-        {
-            try
+            if (!IsPostBack && HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                ProxyArea.ServiceAreaClient proxyArea = new ProxyArea.ServiceAreaClient();
-                List<ProxyArea.AreaBE> areas = proxyArea.GetAllAreas().ToList();
-                dropArea.DataSource = areas;
-                dropArea.DataTextField = "name";
-                dropArea.DataValueField = "id";
-                dropArea.DataBind();
-                proxyArea.Close();
-            } 
-            catch (Exception ex)
-            {
-                viewSuccess.Visible = false;
-                viewError.Visible = true;
-                lblErrorMessage.Text = ex.Message;
+                PopulateAreas();
+                PopulateRole();
             }
         }
 
-        private void PopulateRole()
+        protected void btnCreateUser_Click(object sender, EventArgs e)
         {
             try
             {
-                ProxyRole.ServiceRoleClient proxyRole = new ProxyRole.ServiceRoleClient();
-                List<ProxyRole.RoleBE> roles = proxyRole.GetAllRoles().ToList();
-                dropRole.DataSource = roles;
-                dropRole.DataTextField = "name";
-                dropRole.DataValueField = "id";
-                dropRole.DataBind();
-                proxyRole.Close();
-            }
-            catch (Exception ex)
-            {
-                viewSuccess.Visible = false;
-                viewError.Visible = true;
-                lblErrorMessage.Text = ex.Message;
-            }
-        }
-
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                btnRegister.Enabled = false;
+                btnCreateUser.Enabled = false;
 
                 if (txtFirstName.Text.Trim().Length == 0)
                 {
@@ -87,11 +50,6 @@ namespace WebClinicManagementLiteAdmin
                     throw new Exception("Ingrese un email valido.");
                 }
 
-                if (txtSpecialization.Text.Trim().Length <= 0)
-                {
-                    throw new Exception("El campo especialización es obligatorio.");
-                }
-
                 if (txtPassword.Text.Trim().Length <= 0)
                 {
                     throw new Exception("Ingrese una contraseña valida.");
@@ -102,17 +60,15 @@ namespace WebClinicManagementLiteAdmin
                     throw new Exception("Las contraseñas no coinciden.");
                 }
 
-                if (dropArea.SelectedItem.Text.Length == 0)
+                if (ddlArea.SelectedItem.Text.Length == 0)
                 {
                     throw new Exception("Escoja un área válida.");
                 }
 
-                if (dropRole.SelectedItem.Text.Length == 0)
+                if (ddlRole.SelectedItem.Text.Length == 0)
                 {
                     throw new Exception("Escoja un rol válido.");
                 }
-
-
 
                 ProxyUser.UserBE userBE = new ProxyUser.UserBE();
                 userBE.FirstName = txtFirstName.Text.Trim();
@@ -122,8 +78,8 @@ namespace WebClinicManagementLiteAdmin
                 userBE.Email = txtEmail.Text.Trim();
                 userBE.Specialization = txtSpecialization.Text.Trim();
                 userBE.Password = txtPassword2.Text.Trim();
-                userBE.IdArea = Convert.ToInt16(dropArea.SelectedItem.Value);
-                userBE.IdRole = Convert.ToInt16(dropRole.SelectedItem.Value);
+                userBE.IdArea = Convert.ToInt16(ddlArea.SelectedItem.Value);
+                userBE.IdRole = Convert.ToInt16(ddlRole.SelectedItem.Value);
 
                 ProxyUser.ServiceUserClient proxyUser = new ProxyUser.ServiceUserClient();
 
@@ -131,7 +87,7 @@ namespace WebClinicManagementLiteAdmin
                 {
                     viewError.Visible = false;
                     viewSuccess.Visible = true;
-                    lblSuccessMessage.Text = "Registro exitoso!";
+                    lblSuccessMessage.Text = "Creacion de usuario exitosa!";
                 }
 
                 proxyUser.Close();
@@ -142,7 +98,47 @@ namespace WebClinicManagementLiteAdmin
                 viewError.Visible = true;
                 lblErrorMessage.Text = ex.Message;
 
-                btnRegister.Enabled = true;
+                btnCreateUser.Enabled = true;
+            }
+        }
+
+        private void PopulateAreas()
+        {
+            try
+            {
+                ProxyArea.ServiceAreaClient proxyArea = new ProxyArea.ServiceAreaClient();
+                List<ProxyArea.AreaBE> areas = proxyArea.GetAllAreas().ToList();
+                ddlArea.DataSource = areas;
+                ddlArea.DataTextField = "name";
+                ddlArea.DataValueField = "id";
+                ddlArea.DataBind();
+                proxyArea.Close();
+            }
+            catch (Exception ex)
+            {
+                viewSuccess.Visible = false;
+                viewError.Visible = true;
+                lblErrorMessage.Text = ex.Message;
+            }
+        }
+
+        private void PopulateRole()
+        {
+            try
+            {
+                ProxyRole.ServiceRoleClient proxyRole = new ProxyRole.ServiceRoleClient();
+                List<ProxyRole.RoleBE> roles = proxyRole.GetAllRoles().ToList();
+                ddlRole.DataSource = roles;
+                ddlRole.DataTextField = "name";
+                ddlRole.DataValueField = "id";
+                ddlRole.DataBind();
+                proxyRole.Close();
+            }
+            catch (Exception ex)
+            {
+                viewSuccess.Visible = false;
+                viewError.Visible = true;
+                lblErrorMessage.Text = ex.Message;
             }
         }
     }

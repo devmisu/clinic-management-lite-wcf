@@ -58,5 +58,10 @@ namespace WebClinicManagementLiteAdmin
         {
             Response.Redirect("ShowQueues.aspx");
         }
+
+        protected void btnUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowUsers.aspx");
+        }
     }
 }

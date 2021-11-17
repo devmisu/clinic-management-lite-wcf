@@ -11,61 +11,43 @@ namespace WebClinicManagementLiteAdmin
 {
 
 
-    public partial class Index
+    public partial class ShowUsers
     {
 
         /// <summary>
-        /// btnSignOut control.
+        /// btnCreateUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignOut;
+        protected global::System.Web.UI.WebControls.Button btnCreateUser;
 
         /// <summary>
-        /// tvWelcomeMsg control.
+        /// ddlDoctor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tvWelcomeMsg;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDoctor;
 
         /// <summary>
-        /// btnAppointments control.
+        /// divContainerNoQueues control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAppointments;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divContainerNoQueues;
 
         /// <summary>
-        /// btnQueue control.
+        /// gdvUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnQueue;
-
-        /// <summary>
-        /// btnUsers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUsers;
-
-        /// <summary>
-        /// btnRoles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRoles;
+        protected global::System.Web.UI.WebControls.GridView gdvUsers;
     }
 }
