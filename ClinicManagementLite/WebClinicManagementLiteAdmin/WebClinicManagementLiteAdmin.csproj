@@ -200,13 +200,16 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="CreateAppointment.aspx" />
+    <Content Include="CreateRol.aspx" />
     <Content Include="CSS\Main.css" />
     <Content Include="FinishAppointment.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ShowAppointments.aspx" />
+    <Content Include="ShowRoles.aspx" />
     <Content Include="UpdateAppointment.aspx" />
+    <Content Include="UpdateRol.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +255,13 @@
     <Compile Include="CreateAppointment.aspx.designer.cs">
       <DependentUpon>CreateAppointment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateRol.aspx.cs">
+      <DependentUpon>CreateRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateRol.aspx.designer.cs">
+      <DependentUpon>CreateRol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FinishAppointment.aspx.cs">
       <DependentUpon>FinishAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -295,6 +305,13 @@
     <Compile Include="ShowAppointments.aspx.designer.cs">
       <DependentUpon>ShowAppointments.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShowRoles.aspx.cs">
+      <DependentUpon>ShowRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowRoles.aspx.designer.cs">
+      <DependentUpon>ShowRoles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateAppointment.aspx.cs">
       <DependentUpon>UpdateAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +319,14 @@
     <Compile Include="UpdateAppointment.aspx.designer.cs">
       <DependentUpon>UpdateAppointment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateRol.aspx.cs">
+      <DependentUpon>UpdateRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateRol.aspx.designer.cs">
+      <DependentUpon>UpdateRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.master" />

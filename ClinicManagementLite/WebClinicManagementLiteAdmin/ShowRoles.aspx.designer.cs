@@ -11,43 +11,25 @@ namespace WebClinicManagementLiteAdmin
 {
 
 
-    public partial class Index
+    public partial class ShowRoles
     {
 
         /// <summary>
-        /// Control btnSignOut.
+        /// Control btnCreateRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignOut;
+        protected global::System.Web.UI.WebControls.Button btnCreateRol;
 
         /// <summary>
-        /// Control tvWelcomeMsg.
+        /// Control gdvRoles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tvWelcomeMsg;
-
-        /// <summary>
-        /// Control btnAppointments.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAppointments;
-
-        /// <summary>
-        /// Control btnRoles.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRoles;
+        protected global::System.Web.UI.WebControls.GridView gdvRoles;
     }
 }
