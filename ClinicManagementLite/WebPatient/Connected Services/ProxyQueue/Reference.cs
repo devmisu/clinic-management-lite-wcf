@@ -209,6 +209,12 @@ namespace WebPatient.ProxyQueue {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetUserQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetUserQueuesResponse")]
         System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetUserQueuesAsync(short userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetPatientQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse")]
+        WebPatient.ProxyQueue.QueueBE[] GetPatientQueues(short patientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetPatientQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse")]
+        System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetPatientQueuesAsync(short patientId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -284,6 +290,14 @@ namespace WebPatient.ProxyQueue {
         
         public System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetUserQueuesAsync(short userId) {
             return base.Channel.GetUserQueuesAsync(userId);
+        }
+        
+        public WebPatient.ProxyQueue.QueueBE[] GetPatientQueues(short patientId) {
+            return base.Channel.GetPatientQueues(patientId);
+        }
+        
+        public System.Threading.Tasks.Task<WebPatient.ProxyQueue.QueueBE[]> GetPatientQueuesAsync(short patientId) {
+            return base.Channel.GetPatientQueuesAsync(patientId);
         }
     }
 }

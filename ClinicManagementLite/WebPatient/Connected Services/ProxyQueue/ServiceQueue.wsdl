@@ -43,6 +43,12 @@
   <wsdl:message name="IServiceQueue_GetUserQueues_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserQueuesResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetPatientQueues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientQueues" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetPatientQueues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientQueuesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceQueue">
     <wsdl:operation name="CreateQueue">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/CreateQueue" message="tns:IServiceQueue_CreateQueue_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="GetUserQueues">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/GetUserQueues" message="tns:IServiceQueue_GetUserQueues_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/GetUserQueuesResponse" message="tns:IServiceQueue_GetUserQueues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientQueues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/GetPatientQueues" message="tns:IServiceQueue_GetPatientQueues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse" message="tns:IServiceQueue_GetPatientQueues_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceQueue" type="tns:IServiceQueue">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserQueues">
       <soap:operation soapAction="http://tempuri.org/IServiceQueue/GetUserQueues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientQueues">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/GetPatientQueues" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

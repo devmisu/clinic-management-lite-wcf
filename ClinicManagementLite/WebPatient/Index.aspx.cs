@@ -103,6 +103,11 @@ namespace WebPatient
             Response.Redirect("Index.aspx");
         }
 
+        protected void btnQueue_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Queues.aspx");
+        }
+
         protected void btnProfile_Click(object sender, EventArgs e)
         {
             Response.Redirect("Profile.aspx");

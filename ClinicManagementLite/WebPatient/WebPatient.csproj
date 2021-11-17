@@ -182,6 +182,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="QueueAppointment.aspx" />
+    <Content Include="Queues.aspx" />
     <Content Include="ScheduleAppointment.aspx" />
     <Content Include="www\img\icon_delete_16.png" />
     <Content Include="www\img\icon_edit_16.png" />
@@ -307,6 +308,13 @@
     </Compile>
     <Compile Include="QueueAppointment.aspx.designer.cs">
       <DependentUpon>QueueAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Queues.aspx.cs">
+      <DependentUpon>Queues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Queues.aspx.designer.cs">
+      <DependentUpon>Queues.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

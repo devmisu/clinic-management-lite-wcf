@@ -182,5 +182,27 @@ namespace WCFClinic
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<QueueBE> GetPatientQueues(Int16 patientId)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+                List<QueueBE> listQueues = new List<QueueBE>();
+
+                var query = (from queues in db.Queues orderby queues.start_date where queues.active && queues.User.active && queues.Patient.id == patientId select queues);
+
+                foreach (var tbQueue in query)
+                {
+                    listQueues.Add(QueueBE.Create(tbQueue));
+                }
+
+                return listQueues;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
