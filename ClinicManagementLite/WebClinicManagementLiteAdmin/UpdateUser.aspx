@@ -5,7 +5,7 @@
     <div class="container">
       <div>
         <div class="py-5 text-center">
-          <h2>Registrar usuario</h2>
+          <h2>Editar usuario</h2>
         </div>
 
         <div class="row g-5">
@@ -79,6 +79,7 @@
                 <hr class="my-4">
               
                 <asp:Button ID="btnUpdateUser" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Actualizar" OnClick="btnUpdateUser_Click" />
+                <asp:Button ID="btnDeleteUser" CssClass="w-100 btn btn-danger btn-lg" runat="server" Text="Eliminar" OnClick="btnDeleteUser_Click" />
             </div>
           </div>
         </div>

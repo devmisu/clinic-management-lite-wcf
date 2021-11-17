@@ -171,5 +171,34 @@ namespace WebClinicManagementLiteAdmin
         {
             txtPassword.Attributes["type"] = txtPassword.Attributes["type"] == "password" ? "text" : "password";
         }
+
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnUpdateUser.Enabled = false;
+
+                Int16 userId = Convert.ToInt16(Session["userId"].ToString());
+
+                ServiceUserClient proxyUser = new ServiceUserClient();
+
+                if (proxyUser.DeleteUser(userId))
+                {
+                    viewError.Visible = false;
+                    viewSuccess.Visible = true;
+                    lblSuccessMessage.Text = "Se elimino el usuario!";
+                }
+
+                proxyUser.Close();
+            }
+            catch (Exception ex)
+            {
+                viewSuccess.Visible = false;
+                viewError.Visible = true;
+                lblErrorMessage.Text = ex.Message;
+
+                btnUpdateUser.Enabled = true;
+            }
+        }
     }
 }
