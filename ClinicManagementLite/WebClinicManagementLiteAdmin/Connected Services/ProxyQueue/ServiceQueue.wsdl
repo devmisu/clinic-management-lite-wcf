@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceQueue" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceQueue_CreateQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateQueue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_CreateQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetAllQueues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQueues" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetAllQueues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQueuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetOneQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneQueue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetOneQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOneQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_UpdateQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQueue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_UpdateQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_DeleteQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQueue" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_DeleteQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetUserQueues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserQueues" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetUserQueues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserQueuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetPatientQueues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientQueues" />
+  </wsdl:message>
+  <wsdl:message name="IServiceQueue_GetPatientQueues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientQueuesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceQueue">
+    <wsdl:operation name="CreateQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/CreateQueue" message="tns:IServiceQueue_CreateQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/CreateQueueResponse" message="tns:IServiceQueue_CreateQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQueues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/GetAllQueues" message="tns:IServiceQueue_GetAllQueues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/GetAllQueuesResponse" message="tns:IServiceQueue_GetAllQueues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOneQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/GetOneQueue" message="tns:IServiceQueue_GetOneQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/GetOneQueueResponse" message="tns:IServiceQueue_GetOneQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/UpdateQueue" message="tns:IServiceQueue_UpdateQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/UpdateQueueResponse" message="tns:IServiceQueue_UpdateQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/DeleteQueue" message="tns:IServiceQueue_DeleteQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/DeleteQueueResponse" message="tns:IServiceQueue_DeleteQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQueues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/GetUserQueues" message="tns:IServiceQueue_GetUserQueues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/GetUserQueuesResponse" message="tns:IServiceQueue_GetUserQueues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientQueues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceQueue/GetPatientQueues" message="tns:IServiceQueue_GetPatientQueues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse" message="tns:IServiceQueue_GetPatientQueues_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceQueue" type="tns:IServiceQueue">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateQueue">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/CreateQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQueues">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/GetAllQueues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOneQueue">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/GetOneQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQueue">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/UpdateQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQueue">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/DeleteQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQueues">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/GetUserQueues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientQueues">
+      <soap:operation soapAction="http://tempuri.org/IServiceQueue/GetPatientQueues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceQueue">
+    <wsdl:port name="BasicHttpBinding_IServiceQueue" binding="tns:BasicHttpBinding_IServiceQueue">
+      <soap:address location="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceQueue.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

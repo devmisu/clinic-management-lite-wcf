@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebClinicManagementLiteAdmin.ProxyAppointment {
+namespace WebClinicManagementLiteAdmin.ProxyQueue {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AppointmentBE", Namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QueueBE", Namespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities")]
     [System.SerializableAttribute()]
-    public partial class AppointmentBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class QueueBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -26,19 +26,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.TimeSpan> ArrivalHourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedAtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.TimeSpan> DepartureHourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan EndHourField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private short IdField;
@@ -50,16 +38,19 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         private short IdUserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebClinicManagementLiteAdmin.ProxyAppointment.PatientBE PatientField;
+        private WebClinicManagementLiteAdmin.ProxyQueue.PatientBE PatientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.TimeSpan StartHourField;
+        private System.DateTime StartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan StartTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebClinicManagementLiteAdmin.ProxyAppointment.UserBE UserField;
+        private WebClinicManagementLiteAdmin.ProxyQueue.UserBE UserField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -85,19 +76,6 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> ArrivalHour {
-            get {
-                return this.ArrivalHourField;
-            }
-            set {
-                if ((this.ArrivalHourField.Equals(value) != true)) {
-                    this.ArrivalHourField = value;
-                    this.RaisePropertyChanged("ArrivalHour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime CreatedAt {
             get {
                 return this.CreatedAtField;
@@ -106,45 +84,6 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
                 if ((this.CreatedAtField.Equals(value) != true)) {
                     this.CreatedAtField = value;
                     this.RaisePropertyChanged("CreatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Date {
-            get {
-                return this.DateField;
-            }
-            set {
-                if ((this.DateField.Equals(value) != true)) {
-                    this.DateField = value;
-                    this.RaisePropertyChanged("Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> DepartureHour {
-            get {
-                return this.DepartureHourField;
-            }
-            set {
-                if ((this.DepartureHourField.Equals(value) != true)) {
-                    this.DepartureHourField = value;
-                    this.RaisePropertyChanged("DepartureHour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan EndHour {
-            get {
-                return this.EndHourField;
-            }
-            set {
-                if ((this.EndHourField.Equals(value) != true)) {
-                    this.EndHourField = value;
-                    this.RaisePropertyChanged("EndHour");
                 }
             }
         }
@@ -189,7 +128,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebClinicManagementLiteAdmin.ProxyAppointment.PatientBE Patient {
+        public WebClinicManagementLiteAdmin.ProxyQueue.PatientBE Patient {
             get {
                 return this.PatientField;
             }
@@ -202,14 +141,27 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.TimeSpan StartHour {
+        public System.DateTime StartDate {
             get {
-                return this.StartHourField;
+                return this.StartDateField;
             }
             set {
-                if ((this.StartHourField.Equals(value) != true)) {
-                    this.StartHourField = value;
-                    this.RaisePropertyChanged("StartHour");
+                if ((this.StartDateField.Equals(value) != true)) {
+                    this.StartDateField = value;
+                    this.RaisePropertyChanged("StartDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan StartTime {
+            get {
+                return this.StartTimeField;
+            }
+            set {
+                if ((this.StartTimeField.Equals(value) != true)) {
+                    this.StartTimeField = value;
+                    this.RaisePropertyChanged("StartTime");
                 }
             }
         }
@@ -228,7 +180,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebClinicManagementLiteAdmin.ProxyAppointment.UserBE User {
+        public WebClinicManagementLiteAdmin.ProxyQueue.UserBE User {
             get {
                 return this.UserField;
             }
@@ -468,7 +420,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         private bool ActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebClinicManagementLiteAdmin.ProxyAppointment.AreaBE AreaField;
+        private WebClinicManagementLiteAdmin.ProxyQueue.AreaBE AreaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreatedAtField;
@@ -504,7 +456,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         private string PhotoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebClinicManagementLiteAdmin.ProxyAppointment.RoleBE RoleField;
+        private WebClinicManagementLiteAdmin.ProxyQueue.RoleBE RoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecializationField;
@@ -533,7 +485,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebClinicManagementLiteAdmin.ProxyAppointment.AreaBE Area {
+        public WebClinicManagementLiteAdmin.ProxyQueue.AreaBE Area {
             get {
                 return this.AreaField;
             }
@@ -689,7 +641,7 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebClinicManagementLiteAdmin.ProxyAppointment.RoleBE Role {
+        public WebClinicManagementLiteAdmin.ProxyQueue.RoleBE Role {
             get {
                 return this.RoleField;
             }
@@ -943,147 +895,133 @@ namespace WebClinicManagementLiteAdmin.ProxyAppointment {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyAppointment.IServiceAppointment")]
-    public interface IServiceAppointment {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyQueue.IServiceQueue")]
+    public interface IServiceQueue {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/CreateAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/CreateAppointmentResponse")]
-        bool CreateAppointment(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/CreateQueue", ReplyAction="http://tempuri.org/IServiceQueue/CreateQueueResponse")]
+        bool CreateQueue(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/CreateAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/CreateAppointmentResponse")]
-        System.Threading.Tasks.Task<bool> CreateAppointmentAsync(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/CreateQueue", ReplyAction="http://tempuri.org/IServiceQueue/CreateQueueResponse")]
+        System.Threading.Tasks.Task<bool> CreateQueueAsync(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetAllAppointments", ReplyAction="http://tempuri.org/IServiceAppointment/GetAllAppointmentsResponse")]
-        WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetAllAppointments();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetAllQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetAllQueuesResponse")]
+        WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[] GetAllQueues();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetAllAppointments", ReplyAction="http://tempuri.org/IServiceAppointment/GetAllAppointmentsResponse")]
-        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetAllAppointmentsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetAllQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetAllQueuesResponse")]
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[]> GetAllQueuesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetOneAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/GetOneAppointmentResponse")]
-        WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE GetOneAppointment(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetOneQueue", ReplyAction="http://tempuri.org/IServiceQueue/GetOneQueueResponse")]
+        WebClinicManagementLiteAdmin.ProxyQueue.QueueBE GetOneQueue(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetOneAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/GetOneAppointmentResponse")]
-        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE> GetOneAppointmentAsync(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetOneQueue", ReplyAction="http://tempuri.org/IServiceQueue/GetOneQueueResponse")]
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE> GetOneQueueAsync(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/UpdateAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/UpdateAppointmentResponse")]
-        bool UpdateAppointment(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/UpdateQueue", ReplyAction="http://tempuri.org/IServiceQueue/UpdateQueueResponse")]
+        bool UpdateQueue(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/UpdateAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/UpdateAppointmentResponse")]
-        System.Threading.Tasks.Task<bool> UpdateAppointmentAsync(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/UpdateQueue", ReplyAction="http://tempuri.org/IServiceQueue/UpdateQueueResponse")]
+        System.Threading.Tasks.Task<bool> UpdateQueueAsync(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/DeleteAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/DeleteAppointmentResponse")]
-        bool DeleteAppointment(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/DeleteQueue", ReplyAction="http://tempuri.org/IServiceQueue/DeleteQueueResponse")]
+        bool DeleteQueue(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/DeleteAppointment", ReplyAction="http://tempuri.org/IServiceAppointment/DeleteAppointmentResponse")]
-        System.Threading.Tasks.Task<bool> DeleteAppointmentAsync(short id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/DeleteQueue", ReplyAction="http://tempuri.org/IServiceQueue/DeleteQueueResponse")]
+        System.Threading.Tasks.Task<bool> DeleteQueueAsync(short id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetPatientAppointments", ReplyAction="http://tempuri.org/IServiceAppointment/GetPatientAppointmentsResponse")]
-        WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetPatientAppointments(short patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetUserQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetUserQueuesResponse")]
+        WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[] GetUserQueues(short userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetPatientAppointments", ReplyAction="http://tempuri.org/IServiceAppointment/GetPatientAppointmentsResponse")]
-        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetPatientAppointmentsAsync(short patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetUserQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetUserQueuesResponse")]
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[]> GetUserQueuesAsync(short userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetUserAppointments", ReplyAction="http://tempuri.org/IServiceAppointment/GetUserAppointmentsResponse")]
-        WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetUserAppointments(short userId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetPatientQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse")]
+        WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[] GetPatientQueues(short patientId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetUserAppointments", ReplyAction="http://tempuri.org/IServiceAppointment/GetUserAppointmentsResponse")]
-        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetUserAppointmentsAsync(short userId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetUserAppointmentsByDate", ReplyAction="http://tempuri.org/IServiceAppointment/GetUserAppointmentsByDateResponse")]
-        WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetUserAppointmentsByDate(short userId, System.DateTime date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceAppointment/GetUserAppointmentsByDate", ReplyAction="http://tempuri.org/IServiceAppointment/GetUserAppointmentsByDateResponse")]
-        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetUserAppointmentsByDateAsync(short userId, System.DateTime date);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceQueue/GetPatientQueues", ReplyAction="http://tempuri.org/IServiceQueue/GetPatientQueuesResponse")]
+        System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[]> GetPatientQueuesAsync(short patientId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceAppointmentChannel : WebClinicManagementLiteAdmin.ProxyAppointment.IServiceAppointment, System.ServiceModel.IClientChannel {
+    public interface IServiceQueueChannel : WebClinicManagementLiteAdmin.ProxyQueue.IServiceQueue, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceAppointmentClient : System.ServiceModel.ClientBase<WebClinicManagementLiteAdmin.ProxyAppointment.IServiceAppointment>, WebClinicManagementLiteAdmin.ProxyAppointment.IServiceAppointment {
+    public partial class ServiceQueueClient : System.ServiceModel.ClientBase<WebClinicManagementLiteAdmin.ProxyQueue.IServiceQueue>, WebClinicManagementLiteAdmin.ProxyQueue.IServiceQueue {
         
-        public ServiceAppointmentClient() {
+        public ServiceQueueClient() {
         }
         
-        public ServiceAppointmentClient(string endpointConfigurationName) : 
+        public ServiceQueueClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ServiceAppointmentClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceQueueClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceAppointmentClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceQueueClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceAppointmentClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceQueueClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public bool CreateAppointment(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE) {
-            return base.Channel.CreateAppointment(objAppointmentBE);
+        public bool CreateQueue(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.CreateQueue(objQueueBE);
         }
         
-        public System.Threading.Tasks.Task<bool> CreateAppointmentAsync(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE) {
-            return base.Channel.CreateAppointmentAsync(objAppointmentBE);
+        public System.Threading.Tasks.Task<bool> CreateQueueAsync(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.CreateQueueAsync(objQueueBE);
         }
         
-        public WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetAllAppointments() {
-            return base.Channel.GetAllAppointments();
+        public WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[] GetAllQueues() {
+            return base.Channel.GetAllQueues();
         }
         
-        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetAllAppointmentsAsync() {
-            return base.Channel.GetAllAppointmentsAsync();
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[]> GetAllQueuesAsync() {
+            return base.Channel.GetAllQueuesAsync();
         }
         
-        public WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE GetOneAppointment(short id) {
-            return base.Channel.GetOneAppointment(id);
+        public WebClinicManagementLiteAdmin.ProxyQueue.QueueBE GetOneQueue(short id) {
+            return base.Channel.GetOneQueue(id);
         }
         
-        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE> GetOneAppointmentAsync(short id) {
-            return base.Channel.GetOneAppointmentAsync(id);
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE> GetOneQueueAsync(short id) {
+            return base.Channel.GetOneQueueAsync(id);
         }
         
-        public bool UpdateAppointment(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE) {
-            return base.Channel.UpdateAppointment(objAppointmentBE);
+        public bool UpdateQueue(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.UpdateQueue(objQueueBE);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateAppointmentAsync(WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE objAppointmentBE) {
-            return base.Channel.UpdateAppointmentAsync(objAppointmentBE);
+        public System.Threading.Tasks.Task<bool> UpdateQueueAsync(WebClinicManagementLiteAdmin.ProxyQueue.QueueBE objQueueBE) {
+            return base.Channel.UpdateQueueAsync(objQueueBE);
         }
         
-        public bool DeleteAppointment(short id) {
-            return base.Channel.DeleteAppointment(id);
+        public bool DeleteQueue(short id) {
+            return base.Channel.DeleteQueue(id);
         }
         
-        public System.Threading.Tasks.Task<bool> DeleteAppointmentAsync(short id) {
-            return base.Channel.DeleteAppointmentAsync(id);
+        public System.Threading.Tasks.Task<bool> DeleteQueueAsync(short id) {
+            return base.Channel.DeleteQueueAsync(id);
         }
         
-        public WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetPatientAppointments(short patientId) {
-            return base.Channel.GetPatientAppointments(patientId);
+        public WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[] GetUserQueues(short userId) {
+            return base.Channel.GetUserQueues(userId);
         }
         
-        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetPatientAppointmentsAsync(short patientId) {
-            return base.Channel.GetPatientAppointmentsAsync(patientId);
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[]> GetUserQueuesAsync(short userId) {
+            return base.Channel.GetUserQueuesAsync(userId);
         }
         
-        public WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetUserAppointments(short userId) {
-            return base.Channel.GetUserAppointments(userId);
+        public WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[] GetPatientQueues(short patientId) {
+            return base.Channel.GetPatientQueues(patientId);
         }
         
-        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetUserAppointmentsAsync(short userId) {
-            return base.Channel.GetUserAppointmentsAsync(userId);
-        }
-        
-        public WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[] GetUserAppointmentsByDate(short userId, System.DateTime date) {
-            return base.Channel.GetUserAppointmentsByDate(userId, date);
-        }
-        
-        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyAppointment.AppointmentBE[]> GetUserAppointmentsByDateAsync(short userId, System.DateTime date) {
-            return base.Channel.GetUserAppointmentsByDateAsync(userId, date);
+        public System.Threading.Tasks.Task<WebClinicManagementLiteAdmin.ProxyQueue.QueueBE[]> GetPatientQueuesAsync(short patientId) {
+            return base.Channel.GetPatientQueuesAsync(patientId);
         }
     }
 }
