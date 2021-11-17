@@ -106,7 +106,7 @@ namespace WebPatient
             String queueId = row.Cells[1].Text;
 
             Session["queueId"] = queueId;
-            Response.Redirect("Appointment.aspx");
+            Response.Redirect("Queue.aspx");
         }
 
         protected void btnCreateQueue_Click(object sender, EventArgs e)

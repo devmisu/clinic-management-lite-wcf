@@ -181,6 +181,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Queue.aspx" />
     <Content Include="QueueAppointment.aspx" />
     <Content Include="Queues.aspx" />
     <Content Include="ScheduleAppointment.aspx" />
@@ -302,6 +303,13 @@
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queue.aspx.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Queue.aspx.designer.cs">
+      <DependentUpon>Queue.aspx</DependentUpon>
+    </Compile>
     <Compile Include="QueueAppointment.aspx.cs">
       <DependentUpon>QueueAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
