@@ -73,8 +73,8 @@ namespace WebPatient
                         DataRow row = dataTableQueue.NewRow();
 
                         row[0] = queueBE.Id.ToString();
-                        //row[1] = queueBE.User.Area.Name;
-                        //row[2] = queueBE.User.FirstName + " " + queueBE.User.LastName;
+                        row[1] = queueBE.User.Area.Name;
+                        row[2] = queueBE.User.FirstName + " " + queueBE.User.LastName;
                         row[3] = queueBE.StartDate.ToString("dd/MM/yyyy");
                         row[4] = queueBE.StartTime.ToString(@"hh\:mm");
                         row[5] = state;
