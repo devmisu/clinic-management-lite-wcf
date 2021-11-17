@@ -53,5 +53,10 @@ namespace WebClinicManagementLiteAdmin
         {
             Response.Redirect("ShowRoles.aspx");
         }
+
+        protected void btnAreas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowAreas.aspx");
+        }
     }
 }

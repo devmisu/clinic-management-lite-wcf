@@ -200,6 +200,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="CreateAppointment.aspx" />
+    <Content Include="CreateArea.aspx" />
     <Content Include="CreateRol.aspx" />
     <Content Include="CSS\Main.css" />
     <Content Include="FinishAppointment.aspx" />
@@ -207,8 +208,10 @@
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="ShowAppointments.aspx" />
+    <Content Include="ShowAreas.aspx" />
     <Content Include="ShowRoles.aspx" />
     <Content Include="UpdateAppointment.aspx" />
+    <Content Include="UpdateArea.aspx" />
     <Content Include="UpdateRol.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -254,6 +257,13 @@
     </Compile>
     <Compile Include="CreateAppointment.aspx.designer.cs">
       <DependentUpon>CreateAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateArea.aspx.cs">
+      <DependentUpon>CreateArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateArea.aspx.designer.cs">
+      <DependentUpon>CreateArea.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateRol.aspx.cs">
       <DependentUpon>CreateRol.aspx</DependentUpon>
@@ -305,6 +315,13 @@
     <Compile Include="ShowAppointments.aspx.designer.cs">
       <DependentUpon>ShowAppointments.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShowAreas.aspx.cs">
+      <DependentUpon>ShowAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowAreas.aspx.designer.cs">
+      <DependentUpon>ShowAreas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShowRoles.aspx.cs">
       <DependentUpon>ShowRoles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -318,6 +335,13 @@
     </Compile>
     <Compile Include="UpdateAppointment.aspx.designer.cs">
       <DependentUpon>UpdateAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateArea.aspx.cs">
+      <DependentUpon>UpdateArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateArea.aspx.designer.cs">
+      <DependentUpon>UpdateArea.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateRol.aspx.cs">
       <DependentUpon>UpdateRol.aspx</DependentUpon>

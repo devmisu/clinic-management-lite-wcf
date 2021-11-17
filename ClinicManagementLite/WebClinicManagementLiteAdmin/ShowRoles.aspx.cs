@@ -124,7 +124,6 @@ namespace WebClinicManagementLiteAdmin
             {
                 var selectedIndex = gdvRoles.SelectedRow.RowIndex;
                 ProxyRole.ServiceRoleClient proxyRole = new ProxyRole.ServiceRoleClient();
-                String idUser = HttpContext.Current.User.Identity.Name;
                 List<ProxyRole.RoleBE> arrayRoles = proxyRole.GetAllRoles().ToList();
                 proxyRole.Close();
 

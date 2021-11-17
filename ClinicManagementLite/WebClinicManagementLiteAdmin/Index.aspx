@@ -94,7 +94,7 @@
                         <div class="card-body">
                             <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Módulo de administración de areas de especialización.</small></h2>
                             <br />
-                            <button type="btnAreas" class="w-100 btn btn-lg btn-outline-primary">Administrar</button>
+                            <asp:Button ID="btnAreas" runat="server" type="button" class="w-100 btn btn-lg btn-outline-primary" Text="Administrar" OnClick="btnAreas_Click"></asp:Button>
                         </div>
                     </div>
                 </div>
