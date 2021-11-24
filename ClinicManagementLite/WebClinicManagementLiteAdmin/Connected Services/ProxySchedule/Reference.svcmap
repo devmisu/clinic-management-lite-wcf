@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://DESKTOP-NO71S6R/WCFClinic/WCFClinic.ServiceSchedule.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://DESKTOP-TH5F7NM/WCFClinic/WCFClinic.ServiceSchedule.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WCFClinic1.disco" MetadataType="Disco" ID="ce12121e-54e1-472a-a0b8-b46b156aa97b" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceSchedule.svc?disco" />
-    <MetadataFile FileName="WCFClinic3.xsd" MetadataType="Schema" ID="86b5b1c8-c710-4435-9389-78e9034b4611" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceSchedule.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServiceSchedule1.wsdl" MetadataType="Wsdl" ID="5932c19a-2465-41e6-a6d9-2b969337c507" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceSchedule.svc?wsdl" />
-    <MetadataFile FileName="WCFClinic31.xsd" MetadataType="Schema" ID="0101476f-d661-4733-977b-8dcb326d4f5e" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceSchedule.svc?xsd=xsd1" />
-    <MetadataFile FileName="WCFClinic32.xsd" MetadataType="Schema" ID="e102e71d-d18f-4766-a945-c696493c3095" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceSchedule.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCFClinic.disco" MetadataType="Disco" ID="d8ebafc2-2579-4240-9225-71aeb3805bfe" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceSchedule.svc?disco" />
+    <MetadataFile FileName="WCFClinic.xsd" MetadataType="Schema" ID="be71e847-85e5-49ac-a5dd-24cb078bd61e" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceSchedule.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFClinic1.xsd" MetadataType="Schema" ID="0f72fe66-fc3a-4976-9088-550383cca189" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceSchedule.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceSchedule.wsdl" MetadataType="Wsdl" ID="621b50d4-1d7f-44ec-8131-a14f4c71882c" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceSchedule.svc?wsdl" />
+    <MetadataFile FileName="WCFClinic2.xsd" MetadataType="Schema" ID="1aad57e4-b3e2-4c19-ae82-25fbdc3317ad" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceSchedule.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

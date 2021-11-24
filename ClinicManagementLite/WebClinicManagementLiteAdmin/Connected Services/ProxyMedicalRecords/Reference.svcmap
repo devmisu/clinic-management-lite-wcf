@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="2885b87d-e602-4c7f-ba06-7d04ec5242d7" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="764fc761-e5fc-466e-9258-07f748803fca" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
-    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="5ab5bdb6-a7ac-4533-a42f-56207b699b66" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
-    <MetadataFile FileName="WCFClinic.Entities1.xsd" MetadataType="Schema" ID="47b68b40-8f01-41cb-8ba5-742974888447" SourceId="1" SourceUrl="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ee2db1e5-47e2-4d62-ba6d-dd8237cfc866" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2c5ea9a4-e51d-41ac-b8f7-86f811171dac" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="803faf1c-70d5-4924-b00f-f98a1044398c" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
+    <MetadataFile FileName="WCFClinic.Entities.xsd" MetadataType="Schema" ID="a9aed0cf-7ad4-4f4e-92f6-73cc7e8e150b" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

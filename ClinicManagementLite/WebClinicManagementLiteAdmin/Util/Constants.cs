@@ -31,5 +31,13 @@ namespace WebClinicManagementLiteAdmin.Util
         public const String FormatPatient = "Pacientes";
         public const String FormatArea = "Areas";
 
+        public const String MONDAY  = "MON";
+        public const String TUESDAY = "TUE";
+        public const String WEDNESDAY = "WED";
+        public const String THURSDAY = "THU";
+        public const String FRIDAY = "FRI";
+        public const String SATURDAY = "SAT";
+        public const String SUNDAY = "SUN";
+
     }
 }

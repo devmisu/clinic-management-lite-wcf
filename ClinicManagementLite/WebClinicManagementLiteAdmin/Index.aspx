@@ -70,7 +70,7 @@
                         <div class="card-body">
                             <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Podrá administrar sus horarios de atención.</small></h2>
                             <br />
-                            <button type="btnSchedule" class="w-100 btn btn-lg btn-outline-primary">Administrar</button>
+                            <asp:Button ID="btnSchedules" runat="server" type="button" class="w-100 btn btn-lg btn-outline-primary" Text="Administrar" OnClick="btnSchedules_Click"></asp:Button>
                         </div>
                     </div>
                 </div>

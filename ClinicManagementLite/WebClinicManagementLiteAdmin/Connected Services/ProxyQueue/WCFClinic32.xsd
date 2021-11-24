@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFClinic.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://desktop-no71s6r/WCFClinic/WCFClinic.ServiceAppointment.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="AppointmentBE">
+  <xs:import schemaLocation="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="QueueBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="Active" type="xs:boolean" />
-      <xs:element minOccurs="0" name="ArrivalHour" nillable="true" type="ser:duration" />
       <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="DepartureHour" nillable="true" type="ser:duration" />
-      <xs:element minOccurs="0" name="EndHour" type="ser:duration" />
       <xs:element minOccurs="0" name="Id" type="xs:short" />
       <xs:element minOccurs="0" name="IdPatient" type="xs:short" />
       <xs:element minOccurs="0" name="IdUser" type="xs:short" />
       <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:PatientBE" />
-      <xs:element minOccurs="0" name="StartHour" type="ser:duration" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartTime" type="ser:duration" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="User" nillable="true" type="tns:UserBE" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AppointmentBE" nillable="true" type="tns:AppointmentBE" />
+  <xs:element name="QueueBE" nillable="true" type="tns:QueueBE" />
   <xs:complexType name="PatientBE">
     <xs:sequence>
       <xs:element minOccurs="0" name="Active" type="xs:boolean" />
@@ -75,10 +72,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RoleBE" nillable="true" type="tns:RoleBE" />
-  <xs:complexType name="ArrayOfAppointmentBE">
+  <xs:complexType name="ArrayOfQueueBE">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppointmentBE" nillable="true" type="tns:AppointmentBE" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueBE" nillable="true" type="tns:QueueBE" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfAppointmentBE" nillable="true" type="tns:ArrayOfAppointmentBE" />
+  <xs:element name="ArrayOfQueueBE" nillable="true" type="tns:ArrayOfQueueBE" />
 </xs:schema>
