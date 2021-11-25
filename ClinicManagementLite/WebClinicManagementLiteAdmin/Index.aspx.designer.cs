@@ -33,6 +33,15 @@ namespace WebClinicManagementLiteAdmin
         protected global::System.Web.UI.WebControls.Label tvWelcomeMsg;
 
         /// <summary>
+        /// Control btnPatients.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPatients;
+
+        /// <summary>
         /// Control btnAppointments.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace WebClinicManagementLiteAdmin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSchedules;
+
+        /// <summary>
+        /// Control btnUsers.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUsers;
 
         /// <summary>
         /// Control btnRoles.

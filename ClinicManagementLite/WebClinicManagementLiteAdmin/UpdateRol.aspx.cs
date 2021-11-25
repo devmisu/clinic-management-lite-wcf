@@ -117,5 +117,34 @@ namespace WebClinicManagementLiteAdmin
 
             return rolesConcatList.Remove(rolesConcatList.Length - 1);
         }
+
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnUpdateRol.Enabled = false;
+
+                Int16 roleId = Convert.ToInt16(Session["roleId"].ToString());
+
+                ProxyRole.ServiceRoleClient proxyUser = new ProxyRole.ServiceRoleClient();
+
+                if (proxyUser.DeleteRole(roleId))
+                {
+                    viewError.Visible = false;
+                    viewSuccess.Visible = true;
+                    lblSuccessMessage.Text = "Se elimino el rol!";
+                }
+
+                proxyUser.Close();
+            }
+            catch (Exception ex)
+            {
+                viewSuccess.Visible = false;
+                viewError.Visible = true;
+                lblErrorMessage.Text = ex.Message;
+
+                btnUpdateRol.Enabled = true;
+            }
+        }
     }
 }

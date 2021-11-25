@@ -69,79 +69,78 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ProxyAppointment\ServiceAppointment1.wsdl" />
+    <None Include="Connected Services\ProxyAppointment\ServiceAppointment.wsdl" />
+    <None Include="Connected Services\ProxyAppointment\WCFClinic.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProxyAppointment\WCFClinic3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic31.xsd">
+    <None Include="Connected Services\ProxyAppointment\WCFClinic4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic32.xsd">
+    <None Include="Connected Services\ProxyArea\ServiceArea1.wsdl" />
+    <None Include="Connected Services\ProxyArea\WCFClinic3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyArea\ServiceArea.wsdl" />
-    <None Include="Connected Services\ProxyArea\WCFClinic.xsd">
+    <None Include="Connected Services\ProxyArea\WCFClinic31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyArea\WCFClinic1.xsd">
+    <None Include="Connected Services\ProxyArea\WCFClinic32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyArea\WCFClinic2.xsd">
+    <None Include="Connected Services\ProxyMedicalRecords\service1.wsdl" />
+    <None Include="Connected Services\ProxyMedicalRecords\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyMedicalRecords\service.wsdl" />
-    <None Include="Connected Services\ProxyMedicalRecords\service.xsd">
+    <None Include="Connected Services\ProxyMedicalRecords\service21.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyMedicalRecords\service1.xsd">
+    <None Include="Connected Services\ProxyMedicalRecords\WCFClinic.Entities1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyMedicalRecords\WCFClinic.Entities.xsd">
+    <None Include="Connected Services\ProxyPatient\ServicePatient.wsdl" />
+    <None Include="Connected Services\ProxyPatient\WCFClinic.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyPatient\ServicePatient1.wsdl" />
-    <None Include="Connected Services\ProxyPatient\WCFClinic3.xsd">
+    <None Include="Connected Services\ProxyPatient\WCFClinic1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyPatient\WCFClinic31.xsd">
+    <None Include="Connected Services\ProxyPatient\WCFClinic2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyPatient\WCFClinic32.xsd">
+    <None Include="Connected Services\ProxyQueue\ServiceQueue1.wsdl" />
+    <None Include="Connected Services\ProxyQueue\WCFClinic3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\ServiceQueue.wsdl" />
-    <None Include="Connected Services\ProxyQueue\WCFClinic.xsd">
+    <None Include="Connected Services\ProxyQueue\WCFClinic31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\WCFClinic1.xsd">
+    <None Include="Connected Services\ProxyQueue\WCFClinic32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\WCFClinic2.xsd">
+    <None Include="Connected Services\ProxySchedule\ServiceSchedule1.wsdl" />
+    <None Include="Connected Services\ProxySchedule\WCFClinic3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxySchedule\ServiceSchedule.wsdl" />
-    <None Include="Connected Services\ProxySchedule\WCFClinic.xsd">
+    <None Include="Connected Services\ProxySchedule\WCFClinic31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxySchedule\WCFClinic1.xsd">
+    <None Include="Connected Services\ProxySchedule\WCFClinic32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxySchedule\WCFClinic2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic1.disco" />
-    <None Include="Connected Services\ProxyArea\WCFClinic.disco" />
-    <None Include="Connected Services\ProxyPatient\WCFClinic1.disco" />
-    <None Include="Connected Services\ProxySchedule\WCFClinic.disco" />
-    <None Include="Connected Services\ProxyUser\ServiceUser.wsdl" />
-    <None Include="Connected Services\ProxyUser\WCFClinic.disco" />
-    <None Include="Connected Services\ProxyQueue\WCFClinic.disco" />
     <None Include="Connected Services\ProxyQueue\configuration91.svcinfo" />
     <None Include="Connected Services\ProxyQueue\configuration.svcinfo" />
     <None Include="Connected Services\ProxyQueue\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ProxyAppointment\WCFClinic.disco" />
+    <None Include="Connected Services\ProxyArea\WCFClinic1.disco" />
+    <None Include="Connected Services\ProxyPatient\WCFClinic.disco" />
+    <None Include="Connected Services\ProxyQueue\WCFClinic1.disco" />
+    <None Include="Connected Services\ProxySchedule\WCFClinic1.disco" />
+    <None Include="Connected Services\ProxyUser\WCFClinic1.disco" />
     <Content Include="Profile.aspx" />
     <Content Include="Appointment.aspx" />
     <Content Include="Connected Services\ProxyArea\WebPatient.ProxyArea.AreaBE.datasource">
@@ -356,13 +355,14 @@
     <Content Include="Connected Services\ProxyUser\WebPatient.ProxyUser.UserBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ProxyUser\WCFClinic.xsd">
+    <None Include="Connected Services\ProxyUser\ServiceUser1.wsdl" />
+    <None Include="Connected Services\ProxyUser\WCFClinic3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyUser\WCFClinic1.xsd">
+    <None Include="Connected Services\ProxyUser\WCFClinic31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyUser\WCFClinic2.xsd">
+    <None Include="Connected Services\ProxyUser\WCFClinic32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

@@ -41,6 +41,7 @@
                             <hr class="my-4">
 
                             <asp:Button ID="btnUpdateArea" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Actualizar" OnClick="btnUpdateArea_Click"/>
+                            <asp:Button ID="btnDeleteUser" CssClass="w-100 btn btn-danger btn-lg" runat="server" Text="Eliminar" OnClick="btnDeleteUser_Click" />
                         </div>
                     </div>
                 </div>

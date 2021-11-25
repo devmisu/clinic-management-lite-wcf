@@ -51,6 +51,24 @@ namespace WebClinicManagementLiteAdmin
         protected global::System.Web.UI.WebControls.Label lblSuccessMessage;
 
         /// <summary>
+        /// Control ddlStartTimeCurrent.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ddlStartTimeCurrent;
+
+        /// <summary>
+        /// Control ddlEndTimeCurrent.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ddlEndTimeCurrent;
+
+        /// <summary>
         /// Control ddlStartTime.
         /// </summary>
         /// <remarks>
@@ -139,5 +157,14 @@ namespace WebClinicManagementLiteAdmin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateSchedule;
+
+        /// <summary>
+        /// Control btnDeleteUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteUser;
     }
 }

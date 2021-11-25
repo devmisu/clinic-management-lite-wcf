@@ -20,7 +20,7 @@
 
                     <asp:Panel ID="viewSuccess" class="alert alert-success alert-dismissible mb-3" role="alert" runat="server" Visible="false">
                         <asp:Label ID="lblSuccessMessage" runat="server"></asp:Label>
-                        <a href="ShowAppointments.aspx" class="alert-link">Volver al listado de roles</a>
+                        <a href="ShowRoles.aspx" class="alert-link">Volver al listado de roles</a>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </asp:Panel>
 

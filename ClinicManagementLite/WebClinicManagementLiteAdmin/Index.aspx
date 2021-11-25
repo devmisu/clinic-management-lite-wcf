@@ -29,12 +29,12 @@
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">Mis pacientes</h4>
+                            <h4 class="my-0 fw-normal">Administrar pacientes</h4>
                         </div>
                         <div class="card-body">
-                            <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Podrá visualizar a sus pacientes ya atendidos con anterioridad.</small></h2>
+                            <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Podrá visualizar a los pacientes ya atendidos previamente.</small></h2>
                             <br />
-                            <button type="btnPatient" class="w-100 btn btn-lg btn-outline-primary">Visualizar</button>
+                            <asp:Button ID="btnPatients" runat="server" type="button" class="w-100 btn btn-lg btn-outline-primary" Text="Visualizar" OnClick="btnPatients_Click"></asp:Button>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                         <div class="card-body">
                             <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Módulo de administración de doctores registrados.</small></h2>
                             <br />
-                            <button type="btnDoctors" class="w-100 btn btn-lg btn-outline-primary">Visualizar</button>
+                            <asp:Button ID="btnUsers" runat="server" type="button" class="w-100 btn btn-lg btn-outline-primary" Text="Visualizar" OnClick="btnUsers_Click"></asp:Button>
                         </div>
                     </div>
                 </div>

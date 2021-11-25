@@ -66,5 +66,34 @@ namespace WebClinicManagementLiteAdmin
             }
         }
 
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnUpdateArea.Enabled = false;
+
+                Int16 areaId = Convert.ToInt16(Session["areaId"].ToString());
+
+                ProxyArea.ServiceAreaClient proxy = new ProxyArea.ServiceAreaClient();
+
+                if (proxy.DeleteArea(areaId))
+                {
+                    viewError.Visible = false;
+                    viewSuccess.Visible = true;
+                    lblSuccessMessage.Text = "Se elimino el area!";
+                }
+
+                proxy.Close();
+            }
+            catch (Exception ex)
+            {
+                viewSuccess.Visible = false;
+                viewError.Visible = true;
+                lblErrorMessage.Text = ex.Message;
+
+                btnUpdateArea.Enabled = true;
+            }
+        }
+
     }
 }

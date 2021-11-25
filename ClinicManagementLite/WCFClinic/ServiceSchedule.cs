@@ -199,6 +199,29 @@ namespace WCFClinic
             }
         }
 
+        public List<ScheduleBE> GetAllSchedulesOfUserOfAllTime(Int16 id)
+        {
+            ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();
+            try
+            {
+
+                List<ScheduleBE> listSchedules = new List<ScheduleBE>();
+
+                var query = (from schedules in db.Schedules where schedules.active && schedules.id_user == id select schedules);
+
+                foreach (var tbSchedule in query)
+                {
+                    listSchedules.Add(ScheduleBE.Create(tbSchedule));
+                }
+
+                return listSchedules;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<ScheduleBE> GetAvailableSchedulesByUser(Int16 userId, DateTime date)
         {
             ClinicManagementLiteEntities db = new ClinicManagementLiteEntities();

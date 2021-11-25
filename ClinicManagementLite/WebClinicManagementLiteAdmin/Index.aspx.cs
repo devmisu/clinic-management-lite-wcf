@@ -37,11 +37,16 @@ namespace WebClinicManagementLiteAdmin
                 String idUser = HttpContext.Current.User.Identity.Name;
                 user = proxyUser.GetUser(Convert.ToInt16(idUser));
                 proxyUser.Close();
-            } 
+            }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("ERROR: " + ex.Message);
             }
+        }
+
+        protected void btnPatients_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowPatients.aspx");
         }
 
         protected void btnAppointments_Click(object sender, EventArgs e)
@@ -57,14 +62,21 @@ namespace WebClinicManagementLiteAdmin
         protected void btnAreas_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShowAreas.aspx");
-	    }
+	}
+
         protected void btnQueue_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShowQueues.aspx");
         }
+
         protected void btnSchedules_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShowSchedules.aspx");
+	}
+
+        protected void btnUsers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowUsers.aspx");
         }
     }
 }

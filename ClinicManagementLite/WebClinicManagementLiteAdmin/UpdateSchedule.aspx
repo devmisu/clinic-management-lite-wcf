@@ -27,6 +27,16 @@
                     <div>
                         <div class="row g-3">
                             <div class="col-sm-6">
+                                <label for="ddlStartTimeCurrent" class="form-label">Hora de inicio actual</label>
+                                <asp:TextBox ID="ddlStartTimeCurrent" CssClass="form-select" runat="server" AutoPostBack="true" Enabled="false"></asp:TextBox>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="ddlEndTimeCurrent" class="form-label">Hora de salida actual</label>
+                                <asp:TextBox ID="ddlEndTimeCurrent" CssClass="form-select" runat="server" AutoPostBack="true" Enabled="false"></asp:TextBox>
+                            </div>
+
+                            <div class="col-sm-6">
                                 <label for="ddlStartTime" class="form-label">Hora de inicio</label>
                                 <asp:DropDownList ID="ddlStartTime" CssClass="form-select" runat="server" AutoPostBack="true"></asp:DropDownList>
                             </div>
@@ -73,7 +83,8 @@
 
                             <hr class="my-4">
 
-                            <asp:Button ID="btnCreateSchedule" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Crear" OnClick="btnCreateSchedule_Click" />
+                            <asp:Button ID="btnCreateSchedule" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Actualizar" OnClick="btnCreateSchedule_Click" />
+                            <asp:Button ID="btnDeleteUser" CssClass="w-100 btn btn-danger btn-lg" runat="server" Text="Eliminar" OnClick="btnDeleteUser_Click" />
                         </div>
                     </div>
                 </div>

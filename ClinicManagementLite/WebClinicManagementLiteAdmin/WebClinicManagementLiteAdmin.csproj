@@ -221,8 +221,10 @@
     <None Include="Connected Services\ProxyUser\WCFClinic.disco" />
     <Content Include="CreateAppointment.aspx" />
     <Content Include="CreateArea.aspx" />
+    <Content Include="CreatePatient.aspx" />
     <Content Include="CreateRol.aspx" />
     <Content Include="CreateSchedule.aspx" />
+    <Content Include="CreateUser.aspx" />
     <Content Include="CSS\Main.css" />
     <Content Include="FinishAppointment.aspx" />
     <Content Include="Index.aspx" />
@@ -230,14 +232,18 @@
     <Content Include="Register.aspx" />
     <Content Include="ShowAppointments.aspx" />
     <Content Include="ShowAreas.aspx" />
+    <Content Include="ShowPatients.aspx" />
     <Content Include="ShowSchedules.aspx" />
     <Content Include="UpdateArea.aspx" />
     <Content Include="ShowQueues.aspx" />
     <Content Include="ShowRoles.aspx" />
+    <Content Include="ShowUsers.aspx" />
     <Content Include="UpdateAppointment.aspx" />
+    <Content Include="UpdatePatient.aspx" />
     <Content Include="UpdateQueue.aspx" />
     <Content Include="UpdateRol.aspx" />
     <Content Include="UpdateSchedule.aspx" />
+    <Content Include="UpdateUser.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +301,13 @@
     <Compile Include="CreateArea.aspx.designer.cs">
       <DependentUpon>CreateArea.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreatePatient.aspx.cs">
+      <DependentUpon>CreatePatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreatePatient.aspx.designer.cs">
+      <DependentUpon>CreatePatient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateRol.aspx.cs">
       <DependentUpon>CreateRol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,6 +321,13 @@
     </Compile>
     <Compile Include="CreateSchedule.aspx.designer.cs">
       <DependentUpon>CreateSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="FinishAppointment.aspx.cs">
       <DependentUpon>FinishAppointment.aspx</DependentUpon>
@@ -359,6 +379,13 @@
     <Compile Include="ShowAreas.aspx.designer.cs">
       <DependentUpon>ShowAreas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShowPatients.aspx.cs">
+      <DependentUpon>ShowPatients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowPatients.aspx.designer.cs">
+      <DependentUpon>ShowPatients.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShowQueues.aspx.cs">
       <DependentUpon>ShowQueues.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,6 +407,13 @@
     <Compile Include="ShowSchedules.aspx.designer.cs">
       <DependentUpon>ShowSchedules.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShowUsers.aspx.cs">
+      <DependentUpon>ShowUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowUsers.aspx.designer.cs">
+      <DependentUpon>ShowUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UpdateAppointment.aspx.cs">
       <DependentUpon>UpdateAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -393,6 +427,13 @@
     </Compile>
     <Compile Include="UpdateArea.aspx.designer.cs">
       <DependentUpon>UpdateArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePatient.aspx.cs">
+      <DependentUpon>UpdatePatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdatePatient.aspx.designer.cs">
+      <DependentUpon>UpdatePatient.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateQueue.aspx.cs">
       <DependentUpon>UpdateQueue.aspx</DependentUpon>
@@ -414,6 +455,13 @@
     </Compile>
     <Compile Include="UpdateSchedule.aspx.designer.cs">
       <DependentUpon>UpdateSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Util\Constants.cs" />
   </ItemGroup>
@@ -440,7 +488,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

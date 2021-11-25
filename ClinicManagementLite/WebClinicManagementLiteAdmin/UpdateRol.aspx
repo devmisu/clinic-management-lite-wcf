@@ -73,6 +73,7 @@
                             <hr class="my-4">
 
                             <asp:Button ID="btnUpdateRol" CssClass="w-100 btn btn-primary btn-lg" runat="server" Text="Actualizar" OnClick="btnUpdateRol_Click"/>
+                            <asp:Button ID="btnDeleteUser" CssClass="w-100 btn btn-danger btn-lg" runat="server" Text="Eliminar" OnClick="btnDeleteUser_Click" />
                         </div>
                     </div>
                 </div>

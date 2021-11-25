@@ -43,6 +43,27 @@ namespace WebClinicManagementLiteAdmin
             try
             {
 
+                ProxySchedule.ServiceScheduleClient proxySchedule = new ProxySchedule.ServiceScheduleClient();
+                String idUser = HttpContext.Current.User.Identity.Name;
+                List<ProxySchedule.ScheduleBE> array = proxySchedule.GetAllSchedulesOfUserOfAllTime(Convert.ToInt16(idUser)).ToList();
+                proxySchedule.Close();
+
+                if (array.Count == 0)
+                {
+                    
+                }
+
+                foreach (ProxySchedule.ScheduleBE schedule in array)
+                {
+                    DataRow row = dataTable.NewRow();
+                    row[0] = schedule.StartTime.ToString(@"hh\:mm");
+                    row[1] = schedule.EndTime.ToString(@"hh\:mm");
+                    row[2] = schedule.Days;
+                    row[3] = schedule.CreatedAt.ToString("dd/MM/yyyy");
+
+                    dataTable.Rows.Add(row);
+                }
+
             }
             catch (Exception ex)
             {
@@ -59,10 +80,11 @@ namespace WebClinicManagementLiteAdmin
                 var selectedIndex = gdvSchedules.SelectedRow.RowIndex;
                 ProxySchedule.ServiceScheduleClient proxySchedule = new ProxySchedule.ServiceScheduleClient();
                 String idUser = HttpContext.Current.User.Identity.Name;
-                //List<ProxySchedule.ScheduleBE> array= proxySchedule.GetAllSchedulesOfUser(Convert.ToInt16(idUser), ).ToList();
+                List<ProxySchedule.ScheduleBE> array = proxySchedule.GetAllSchedulesOfUserOfAllTime(Convert.ToInt16(idUser)).ToList();
+                proxySchedule.Close();
 
-                //Session["scheduleId"] = array[selectedIndex].Id;
-                //Response.Redirect("UpdateArea.aspx");
+                Session["scheduleId"] = array[selectedIndex].Id;
+                Response.Redirect("UpdateSchedule.aspx");
             }
             catch (Exception ex)
             {
