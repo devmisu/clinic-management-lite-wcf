@@ -241,11 +241,11 @@ namespace WebClinicManagementLiteAdmin
                     throw new Exception("Debes seleccionar un paciente.");
                 }
 
-                Int16 doctorId = Convert.ToInt16(ddlDoctor.SelectedItem.Value); ;
+                Int16 patientId = Convert.ToInt16(ddlPatient.SelectedItem.Value); ;
                 DateTime date = Convert.ToDateTime(txtDate.Text);
                 TimeSpan startTime = TimeSpan.Parse(ddlSchedule.SelectedItem.Value);
 
-                if (createAppointment(doctorId, date, startTime))
+                if (createAppointment(patientId, date, startTime))
                 {
                     viewError.Visible = false;
                     viewSuccess.Visible = true;
