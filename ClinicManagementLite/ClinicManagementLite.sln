@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFClinic", "WCFClinic\WCFClinic.csproj", "{C28FDE05-AA37-46B7-B50B-99D8CBFF333D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClinicManagementLiteAdmin", "WebClinicManagementLiteAdmin\WebClinicManagementLiteAdmin.csproj", "{744CD1B0-3906-4D69-91EF-97B5B98A545F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C28FDE05-AA37-46B7-B50B-99D8CBFF333D} = {C28FDE05-AA37-46B7-B50B-99D8CBFF333D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPatient", "WebPatient\WebPatient.csproj", "{9907FAE5-831A-47B7-8E55-CE96689D32CC}"
 	ProjectSection(ProjectDependencies) = postProject

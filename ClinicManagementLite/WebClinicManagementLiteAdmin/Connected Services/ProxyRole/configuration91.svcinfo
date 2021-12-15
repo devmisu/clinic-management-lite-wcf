@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="W+bs4YQixuR2rz3cj7ONM2uEpZrf8izbQ/hfY5ydCqM=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="QvBVtJzpZYMZSFj3pvq/a7qNUsBOVXPyvcljQbyKQxs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IServiceRole">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IServiceRole" contract="ProxyRole.IServiceRole" bindingType="basicHttpBinding" address="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceRole.svc" bindingConfiguration="BasicHttpBinding_IServiceRole">
+    <endpoint name="BasicHttpBinding_IServiceRole" contract="ProxyRole.IServiceRole" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceRole/" bindingConfiguration="BasicHttpBinding_IServiceRole">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceRole.svc</serializedValue>
+          <serializedValue>http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceRole/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

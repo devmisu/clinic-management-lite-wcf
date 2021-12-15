@@ -89,18 +89,6 @@
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">Administrar roles</h4>
-                        </div>
-                        <div class="card-body">
-                            <h2 class="card-title pricing-card-title"><small class="text-muted fw-light">Módulo de administración de roles.</small></h2>
-                            <br />
-                            <asp:Button ID="btnRoles" runat="server" type="button" class="w-100 btn btn-lg btn-outline-primary" Text="Visualizar" OnClick="btnRoles_Click"></asp:Button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Administrar areas</h4>
                         </div>
                         <div class="card-body">

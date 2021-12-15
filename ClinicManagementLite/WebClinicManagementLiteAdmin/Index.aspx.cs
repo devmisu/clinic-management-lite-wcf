@@ -54,15 +54,10 @@ namespace WebClinicManagementLiteAdmin
             Response.Redirect("ShowAppointments.aspx");
         }
 
-        protected void btnRoles_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ShowRoles.aspx");
-        }
-
         protected void btnAreas_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShowAreas.aspx");
-	}
+	    }
 
         protected void btnQueue_Click(object sender, EventArgs e)
         {
@@ -72,7 +67,7 @@ namespace WebClinicManagementLiteAdmin
         protected void btnSchedules_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShowSchedules.aspx");
-	}
+	    }
 
         protected void btnUsers_Click(object sender, EventArgs e)
         {

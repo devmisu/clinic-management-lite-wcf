@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="17355058-9aff-4155-83bb-7872c9434b1f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23665772-d077-44fa-a366-c522f79d2ee6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="ee2db1e5-47e2-4d62-ba6d-dd8237cfc866" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2c5ea9a4-e51d-41ac-b8f7-86f811171dac" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="803faf1c-70d5-4924-b00f-f98a1044398c" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
-    <MetadataFile FileName="WCFClinic.Entities.xsd" MetadataType="Schema" ID="a9aed0cf-7ad4-4f4e-92f6-73cc7e8e150b" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="54afada0-0d99-4c0d-89e0-8559b08da9bc" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c8d79c4a-7a52-4f42-b995-bbad3f3db078" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="3a3add41-0e1c-496e-92b3-a8276ebbc9d6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/mex" />
+    <MetadataFile FileName="WCFClinic.Entities.xsd" MetadataType="Schema" ID="7d38ece7-9282-4ff1-8f56-218a3eb2c78a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
