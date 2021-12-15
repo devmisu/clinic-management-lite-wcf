@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e55b403e-a067-4166-998d-2a0d3914dbe3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4e2b221b-00c8-4140-aeff-73a9dc9deeea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://DESKTOP-TH5F7NM/WCFClinic/WCFClinic.ServiceQueue.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceQueue/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WCFClinic3.xsd" MetadataType="Schema" ID="7bcf6fdc-b687-459c-92f9-532f24e657f4" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd0" />
-    <MetadataFile FileName="WCFClinic1.disco" MetadataType="Disco" ID="36f30302-ff83-4f77-9563-735c420431bf" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceQueue.svc?disco" />
-    <MetadataFile FileName="WCFClinic31.xsd" MetadataType="Schema" ID="a7be6d26-8d16-4d23-9c46-359e41387056" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd1" />
-    <MetadataFile FileName="WCFClinic32.xsd" MetadataType="Schema" ID="9fe61edd-370c-4f9b-bb2a-e887a9cb4043" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceQueue.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServiceQueue1.wsdl" MetadataType="Wsdl" ID="25d3a102-d523-439b-b633-002dc7752859" SourceId="1" SourceUrl="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceQueue.svc?wsdl" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="92ec8cbf-c15b-4c81-8543-3ae3d81e2823" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceQueue/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4bcbbc9d-9aab-460f-b577-a3b87d35185b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceQueue/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="71b9ebb4-d96c-4c40-bba2-7eda55b14d9a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceQueue/mex" />
+    <MetadataFile FileName="WCFClinic.Entities.xsd" MetadataType="Schema" ID="fbffc8b2-4629-4aeb-a9ed-1364457b79d4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceQueue/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

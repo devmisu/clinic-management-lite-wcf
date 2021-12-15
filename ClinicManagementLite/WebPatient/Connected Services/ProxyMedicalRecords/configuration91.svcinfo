@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="F02ufxVcFlA8LvPN6mkqDFV6BrwH0Et4wtOLDuRMYRQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="oJtcnJNG8LFjPivtJL3aP6sO/Vrqnp9FFz9oEGABXnA=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IServiceMedicalRecord">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IServiceMedicalRecord" contract="ProxyMedicalRecords.IServiceMedicalRecord" bindingType="basicHttpBinding" address="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc" bindingConfiguration="BasicHttpBinding_IServiceMedicalRecord">
+    <endpoint name="BasicHttpBinding_IServiceMedicalRecord" contract="ProxyMedicalRecords.IServiceMedicalRecord" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/" bindingConfiguration="BasicHttpBinding_IServiceMedicalRecord">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc</serializedValue>
+          <serializedValue>http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

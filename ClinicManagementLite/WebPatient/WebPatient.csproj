@@ -69,93 +69,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ProxyAppointment\ServiceAppointment.wsdl" />
-    <None Include="Connected Services\ProxyAppointment\WCFClinic.xsd">
+    <None Include="Connected Services\ProxyAppointment\service.wsdl" />
+    <None Include="Connected Services\ProxyAppointment\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic3.xsd">
+    <None Include="Connected Services\ProxyAppointment\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic4.xsd">
+    <None Include="Connected Services\ProxyAppointment\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyArea\ServiceArea1.wsdl" />
-    <None Include="Connected Services\ProxyArea\WCFClinic3.xsd">
+    <None Include="Connected Services\ProxyArea\service.wsdl" />
+    <None Include="Connected Services\ProxyArea\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyArea\WCFClinic31.xsd">
+    <None Include="Connected Services\ProxyArea\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyArea\WCFClinic32.xsd">
+    <None Include="Connected Services\ProxyArea\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyMedicalRecords\service1.wsdl" />
-    <None Include="Connected Services\ProxyMedicalRecords\service2.xsd">
+    <None Include="Connected Services\ProxyMedicalRecords\service.wsdl" />
+    <None Include="Connected Services\ProxyMedicalRecords\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyMedicalRecords\service21.xsd">
+    <None Include="Connected Services\ProxyMedicalRecords\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyMedicalRecords\WCFClinic.Entities1.xsd">
+    <None Include="Connected Services\ProxyMedicalRecords\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyPatient\ServicePatient.wsdl" />
-    <None Include="Connected Services\ProxyPatient\WCFClinic.xsd">
+    <None Include="Connected Services\ProxyPatient\service.wsdl" />
+    <None Include="Connected Services\ProxyPatient\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyPatient\WCFClinic1.xsd">
+    <None Include="Connected Services\ProxyPatient\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyPatient\WCFClinic2.xsd">
+    <None Include="Connected Services\ProxyPatient\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\ServiceQueue1.wsdl" />
-    <None Include="Connected Services\ProxyQueue\WCFClinic3.xsd">
+    <None Include="Connected Services\ProxyQueue\service.wsdl" />
+    <None Include="Connected Services\ProxyQueue\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\WCFClinic31.xsd">
+    <None Include="Connected Services\ProxyQueue\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\WCFClinic32.xsd">
+    <None Include="Connected Services\ProxyQueue\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxySchedule\ServiceSchedule1.wsdl" />
-    <None Include="Connected Services\ProxySchedule\WCFClinic3.xsd">
+    <None Include="Connected Services\ProxySchedule\service.wsdl" />
+    <None Include="Connected Services\ProxySchedule\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxySchedule\WCFClinic31.xsd">
+    <None Include="Connected Services\ProxySchedule\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxySchedule\WCFClinic32.xsd">
+    <None Include="Connected Services\ProxySchedule\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyQueue\configuration91.svcinfo" />
-    <None Include="Connected Services\ProxyQueue\configuration.svcinfo" />
-    <None Include="Connected Services\ProxyQueue\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic.disco" />
-    <None Include="Connected Services\ProxyArea\WCFClinic1.disco" />
-    <None Include="Connected Services\ProxyPatient\WCFClinic.disco" />
-    <None Include="Connected Services\ProxyQueue\WCFClinic1.disco" />
-    <None Include="Connected Services\ProxySchedule\WCFClinic1.disco" />
-    <None Include="Connected Services\ProxyUser\WCFClinic1.disco" />
-    <Content Include="Profile.aspx" />
-    <Content Include="Appointment.aspx" />
-    <Content Include="Connected Services\ProxyArea\WebPatient.ProxyArea.AreaBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="MedicalRecord.aspx" />
-    <Content Include="MedicalRecords.aspx" />
-    <Content Include="Profile.aspx" />
-    <Content Include="Appointment.aspx" />
-    <Content Include="Connected Services\ProxyArea\WebPatient.ProxyArea.AreaBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ProxyMedicalRecords\configuration91.svcinfo" />
-    <None Include="Connected Services\ProxyMedicalRecords\configuration.svcinfo" />
-    <None Include="Connected Services\ProxyMedicalRecords\Reference.svcmap">
+    <None Include="Connected Services\ProxyAppointment\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyAppointment\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyAppointment\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -165,12 +141,21 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Connected Services\ProxySchedule\WebPatient.ProxySchedule.ScheduleBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ProxyUser\configuration91.svcinfo" />
-    <None Include="Connected Services\ProxyUser\configuration.svcinfo" />
-    <None Include="Connected Services\ProxyUser\Reference.svcmap">
+    <None Include="Connected Services\ProxyMedicalRecords\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyMedicalRecords\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyMedicalRecords\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyPatient\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyPatient\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyPatient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyQueue\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyQueue\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyQueue\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -180,6 +165,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ProxyUser\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyUser\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyUser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Profile.aspx" />
+    <Content Include="Appointment.aspx" />
+    <Content Include="MedicalRecord.aspx" />
+    <Content Include="MedicalRecords.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Appointment.aspx" />
     <Content Include="Queue.aspx" />
     <Content Include="QueueAppointment.aspx" />
     <Content Include="Queues.aspx" />
@@ -187,24 +184,6 @@
     <Content Include="www\img\icon_delete_16.png" />
     <Content Include="www\img\icon_edit_16.png" />
     <Content Include="www\img\icon_view_16.png" />
-    <None Include="Connected Services\ProxyAppointment\configuration91.svcinfo" />
-    <None Include="Connected Services\ProxyAppointment\configuration.svcinfo" />
-    <None Include="Connected Services\ProxyAppointment\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Connected Services\ProxyAppointment\WebPatient.ProxyAppointment.AppointmentBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ProxyMedicalRecords\WebPatient.ProxyMedicalRecords.MedicalRecordBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ProxyPatient\configuration91.svcinfo" />
-    <None Include="Connected Services\ProxyPatient\configuration.svcinfo" />
-    <None Include="Connected Services\ProxyPatient\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="www\img\icon_delete_16.png" />
     <Content Include="www\img\icon_edit_16.png" />
     <Content Include="www\img\icon_view_16.png" />
@@ -217,7 +196,37 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ProxyAppointment\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyArea\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyMedicalRecords\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyPatient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProxyQueue\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxySchedule\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyUser\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -249,36 +258,6 @@
     </Compile>
     <Compile Include="Appointment.aspx.designer.cs">
       <DependentUpon>Appointment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ProxyAppointment\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ProxyArea\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ProxyMedicalRecords\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ProxyPatient\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ProxySchedule\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ProxyUser\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -340,29 +319,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />
-    <None Include="Connected Services\ProxyAppointment\WCFClinic1.xsd">
+    <None Include="Connected Services\ProxyUser\service.wsdl" />
+    <None Include="Connected Services\ProxyUser\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyAppointment\WCFClinic2.xsd">
+    <None Include="Connected Services\ProxyUser\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\ProxyAppointment\WebPatient.ProxyAppointment.AppointmentBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ProxyPatient\WebPatient.ProxyPatient.PatientBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ProxyUser\WebPatient.ProxyUser.UserBE.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ProxyUser\ServiceUser1.wsdl" />
-    <None Include="Connected Services\ProxyUser\WCFClinic3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProxyUser\WCFClinic31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ProxyUser\WCFClinic32.xsd">
+    <None Include="Connected Services\ProxyUser\WCFClinic.Entities.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

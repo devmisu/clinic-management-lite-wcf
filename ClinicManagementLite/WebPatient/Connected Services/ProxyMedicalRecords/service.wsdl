@@ -128,7 +128,7 @@
   </wsdl:binding>
   <wsdl:service name="ServiceMedicalRecord">
     <wsdl:port name="BasicHttpBinding_IServiceMedicalRecord" binding="tns:BasicHttpBinding_IServiceMedicalRecord">
-      <soap:address location="http://desktop-th5f7nm/WCFClinic/WCFClinic.ServiceMedicalRecord.svc" />
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WCFClinic/ServiceMedicalRecord/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -199,6 +199,12 @@ namespace WebPatient.ProxySchedule {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUser", ReplyAction="http://tempuri.org/IServiceSchedule/GetAvailableSchedulesByUserResponse")]
         System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAvailableSchedulesByUserAsync(short userId, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserOfAllTime", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserOfAllTimeResponse")]
+        WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUserOfAllTime(short userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserOfAllTime", ReplyAction="http://tempuri.org/IServiceSchedule/GetAllSchedulesOfUserOfAllTimeResponse")]
+        System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserOfAllTimeAsync(short userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -282,6 +288,14 @@ namespace WebPatient.ProxySchedule {
         
         public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAvailableSchedulesByUserAsync(short userId, System.DateTime date) {
             return base.Channel.GetAvailableSchedulesByUserAsync(userId, date);
+        }
+        
+        public WebPatient.ProxySchedule.ScheduleBE[] GetAllSchedulesOfUserOfAllTime(short userId) {
+            return base.Channel.GetAllSchedulesOfUserOfAllTime(userId);
+        }
+        
+        public System.Threading.Tasks.Task<WebPatient.ProxySchedule.ScheduleBE[]> GetAllSchedulesOfUserOfAllTimeAsync(short userId) {
+            return base.Channel.GetAllSchedulesOfUserOfAllTimeAsync(userId);
         }
     }
 }
